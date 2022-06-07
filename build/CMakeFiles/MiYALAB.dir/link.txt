@@ -1,0 +1,2 @@
+/usr/bin/ar qc libMiYALAB.a  CMakeFiles/MiYALAB.dir/lib/Mathematics/Matrix/Matrix.cpp.o
+/usr/bin/ranlib libMiYALAB.a

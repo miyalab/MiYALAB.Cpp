@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../lib/Algorithm/Sort.hpp
+Swap.hpp
+../lib/Algorithm/Swap.hpp
+
+../lib/Algorithm/Swap.hpp
+string
+-
+
+../lib/Mathematics/Matrix/Matrix.hpp
+vector
+-
+string
+-
+
+/home/koshiro/workspace/MiYALAB.Cpp/src/main.cpp
+iostream
+-
+iomanip
+-
+ctime
+-
+random
+-
+Algorithm/Sort.hpp
+/home/koshiro/workspace/MiYALAB.Cpp/src/Algorithm/Sort.hpp
+Mathematics/Matrix/Matrix.hpp
+/home/koshiro/workspace/MiYALAB.Cpp/src/Mathematics/Matrix/Matrix.hpp
+
