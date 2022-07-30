@@ -4,12 +4,18 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/koshiro/workspace/MiYALAB.Cpp/lib/Mathematics/Matrix/Matrix.cpp" "/home/koshiro/workspace/MiYALAB.Cpp/build/CMakeFiles/MiYALAB.dir/lib/Mathematics/Matrix/Matrix.cpp.o"
+  "/home/kmiyauchi/workspace/MiYALAB.Cpp/lib/Mathematics/Matrix/Matrix.cpp" "/home/kmiyauchi/workspace/MiYALAB.Cpp/build/CMakeFiles/MiYALAB.Cpp.dir/lib/Mathematics/Matrix/Matrix.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
+# Preprocessor definitions for this target.
+set(CMAKE_TARGET_DEFINITIONS_CXX
+  "MiYALAB_Cpp_EXPORTS"
+  )
+
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
+  "../include"
   "../lib"
   )
 

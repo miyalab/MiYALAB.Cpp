@@ -48,13 +48,47 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/koshiro/workspace/MiYALAB.Cpp
+CMAKE_SOURCE_DIR = /home/kmiyauchi/workspace/MiYALAB.Cpp
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/koshiro/workspace/MiYALAB.Cpp/build
+CMAKE_BINARY_DIR = /home/kmiyauchi/workspace/MiYALAB.Cpp/build
 
 #=============================================================================
 # Targets provided globally by CMake.
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
 
 # Special rule for the target rebuild_cache
 rebuild_cache:
@@ -78,11 +112,23 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
+
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/koshiro/workspace/MiYALAB.Cpp/build/CMakeFiles /home/koshiro/workspace/MiYALAB.Cpp/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/kmiyauchi/workspace/MiYALAB.Cpp/build/CMakeFiles /home/kmiyauchi/workspace/MiYALAB.Cpp/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/koshiro/workspace/MiYALAB.Cpp/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/kmiyauchi/workspace/MiYALAB.Cpp/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -124,17 +170,17 @@ main/fast:
 .PHONY : main/fast
 
 #=============================================================================
-# Target rules for targets named MiYALAB
+# Target rules for targets named MiYALAB.Cpp
 
 # Build rule for target.
-MiYALAB: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 MiYALAB
-.PHONY : MiYALAB
+MiYALAB.Cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 MiYALAB.Cpp
+.PHONY : MiYALAB.Cpp
 
 # fast build rule for target.
-MiYALAB/fast:
-	$(MAKE) -f CMakeFiles/MiYALAB.dir/build.make CMakeFiles/MiYALAB.dir/build
-.PHONY : MiYALAB/fast
+MiYALAB.Cpp/fast:
+	$(MAKE) -f CMakeFiles/MiYALAB.Cpp.dir/build.make CMakeFiles/MiYALAB.Cpp.dir/build
+.PHONY : MiYALAB.Cpp/fast
 
 lib/Mathematics/Matrix/Matrix.o: lib/Mathematics/Matrix/Matrix.cpp.o
 
@@ -142,7 +188,7 @@ lib/Mathematics/Matrix/Matrix.o: lib/Mathematics/Matrix/Matrix.cpp.o
 
 # target to build an object file
 lib/Mathematics/Matrix/Matrix.cpp.o:
-	$(MAKE) -f CMakeFiles/MiYALAB.dir/build.make CMakeFiles/MiYALAB.dir/lib/Mathematics/Matrix/Matrix.cpp.o
+	$(MAKE) -f CMakeFiles/MiYALAB.Cpp.dir/build.make CMakeFiles/MiYALAB.Cpp.dir/lib/Mathematics/Matrix/Matrix.cpp.o
 .PHONY : lib/Mathematics/Matrix/Matrix.cpp.o
 
 lib/Mathematics/Matrix/Matrix.i: lib/Mathematics/Matrix/Matrix.cpp.i
@@ -151,7 +197,7 @@ lib/Mathematics/Matrix/Matrix.i: lib/Mathematics/Matrix/Matrix.cpp.i
 
 # target to preprocess a source file
 lib/Mathematics/Matrix/Matrix.cpp.i:
-	$(MAKE) -f CMakeFiles/MiYALAB.dir/build.make CMakeFiles/MiYALAB.dir/lib/Mathematics/Matrix/Matrix.cpp.i
+	$(MAKE) -f CMakeFiles/MiYALAB.Cpp.dir/build.make CMakeFiles/MiYALAB.Cpp.dir/lib/Mathematics/Matrix/Matrix.cpp.i
 .PHONY : lib/Mathematics/Matrix/Matrix.cpp.i
 
 lib/Mathematics/Matrix/Matrix.s: lib/Mathematics/Matrix/Matrix.cpp.s
@@ -160,7 +206,7 @@ lib/Mathematics/Matrix/Matrix.s: lib/Mathematics/Matrix/Matrix.cpp.s
 
 # target to generate assembly for a file
 lib/Mathematics/Matrix/Matrix.cpp.s:
-	$(MAKE) -f CMakeFiles/MiYALAB.dir/build.make CMakeFiles/MiYALAB.dir/lib/Mathematics/Matrix/Matrix.cpp.s
+	$(MAKE) -f CMakeFiles/MiYALAB.Cpp.dir/build.make CMakeFiles/MiYALAB.Cpp.dir/lib/Mathematics/Matrix/Matrix.cpp.s
 .PHONY : lib/Mathematics/Matrix/Matrix.cpp.s
 
 src/main.o: src/main.cpp.o
@@ -196,10 +242,14 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
+	@echo "... install/local"
+	@echo "... install"
+	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... main"
-	@echo "... MiYALAB"
+	@echo "... install/strip"
+	@echo "... MiYALAB.Cpp"
 	@echo "... lib/Mathematics/Matrix/Matrix.o"
 	@echo "... lib/Mathematics/Matrix/Matrix.i"
 	@echo "... lib/Mathematics/Matrix/Matrix.s"
