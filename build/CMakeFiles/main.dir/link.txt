@@ -1,1 +1,0 @@
-/usr/bin/c++   -fopenmp   CMakeFiles/main.dir/src/main.cpp.o  -o main  -Wl,-rpath,/home/kmiyauchi/workspace/MiYALAB.Cpp/build libMiYALAB.Cpp.so 

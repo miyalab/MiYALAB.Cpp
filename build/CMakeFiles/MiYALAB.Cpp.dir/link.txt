@@ -1,1 +1,0 @@
-/usr/bin/c++ -fPIC  -fopenmp  -shared -Wl,-soname,libMiYALAB.Cpp.so -o libMiYALAB.Cpp.so CMakeFiles/MiYALAB.Cpp.dir/lib/Mathematics/Matrix/Matrix.cpp.o 
