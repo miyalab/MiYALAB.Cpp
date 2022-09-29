@@ -51,6 +51,8 @@ namespace Mathematics{
  */
 template<class NumericType>
 struct Pose2D{
+    Pose2D(const NumericType &_x, const NumericType &_y, const NumericType &_yaw){position.x = _x, position.y = _y, yaw = _yaw;}
+    
     Point2D<NumericType> position;
     NumericType yaw;
 
