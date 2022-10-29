@@ -41,6 +41,18 @@
         "ratio": "cpp",
         "thread": "cpp",
         "iomanip": "cpp",
-        "deque": "cpp"
+        "deque": "cpp",
+        "cstdarg": "cpp",
+        "cstddef": "cpp",
+        "cstring": "cpp",
+        "atomic": "cpp",
+        "bitset": "cpp",
+        "complex": "cpp",
+        "map": "cpp",
+        "algorithm": "cpp",
+        "iterator": "cpp",
+        "memory_resource": "cpp",
+        "random": "cpp",
+        "cinttypes": "cpp"
     }
 }

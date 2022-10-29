@@ -54,7 +54,7 @@ double PotentialGenerator::CalcPotential(const double &x, const double &y) const
 math::Point2D<double> PotentialGenerator::CalcPotential(const math::Point2D<double> &point) const 
 {
     math::Point2D<double> ret;
-    const math::Point2D<double> &pt = point - this->GetOfset();
+    const math::Point2D<double> &pt = point - this->GetOffset();
 
     const double &r2 = pt.x * pt.x + pt.y * pt.y;
     ret.x = this->GetGain() * pt.x / r2;             // x = Gain * cos(theta) / r

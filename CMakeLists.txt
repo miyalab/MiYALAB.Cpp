@@ -24,6 +24,7 @@ include_directories(lib)
 #ソースコード
 set(SRC 
     matrix_test
+    potential_test
 )
 
 #ライブラリ

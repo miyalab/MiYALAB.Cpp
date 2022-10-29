@@ -48,7 +48,7 @@ namespace PhysicsEngine{
 math::Point2D<double> RotatePotentialGenerator::CalcPotential(const math::Point2D<double> &point) const 
 {
     math::Point2D<double> ret;
-    math::Point2D<double> pt = point - this->GetOfset();
+    math::Point2D<double> pt = point - this->GetOffset();
 
     const double &r2 = pt.x * pt.x + pt.y * pt.y;
     ret.x =   this->GetGain() * pt.y / r2;             // x = Gain * sin(theta) / r

@@ -49,7 +49,7 @@ namespace PhysicsEngine{
 math::Point2D<double> EllipsePotentialGenerator::CalcPotential(const math::Point2D<double> &point) const
 {
     math::Point2D<double> ret;
-    math::Point2D<double> pt = point - this->GetOfset();
+    math::Point2D<double> pt = point - this->GetOffset();
 
     // 楕円ポテンシャル場の回転
     const double &cos = std::cos(this->GetAngle());
@@ -62,7 +62,7 @@ math::Point2D<double> EllipsePotentialGenerator::CalcPotential(const math::Point
     // ポテンシャル計算
     const double &aspect_pow2 = this->GetAspectRatio()*this->GetAspectRatio();
     const double &theta = std::atan2(m_aspect_ratio * pt.y, pt.x);
-    const double &r = std::sqrt((1+aspect_pow2)*pt.x*pt.x + (1+1/aspect_pow2)*pt.y*pt.y);
+    const double &r = std::sqrt((1+aspect_pow2)*pt.x*pt.x + (1+1/aspect_pow2)*pt.y*pt.y) / 1.41421356237;
     ret.x = this->GetGain() * std::cos(theta + this->GetAngle()) / r;
     ret.y = this->GetGain() * std::sin(theta + this->GetAngle()) / r;
     
