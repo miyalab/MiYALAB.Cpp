@@ -42,8 +42,8 @@ namespace MiYALAB {
 namespace Cpp{
 namespace Mathematics{
 template struct Matrix<char>;
-template struct Matrix<int>;
 template struct Matrix<short>;
+template struct Matrix<int>;
 template struct Matrix<long>;
 template struct Matrix<long long>;
 template struct Matrix<float>;
