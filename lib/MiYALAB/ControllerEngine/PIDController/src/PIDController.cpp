@@ -48,10 +48,10 @@ namespace ControllerEngine{
 PIDController::PIDController()
 {
     this->Reset();
-    this->SetGain(0, 0, 0);
-    this->SetAccelerateLimit(0);
-    this->SetManipulateLimit(0);
-    this->SetBrakeLimit(0);
+    this->SetGain(0.0, 0.0, 0.0);
+    this->SetAccelerateLimit(0.0);
+    this->SetManipulateLimit(0.0);
+    this->SetBrakeLimit(0.0);
 }
 
 /**
@@ -65,9 +65,9 @@ PIDController::PIDController(const double &kp, const double &ki, const double &k
 {
     this->Reset();
     this->SetGain(kp, ki, kd);
-    this->SetManipulateLimit(-1);
-    this->SetAccelerateLimit(-1);
-    this->SetBrakeLimit(-1);
+    this->SetManipulateLimit(-1.0);
+    this->SetAccelerateLimit(-1.0);
+    this->SetBrakeLimit(-1.0);
 }
 
 /**
@@ -95,9 +95,9 @@ PIDController::PIDController(const double &kp, const double &ki, const double &k
  */
 void PIDController::Reset()
 {
-    this->manipulateBefore = 0;
-    this->errorBefore = 0;
-    this->errorInt = 0;
+    this->manipulateBefore = 0.0;
+    this->errorBefore = 0.0;
+    this->errorInt = 0.0;
     this->timeBefore = std::chrono::high_resolution_clock::now();
 }
 
@@ -109,28 +109,26 @@ void PIDController::Reset()
  */
 double PIDController::CalcManipulateVal(const double &error)
 {
-    double ret;
-
     // 時間変化
     const auto &time_now = std::chrono::high_resolution_clock::now();
     const double &dt = (double)std::chrono::duration_cast<std::chrono::microseconds>(time_now - timeBefore).count() / 1000000.0;
     
     // 積分計算(台形面積)
-    this->errorInt += (error + errorBefore) / 2 * dt;
+    this->errorInt += (error + errorBefore) / 2.0 * dt;
 
     // PID制御量計算
-    ret =  gainP * error;
-    ret += gainI * errorInt;
-    ret += gainD * (error - errorBefore) / dt;
+    double ret =  gainP * error                         // 比例制御
+                + gainI * errorInt                      // 積分制御
+                + gainD * (error - errorBefore) / dt;   // 微分制御
     
-    // 制御量 上昇量制限
-    if(ret >= 0){
-        if(accelerateLimit > 0 && (ret - manipulateBefore)/dt > accelerateLimit) ret = manipulateBefore + accelerateLimit * dt;
-        else if(brakeLimit > 0 && (ret - manipulateBefore)/dt < -brakeLimit)     ret = manipulateBefore - brakeLimit * dt;
+    // 制御量 変化量制限
+    if(ret >= 0.0){
+        if(accelerateLimit > 0.0 && (ret - manipulateBefore)/dt > accelerateLimit) ret = manipulateBefore + accelerateLimit * dt;
+        else if(brakeLimit > 0.0 && (ret - manipulateBefore)/dt < -brakeLimit)     ret = manipulateBefore - brakeLimit * dt;
     }
     else{
-        if(accelerateLimit > 0 && (ret - manipulateBefore)/dt < accelerateLimit) ret = manipulateBefore - accelerateLimit * dt;
-        else if(brakeLimit > 0 && (ret - manipulateBefore)/dt > -brakeLimit)     ret = manipulateBefore + brakeLimit * dt;
+        if(accelerateLimit > 0.0 && (ret - manipulateBefore)/dt < accelerateLimit) ret = manipulateBefore - accelerateLimit * dt;
+        else if(brakeLimit > 0.0 && (ret - manipulateBefore)/dt > -brakeLimit)     ret = manipulateBefore + brakeLimit * dt;
     }
 
     // 制御量 制限
