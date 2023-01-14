@@ -26,11 +26,11 @@ set(DEPENDENT_LIBS opencv_core)
  
 # Build library
 add_library(${PROJECT_NAME} SHARED
-	src/Mathematics/Matrix/Matrix.cpp
-	src/ControllerEngine/PIDController/PIDController.cpp
-	src/PhysicsEngine/PotentialGenerator/PotentialGenerator.cpp
-	src/PhysicsEngine/PotentialGenerator/Rotate/RotatePotentialGenerator.cpp
-	src/PhysicsEngine/PotentialGenerator/Ellipse/EllipsePotentialGenerator.cpp
+	src/MiYALAB/Mathematics/Matrix/Matrix.cpp
+	src/MiYALAB/ControllerEngine/PIDController/PIDController.cpp
+	src/MiYALAB/PhysicsEngine/PotentialGenerator/PotentialGenerator.cpp
+	src/MiYALAB/PhysicsEngine/PotentialGenerator/Rotate/RotatePotentialGenerator.cpp
+	src/MiYALAB/PhysicsEngine/PotentialGenerator/Ellipse/EllipsePotentialGenerator.cpp
 )
 target_link_libraries(${PROJECT_NAME} ${DEPENDENT_LIBS})
  
