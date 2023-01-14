@@ -29,7 +29,7 @@
 #include <vector>
 #include <string>
 #include <algorithm>
-#include "Matrix.hpp"
+#include "Mathematics/Matrix/Matrix.hpp"
 
 //-----------------------------
 // Namespace & using

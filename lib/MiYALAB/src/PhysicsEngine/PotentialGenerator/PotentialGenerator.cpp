@@ -26,7 +26,7 @@
 // include
 //-----------------------------
 #include <cmath>
-#include "PotentialGenerator.hpp"
+#include "PhysicsEngine/PotentialGenerator/PotentialGenerator.hpp"
 
 //-----------------------------
 // Namespace & using

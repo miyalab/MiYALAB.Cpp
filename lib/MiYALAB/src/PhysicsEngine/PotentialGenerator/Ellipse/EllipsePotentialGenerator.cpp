@@ -26,7 +26,7 @@
 // include
 //-----------------------------
 #include <cmath>
-#include "EllipsePotentialGenerator.hpp"
+#include "PhysicsEngine/PotentialGenerator/Ellipse/EllipsePotentialGenerator.hpp"
 
 //-----------------------------
 // Namespace & using

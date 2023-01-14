@@ -26,7 +26,7 @@
 // include
 //-----------------------------
 #include <cmath>
-#include "RotatePotentialGenerator.hpp"
+#include "PhysicsEngine/PotentialGenerator/Rotate/RotatePotentialGenerator.hpp"
 
 //-----------------------------
 // Namespace & using
