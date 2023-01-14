@@ -26,7 +26,7 @@
 // include
 //-----------------------------
 #include <cmath>
-#include "PhysicsEngine/PotentialGenerator/Rotate/RotatePotentialGenerator.hpp"
+#include "MiYALAB/PhysicsEngine/PotentialGenerator/Rotate/RotatePotentialGenerator.hpp"
 
 //-----------------------------
 // Namespace & using

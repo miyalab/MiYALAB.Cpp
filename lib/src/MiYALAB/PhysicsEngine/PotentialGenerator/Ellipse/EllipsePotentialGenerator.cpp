@@ -26,7 +26,7 @@
 // include
 //-----------------------------
 #include <cmath>
-#include "PhysicsEngine/PotentialGenerator/Ellipse/EllipsePotentialGenerator.hpp"
+#include "MiYALAB/PhysicsEngine/PotentialGenerator/Ellipse/EllipsePotentialGenerator.hpp"
 
 //-----------------------------
 // Namespace & using

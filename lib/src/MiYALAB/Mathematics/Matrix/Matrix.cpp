@@ -29,7 +29,7 @@
 #include <vector>
 #include <string>
 #include <algorithm>
-#include "Mathematics/Matrix/Matrix.hpp"
+#include "MiYALAB/Mathematics/Matrix/Matrix.hpp"
 
 //-----------------------------
 // Namespace & using
