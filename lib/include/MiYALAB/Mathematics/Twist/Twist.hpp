@@ -57,9 +57,9 @@ struct Pose3D{
     std::string toString() const {return "(" + std::to_string(position.x) + ", "
                                              + std::to_string(position.y) + ", " 
                                              + std::to_string(position.z) + ", "
-                                             + std::to_string(orientation.x) + ", "
-                                             + std::to_string(orientation.y) + ", " 
-                                             + std::to_string(orientation.z) + ")";}
+                                             + std::to_string(orientation.roll) + ", "
+                                             + std::to_string(orientation.pitch) + ", " 
+                                             + std::to_string(orientation.yaw) + ")";}
 };
 }
 }
