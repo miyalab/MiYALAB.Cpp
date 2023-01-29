@@ -20,7 +20,7 @@ include_directories(
 	${HEADER_DIR}
 )
 link_directories(
-  ${LIBRARY_DIR}
+  	${LIBRARY_DIR}
 )
 set(DEPENDENT_LIBS opencv_core)
  
@@ -40,4 +40,4 @@ install(TARGETS ${PROJECT_NAME}
 	LIBRARY DESTINATION lib
 	ARCHIVE DESTINATION lib
 )
-install(DIRECTORY include DESTINATION include)
+install(DIRECTORY include DESTINATION ./)

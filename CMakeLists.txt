@@ -1,6 +1,6 @@
 #
 cmake_minimum_required(VERSION 3.5)
-project(MiYALAB.Cpp)
+project(lib_test)
 
 # Add definitions
 if(WIN32 AND CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
@@ -23,21 +23,15 @@ include_directories(lib)
 
 #ソースコード
 set(SRC 
-    matrix_test
-    potential_test
+  matrix_test
+  potential_test
 )
 
-#ライブラリ
-add_library(miyalab SHARED
-    lib/MiYALAB/Mathematics/Matrix/Matrix.cpp
-    lib/MiYALAB/ControllerEngine/PIDController/PIDController.cpp
-    lib/MiYALAB/PhysicsEngine/PotentialGenerator/PotentialGenerator.cpp
-    lib/MiYALAB/PhysicsEngine/PotentialGenerator/Rotate/RotatePotentialGenerator.cpp
-    lib/MiYALAB/PhysicsEngine/PotentialGenerator/Ellipse/EllipsePotentialGenerator.cpp
+set(LIBS
+  MiYALAB.Cpp
 )
-
 #ソースコードのコンパイル
 foreach(target IN LISTS SRC)
     add_executable(${target} ${SRC_DIR}/${target}.cpp)
-    target_link_libraries(${target} miyalab)
+    target_link_libraries(${target} ${LIBS})
 endforeach()

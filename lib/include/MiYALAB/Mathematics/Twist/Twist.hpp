@@ -1,3 +1,5 @@
+
+
 /*
  * MIT License
  * 
@@ -22,15 +24,16 @@
  * SOFTWARE.
 */
 
-#ifndef __MIYALAB_CPP_MATHEMATICS_POINT_HPP__
-#define __MIYALAB_CPP_MATHEMATICS_POINT_HPP__
+#ifndef __MIYALAB_CPP_MATHEMATICS_TWIST_HPP__
+#define __MIYALAB_CPP_MATHEMATICS_TWIST_HPP__
 
 //-----------------------------
 // include
 //-----------------------------
-#include "Point2D.hpp"
-#include "Point3D.hpp"
-#include "../Matrix/Matrix.hpp"
+#include <string>
+#include <cmath>
+
+#include "../Point/Point3D.hpp"
 
 //-----------------------------
 // Namespace & using
@@ -42,44 +45,28 @@
 namespace MiYALAB {
 namespace Cpp{
 namespace Mathematics{
-template <class NumericType> Matrix<NumericType> ToMatrix(const Point2D<NumericType> &point, bool columnVector = true)
-{
-    if(columnVector) {
-        Matrix<NumericType> ret(2,1);
-        ret[0][0] = point.x;
-        ret[1][0] = point.y;
-        return ret;
-    }
-    else{
-        Matrix<NumericType> ret(1,2);
-        ret[0][0] = point.x;
-        ret[0][1] = point.y;
-        return ret;
-    }
-}
-template <class NumericType> Matrix<NumericType> ToMatrix(const Point3D<NumericType> &point, bool columnVector = true)
-{
-    if(columnVector) {
-        Matrix<NumericType> ret(3,1);
-        ret[0][0] = point.x;
-        ret[1][0] = point.y;
-        ret[2][0] = point.z;
-        return ret;
-    }
-    else{
-        Matrix<NumericType> ret(1,3);
-        ret[0][0] = point.x;
-        ret[0][1] = point.y;
-        ret[0][2] = point.z;
-        return ret;
-    }
-}
+/**
+ * @brief x-y NumericType
+ * 
+ * @tparam NumericType 
+ */
+template<class NumericType>
+struct Pose3D{
+    Point3D<NumericType> position;
+    Point3D<NumericType> orientation;
 
+    std::string toString() const {return "(" + std::to_string(position.x) + ", "
+                                             + std::to_string(position.y) + ", " 
+                                             + std::to_string(position.z) + ", "
+                                             + std::to_string(orientation.x) + ", "
+                                             + std::to_string(orientation.y) + ", " 
+                                             + std::to_string(orientation.z) + ")";}
+};
 }
 }
 }
 
-#endif // __MIYALAB_CPP_MATHEMATICS_POINT_2D_HPP__
+#endif // __MIYALAB_CPP_MATHEMATICS_TWIST_HPP__
 
 //-----------------------------------------------------------------------------------
 // end of file

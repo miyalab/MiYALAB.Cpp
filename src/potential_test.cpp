@@ -18,7 +18,7 @@ int main()
     circleP.SetOffset(0, 0);
     circleP.SetGain(2);
     ellipseP.SetOffset(0, 0);
-    ellipseP.SetAspectRatio(1.0);
+    ellipseP.SetAspectRatio(2.0);
     ellipseP.SetGain(2);
     std::cout << circleP.CalcPotential(point).ToString() << std::endl;
     std::cout << ellipseP.CalcPotential(point).ToString() << std::endl;
