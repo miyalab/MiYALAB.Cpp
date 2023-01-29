@@ -34,6 +34,7 @@
 #include <cmath>
 
 #include "../Point/Point3D.hpp"
+#include "../Quaternion/Quaternion.hpp"
 
 //-----------------------------
 // Namespace & using
@@ -53,11 +54,12 @@ namespace Mathematics{
 template<class NumericType>
 struct Pose3D{
     Point3D<NumericType> position;
-    Point3D<NumericType> orientation;
+    Quaternion<NumericType> orientation;
 
     std::string toString() const {return "(" + std::to_string(position.x) + ", "
                                              + std::to_string(position.y) + ", " 
                                              + std::to_string(position.z) + ", "
+                                             + std::to_string(orientation.w) + ", "
                                              + std::to_string(orientation.x) + ", "
                                              + std::to_string(orientation.y) + ", " 
                                              + std::to_string(orientation.z) + ")";}
