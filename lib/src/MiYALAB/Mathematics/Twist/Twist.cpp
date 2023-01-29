@@ -1,5 +1,3 @@
-
-
 /*
  * MIT License
  * 
@@ -24,44 +22,14 @@
  * SOFTWARE.
 */
 
-#ifndef __MIYALAB_CPP_MATHEMATICS_QUATERNION_HPP__
-#define __MIYALAB_CPP_MATHEMATICS_QUATERNION_HPP__
-
 //-----------------------------
 // include
 //-----------------------------
-#include <string>
 #include <cmath>
-
-#include "../Point/Point3D.hpp"
-
-//-----------------------------
-// Namespace & using
-//-----------------------------
-
-//-----------------------------
-// Class
-//-----------------------------
-namespace MiYALAB {
-namespace Cpp{
-namespace Mathematics{
-/**
- * @brief x-y NumericType
- * 
- * @tparam NumericType 
- */
-template<class NumericType>
-struct Quaternion{
-    NumericType w;
-    NumericType x;
-    NumericType y;
-    NumericType z;
-};
-}
-}
-}
-
-#endif // __MIYALAB_CPP_MATHEMATICS_QUATERNION_HPP__
+#include <vector>
+#include <string>
+#include <algorithm>
+#include "MiYALAB/Mathematics/Twist/Twist.hpp"
 
 //-----------------------------------------------------------------------------------
 // end of file
