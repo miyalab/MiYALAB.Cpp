@@ -32,6 +32,7 @@
 #include <cmath>
 
 #include "../Point/Point3D.hpp"
+#include "../Eulerian/Eulerian.hpp"
 
 //-----------------------------
 // Namespace & using
@@ -51,7 +52,7 @@ namespace Mathematics{
 template<class NumericType>
 struct Pose3D{
     Point3D<NumericType> position;
-    Point3D<NumericType> orientation;
+    EulerianAngles<NumericType> orientation;
 
     std::string toString() const {return "(" + std::to_string(position.x) + ", "
                                              + std::to_string(position.y) + ", " 
