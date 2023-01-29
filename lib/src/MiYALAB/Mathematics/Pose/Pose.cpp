@@ -29,9 +29,8 @@
 #include <vector>
 #include <string>
 #include <algorithm>
-#include "MiYALAB/Mathematics/Point/Point.hpp"
-#include "MiYALAB/Mathematics/Point/Point2D.hpp"
-#include "MiYALAB/Mathematics/Point/Point3D.hpp"
+#include "MiYALAB/Mathematics/Pose/Pose2D.hpp"
+#include "MiYALAB/Mathematics/Pose/Pose3D.hpp"
 
 //-----------------------------------------------------------------------------------
 // end of file
