@@ -2,7 +2,7 @@
 /*
  * MIT License
  * 
- * Copyright (c) 2022 MiYA LAB(K.Miyauchi)
+ * Copyright (c) 2022-2023 MiYA LAB(K.Miyauchi)
  * 
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
