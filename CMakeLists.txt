@@ -4,14 +4,14 @@ project(lib_test)
 
 # Add definitions
 if(WIN32 AND CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
-  set(CMAKE_INSTALL_PREFIX "C:/local" CACHE PATH "Installation directory" FORCE)
+    set(CMAKE_INSTALL_PREFIX "C:/local" CACHE PATH "Installation directory" FORCE)
 endif()
 if(MSVC)
-  add_definitions(-D_WIN32_WINNT=0x0501)
-  set(CMAKE_CONFIGURATION_TYPES "Debug;Release" CACHE STRING "Configs")
+    add_definitions(-D_WIN32_WINNT=0x0501)
+    set(CMAKE_CONFIGURATION_TYPES "Debug;Release" CACHE STRING "Configs")
 else()
-  set(CMAKE_BUILD_TYPE "Release" CACHE STRING "Choose the type of build")
-  set(CMAKE_CXX_FLAGS "-std=c++14 ${CMAKE_CXX_FLAGS} -Wunused-variable")
+    set(CMAKE_BUILD_TYPE "Release" CACHE STRING "Choose the type of build")
+    set(CMAKE_CXX_FLAGS "-std=c++14 ${CMAKE_CXX_FLAGS} -Wunused-variable")
 endif()
 
 #各ディレクトリ
@@ -23,8 +23,8 @@ include_directories(lib)
 
 #ソースコード
 set(SRC 
-  matrix_test
-  potential_test
+    matrix_test
+    potential_test
 )
 
 set(LIBS
