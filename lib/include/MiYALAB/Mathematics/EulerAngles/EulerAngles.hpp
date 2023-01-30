@@ -1,7 +1,7 @@
 /*
  * MIT License
  * 
- * Copyright (c) 2022 MiYA LAB(K.Miyauchi)
+ * Copyright (c) 2022-2023 MiYA LAB(K.Miyauchi)
  * 
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -22,8 +22,8 @@
  * SOFTWARE.
 */
 
-#ifndef __MIYALAB_CPP_MATHEMATICS_EULERIAN_HPP__
-#define __MIYALAB_CPP_MATHEMATICS_EULERIAN_HPP__
+#ifndef __MIYALAB_CPP_MATHEMATICS_EULER_HPP__
+#define __MIYALAB_CPP_MATHEMATICS_EULER_HPP__
 
 //-----------------------------
 // include
@@ -99,6 +99,9 @@ template struct EulerAngles<long long>;
 template struct EulerAngles<float>;
 template struct EulerAngles<double>;
 template struct EulerAngles<long double>;
+
+using AulerAngle32f = EulerAngles<float>;
+using AulerAngle64f = EulerAngles<double>;
 }
 }
 
