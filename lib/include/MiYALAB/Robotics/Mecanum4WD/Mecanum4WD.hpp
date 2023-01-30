@@ -22,8 +22,8 @@
  * SOFTWARE.
 */
 
-#ifndef __MIYALAB_CPP_ROBOTICS_DC_MOTOR_HPP__
-#define __MIYALAB_CPP_ROBOTICS_DC_MOTOR_HPP__
+#ifndef __MIYALAB_CPP_ROBOTICS_MECANUM_4WD_HPP__
+#define __MIYALAB_CPP_ROBOTICS_MECANUM_4WD_HPP__
 
 namespace MiYALAB{
 namespace Robotics{
@@ -31,4 +31,4 @@ namespace Robotics{
 }
 }
 
-#endif // __MIYALAB_CPP_ROBOTICS_DC_MOTOR_HPP__
+#endif // __MIYALAB_CPP_ROBOTICS_MECANUM_4WD_HPP__
