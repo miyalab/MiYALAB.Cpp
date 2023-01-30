@@ -22,13 +22,20 @@
  * SOFTWARE.
 */
 
-#pragma once
-
-#include <sys/socket.h>
+#ifndef __MIYALAB_CPP_ALGORITHM_GRAPH__
+#define __MIYALAB_CPP_ALGORITHM_GRAPH__
 
 namespace MiYALAB{
-namespace Device{
+namespace Algorithm{
+template<typename Numeric> 
+struct edge{
+    int src, to;
+    Numeric cost;
 
-
+    // コンストラクタ
+    edge(int _to, Numeric _cost) : to(_to), cost(_cost){}
+};
 }
 }
+
+#endif // __MIYALAB_CPP_ALGORITHM_GRAPH__

@@ -52,8 +52,8 @@ struct Point2D{
     Numeric y;
 
     // コンストラクタ
-    Point2D(){this->x=0; this->y=0;}
-    Point2D(const Numeric &_x, const Numeric &_y){this->x = _x; this->y = _y;}
+    Point2D() : x(0), y(0){}
+    Point2D(const Numeric &_x, const Numeric &_y) : x(_x), y(_y){}
 
     // デストラクタ
     virtual ~Point2D(){}

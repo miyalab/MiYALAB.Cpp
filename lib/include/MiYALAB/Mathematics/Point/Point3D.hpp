@@ -53,8 +53,8 @@ struct Point3D{
     Numeric z;
 
     // コンストラクタ
-    Point3D(){this->x = 0; this->y = 0; this->z = 0;}
-    Point3D(const Numeric &_x, const Numeric &_y, const Numeric &_z){this->x = _x; this->y = _y; this->z = _z;}
+    Point3D() : x(0), y(0), z(0){}
+    Point3D(const Numeric &_x, const Numeric &_y, const Numeric &_z) : x(_x), y(_y), z(_z){}
 
     // デストラクタ
     virtual ~Point3D(){}
