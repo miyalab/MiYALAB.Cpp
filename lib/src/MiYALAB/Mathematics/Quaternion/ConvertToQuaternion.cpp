@@ -25,7 +25,6 @@
 //-----------------------------
 // include
 //-----------------------------
-#include <string>
 #include <cmath>
 #include "MiYALAB/Mathematics/Quaternion/ConvertToQuaternion.hpp"
 
@@ -52,13 +51,30 @@ template<typename Numeric> void ConvertToQuaternion(const EulerAngles<Numeric> &
     quaternion.y = cosRoll * sinPitch * cosYaw + sinRoll * cosPitch * sinYaw;
     quaternion.z = cosRoll * cosPitch * sinYaw - sinRoll * sinPitch * cosYaw;
 }
+template void ConvertToQuaternion<char>(const EulerAngles<char>&, Quaternion<char>&);
+template void ConvertToQuaternion<short>(const EulerAngles<short>&, Quaternion<short>&);
+template void ConvertToQuaternion<int>(const EulerAngles<int>&, Quaternion<int>&);
+template void ConvertToQuaternion<long>(const EulerAngles<long>&, Quaternion<long>&);
+template void ConvertToQuaternion<long long>(const EulerAngles<long long>&, Quaternion<long long>&);
+template void ConvertToQuaternion<float>(const EulerAngles<float>&, Quaternion<float>&);
+template void ConvertToQuaternion<double>(const EulerAngles<double>&, Quaternion<double>&);
+template void ConvertToQuaternion<long double>(const EulerAngles<long double>&, Quaternion<long double>&);
 
 template<typename Numeric> Quaternion<Numeric> ConvertToQuaternion(const EulerAngles<Numeric> &euler)
 {
     Quaternion<Numeric> ret;
-    ConvertEulerAnglesToQuaternion(euler, ret);
+    ConvertToQuaternion(euler, ret);
     return ret;
 }
+template Quaternion<char> ConvertToQuaternion<char>(const EulerAngles<char>&);
+template Quaternion<short> ConvertToQuaternion<short>(const EulerAngles<short>&);
+template Quaternion<int> ConvertToQuaternion<int>(const EulerAngles<int>&);
+template Quaternion<long> ConvertToQuaternion<long>(const EulerAngles<long>&);
+template Quaternion<long long> ConvertToQuaternion<long long>(const EulerAngles<long long>&);
+template Quaternion<float> ConvertToQuaternion<float>(const EulerAngles<float>&);
+template Quaternion<double> ConvertToQuaternion<double>(const EulerAngles<double>&);
+template Quaternion<long double> ConvertToQuaternion<long double>(const EulerAngles<long double>&);
+
 }
 }
 

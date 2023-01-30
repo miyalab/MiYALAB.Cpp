@@ -25,7 +25,6 @@
 //-----------------------------
 // include
 //-----------------------------
-#include <string>
 #include <cmath>
 #include "MiYALAB/Mathematics/EulerAngles/EulerAnglesConverter.hpp"
 
@@ -38,7 +37,7 @@
 //-----------------------------
 namespace MiYALAB {
 namespace Mathematics{
-template<typename Numeric> void ConvertQuaternionToEulerAngles(const Quaternion<Numeric> &quaternion, EulerAngles<Numeric> &euler)
+template<typename Numeric> void ConvertToEulerAngles(const Quaternion<Numeric> &quaternion, EulerAngles<Numeric> &euler)
 {
     const Numeric &q0q0 = quaternion.w * quaternion.w;
     const Numeric &q0q1 = quaternion.w * quaternion.x;
@@ -55,13 +54,29 @@ template<typename Numeric> void ConvertQuaternionToEulerAngles(const Quaternion<
     euler.pitch = std::asin(2.0 * (q0q2 - q1q3));
     euler.yaw   = std::atan2(2.0 * (q1q2 + q0q3), q0q0 + q1q1 - q2q2 - q3q3);
 }
+template void ConvertToEulerAngles<char>(const Quaternion<char>&, EulerAngles<char>&);
+template void ConvertToEulerAngles<short>(const Quaternion<short>&, EulerAngles<short>&);
+template void ConvertToEulerAngles<int>(const Quaternion<int>&, EulerAngles<int>&);
+template void ConvertToEulerAngles<long>(const Quaternion<long>&, EulerAngles<long>&);
+template void ConvertToEulerAngles<long long>(const Quaternion<long long>&, EulerAngles<long long>&);
+template void ConvertToEulerAngles<float>(const Quaternion<float>&, EulerAngles<float>&);
+template void ConvertToEulerAngles<double>(const Quaternion<double>&, EulerAngles<double>&);
+template void ConvertToEulerAngles<long double>(const Quaternion<long double>&, EulerAngles<long double>&);
 
-template<typename Numeric> EulerAngles<Numeric> ConvertQuaternionToEulerAngles(const Quaternion<Numeric> &quaternion)
+template<typename Numeric> EulerAngles<Numeric> ConvertToEulerAngles(const Quaternion<Numeric> &quaternion)
 {
     EulerAngles<Numeric> ret;
-    ConvertQuaternionToEulerAngles(quaternion, ret);
+    ConvertToEulerAngles(quaternion, ret);
     return ret;
 }
+template EulerAngles<char> ConvertToEulerAngles<char>(const Quaternion<char>&);
+template EulerAngles<short> ConvertToEulerAngles<short>(const Quaternion<short>&);
+template EulerAngles<int> ConvertToEulerAngles<int>(const Quaternion<int>&);
+template EulerAngles<long> ConvertToEulerAngles<long>(const Quaternion<long>&);
+template EulerAngles<long long> ConvertToEulerAngles<long long>(const Quaternion<long long>&);
+template EulerAngles<float> ConvertToEulerAngles<float>(const Quaternion<float>&);
+template EulerAngles<double> ConvertToEulerAngles<double>(const Quaternion<double>&);
+template EulerAngles<long double> ConvertToEulerAngles<long double>(const Quaternion<long double>&);
 
 }
 }
