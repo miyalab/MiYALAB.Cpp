@@ -8,7 +8,7 @@
 
 constexpr size_t MAT_SIZE = 1000;
 
-using namespace MiYALAB::Cpp;
+using namespace MiYALAB;
 
 int main()
 {

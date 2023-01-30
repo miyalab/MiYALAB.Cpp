@@ -7,8 +7,8 @@
 
 constexpr size_t MAT_SIZE = 1000;
 
-namespace math = MiYALAB::Cpp::Mathematics;
-namespace physics = MiYALAB::Cpp::PhysicsEngine;
+namespace math = MiYALAB::Mathematics;
+namespace physics = MiYALAB::PhysicsEngine;
 
 int main()
 {
