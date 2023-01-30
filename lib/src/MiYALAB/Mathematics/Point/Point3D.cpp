@@ -25,25 +25,21 @@
 //-----------------------------
 // include
 //-----------------------------
-#include <cmath>
-#include <vector>
-#include <string>
-#include <algorithm>
-#include "MiYALAB/Mathematics/EulerAngles/EulerAngles.hpp"
+#include "MiYALAB/Mathematics/Point/Point3D.hpp"
 
 //-----------------------------
 // template
 //-----------------------------
 namespace MiYALAB{
 namespace Mathematics{
-template struct EulerAngles<char>;
-template struct EulerAngles<short>;
-template struct EulerAngles<int>;
-template struct EulerAngles<long>;
-template struct EulerAngles<long long>;
-template struct EulerAngles<float>;
-template struct EulerAngles<double>;
-template struct EulerAngles<long double>;
+template struct Point3D<char>;
+template struct Point3D<short>;
+template struct Point3D<int>;
+template struct Point3D<long>;
+template struct Point3D<long long>;
+template struct Point3D<float>;
+template struct Point3D<double>;
+template struct Point3D<long double>;
 
 }
 }

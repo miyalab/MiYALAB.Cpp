@@ -320,6 +320,22 @@ template<typename Numeric> Matrix<Numeric> Matrix<Numeric>::Transpose() const
 }
 }
 
+//-----------------------------
+// template
+//-----------------------------
+namespace MiYALAB{
+namespace Mathematics{
+template struct Matrix<char>;
+template struct Matrix<short>;
+template struct Matrix<int>;
+template struct Matrix<long>;
+template struct Matrix<long long>;
+template struct Matrix<float>;
+template struct Matrix<double>;
+template struct Matrix<long double>;
+}
+}
+
 //-----------------------------------------------------------------------------------
 // end of file
 //-----------------------------------------------------------------------------------

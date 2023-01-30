@@ -91,15 +91,6 @@ struct Point3D{
 //-----------------------------
 namespace MiYALAB{
 namespace Mathematics{
-template struct Point3D<char>;
-template struct Point3D<short>;
-template struct Point3D<int>;
-template struct Point3D<long>;
-template struct Point3D<long long>;
-template struct Point3D<float>;
-template struct Point3D<double>;
-template struct Point3D<long double>;
-
 using Point32f = Point3D<float>;
 using Point64f = Point3D<double>;
 }

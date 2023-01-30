@@ -87,19 +87,10 @@ struct EulerAngles{
 }
 
 //-----------------------------
-// template
+// using
 //-----------------------------
 namespace MiYALAB{
 namespace Mathematics{
-template struct EulerAngles<char>;
-template struct EulerAngles<short>;
-template struct EulerAngles<int>;
-template struct EulerAngles<long>;
-template struct EulerAngles<long long>;
-template struct EulerAngles<float>;
-template struct EulerAngles<double>;
-template struct EulerAngles<long double>;
-
 using EulerAngles32f = EulerAngles<float>;
 using EulerAngles64f = EulerAngles<double>;
 }

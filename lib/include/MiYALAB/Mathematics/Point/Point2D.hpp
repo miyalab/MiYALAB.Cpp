@@ -84,22 +84,12 @@ struct Point2D{
 }
 
 //-----------------------------
-// template
+// using
 //-----------------------------
 namespace MiYALAB{
 namespace Mathematics{
-template struct Point2D<char>;
-template struct Point2D<short>;
-template struct Point2D<int>;
-template struct Point2D<long>;
-template struct Point2D<long long>;
-template struct Point2D<float>;
-template struct Point2D<double>;
-template struct Point2D<long double>;
-
 using Point2d32f = Point2D<float>;
 using Point2d64f = Point2D<double>;
-
 }
 }
 
