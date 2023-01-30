@@ -54,5 +54,9 @@
         "memory_resource": "cpp",
         "random": "cpp",
         "cinttypes": "cpp"
-    }
+    },
+    "cSpell.words": [
+        "MIYALAB",
+        "Miyauchi"
+    ]
 }

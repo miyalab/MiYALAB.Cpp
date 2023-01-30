@@ -27,7 +27,7 @@
 //-----------------------------
 #include <string>
 #include <cmath>
-#include "MiYALAB/Mathematics/Quaternion/QuaternionConverter.hpp"
+#include "MiYALAB/Mathematics/Quaternion/ConvertToQuaternion.hpp"
 
 //-----------------------------
 // Namespace & using
@@ -38,7 +38,7 @@
 //-----------------------------
 namespace MiYALAB {
 namespace Mathematics{
-template<typename Numeric> void ConvertEulerAnglesToQuaternion(const EulerAngles<Numeric> &euler, Quaternion<Numeric> &quaternion)
+template<typename Numeric> void ConvertToQuaternion(const EulerAngles<Numeric> &euler, Quaternion<Numeric> &quaternion)
 {
     Numeric cosRoll = std::cos(euler.roll / 2.0);
     Numeric sinRoll = std::sin(euler.roll / 2.0);
@@ -53,7 +53,7 @@ template<typename Numeric> void ConvertEulerAnglesToQuaternion(const EulerAngles
     quaternion.z = cosRoll * cosPitch * sinYaw - sinRoll * sinPitch * cosYaw;
 }
 
-template<typename Numeric> Quaternion<Numeric> ConvertEulerAnglesToQuaternion(const EulerAngles<Numeric> &euler)
+template<typename Numeric> Quaternion<Numeric> ConvertToQuaternion(const EulerAngles<Numeric> &euler)
 {
     Quaternion<Numeric> ret;
     ConvertEulerAnglesToQuaternion(euler, ret);
