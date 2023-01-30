@@ -31,6 +31,7 @@ add_library(${PROJECT_NAME} SHARED
 	src/MiYALAB/Mathematics/Point/Point.cpp
 	src/MiYALAB/Mathematics/Pose/Pose.cpp
 	src/MiYALAB/Mathematics/Quaternion/Quaternion.cpp
+	src/MiYALAB/Mathematics/Quaternion/QuaternionConverter.cpp
 	src/MiYALAB/Mathematics/Twist/Twist.cpp
 	src/MiYALAB/ControllerEngine/PIDController/PIDController.cpp
 	src/MiYALAB/PhysicsEngine/PotentialGenerator/PotentialGenerator.cpp

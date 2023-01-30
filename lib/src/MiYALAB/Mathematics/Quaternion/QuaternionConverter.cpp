@@ -27,7 +27,8 @@
 //-----------------------------
 #include <string>
 #include <cmath>
-#include "MiYALAB/Mathematics/Eulerian/EulerianConverter.hpp"
+#include "MiYALAB/Mathematics/Eulerian/Eulerian.hpp"
+#include "MiYALAB/Mathematics/Quaternion/Quaternion.hpp"
 
 //-----------------------------
 // Namespace & using
@@ -39,31 +40,27 @@
 namespace MiYALAB {
 namespace Cpp{
 namespace Mathematics{
-template<typename Numeric> void ConvertQuaternionToEulerianAngles(const Quaternion<Numeric> &quaternion, EulerianAngles<Numeric> &euler)
+template<typename Numeric> void ConvertEulerianAnglesToQuaternion(const EulerianAngles<Numeric> &euler, Quaternion<Numeric> &quaternion)
 {
-    const Numeric &q0q0 = quaternion.w * quaternion.w;
-    const Numeric &q0q1 = quaternion.w * quaternion.x;
-    const Numeric &q0q2 = quaternion.w * quaternion.y;
-    const Numeric &q0q3 = quaternion.w * quaternion.z;
-    const Numeric &q1q1 = quaternion.x * quaternion.x;
-    const Numeric &q1q2 = quaternion.x * quaternion.y;
-    const Numeric &q1q3 = quaternion.x * quaternion.z;
-    const Numeric &q2q2 = quaternion.y * quaternion.y;
-    const Numeric &q2q3 = quaternion.y * quaternion.z;
-    const Numeric &q3q3 = quaternion.z * quaternion.z;
-    
-    euler.roll  = std::atan2(2.0 * (q2q3 + q0q1), q0q0 - q1q1 - q2q2 + q3q3);
-    euler.pitch = std::asin(2.0 * (q0q2 - q1q3));
-    euler.yaw   = std::atan2(2.0 * (q1q2 + q0q3), q0q0 + q1q1 - q2q2 - q3q3);
+    Numeric cosRoll = std::cos(euler.roll / 2.0);
+    Numeric sinRoll = std::sin(euler.roll / 2.0);
+    Numeric cosPitch = std::cos(euler.pitch / 2.0);
+    Numeric sinPitch = std::sin(euler.pitch / 2.0);
+    Numeric cosYaw = std::cos(euler.yaw / 2.0);
+    Numeric sinYaw = std::sin(euler.yaw / 2.0);
+
+    quaternion.w = cosRoll * cosPitch * cosYaw + sinRoll * sinPitch * sinYaw;
+    quaternion.x = sinRoll * cosPitch * cosYaw - cosRoll * sinPitch * sinYaw;
+    quaternion.y = cosRoll * sinPitch * cosYaw + sinRoll * cosPitch * sinYaw;
+    quaternion.z = cosRoll * cosPitch * sinYaw - sinRoll * sinPitch * cosYaw;
 }
 
-template<typename Numeric> EulerianAngles<Numeric> ConvertQuaternionToEulerianAngles(const Quaternion<Numeric> &quaternion)
+template<typename Numeric> Quaternion<Numeric> ConvertEulerianAnglesToQuaternion(const EulerianAngles<Numeric> &euler)
 {
-    EulerianAngles<Numeric> ret;
-    ConvertQuaternionToEulerianAngles(quaternion, ret);
+    Quaternion<Numeric> ret;
+    ConvertEulerianAnglesToQuaternion(euler, ret);
     return ret;
 }
-
 }
 }
 }
