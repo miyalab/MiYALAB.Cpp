@@ -60,22 +60,22 @@ namespace MiYALAB {
 namespace Cpp{
 namespace Mathematics{
 
-template<class NumericType>
+template<class Numeric>
 struct LUP{
 public:
-    LUP(const Matrix<NumericType> &matrix): mat(matrix), perm(matrix.Height()){}
-    Matrix<NumericType> mat;
-    std::vector<NumericType> perm;
+    LUP(const Matrix<Numeric> &matrix): mat(matrix), perm(matrix.Height()){}
+    Matrix<Numeric> mat;
+    std::vector<Numeric> perm;
     int toggle;
 };
 
-template<class NumericType> 
-void DecomposeLUP(LUP<NumericType> &ret)
+template<class Numeric> 
+void DecomposeLUP(LUP<Numeric> &ret)
 {
     const size_t &n = ret.mat.Height();
 
     int pRow;
-    NumericType colMax;
+    Numeric colMax;
     ret.toggle = 1;
     for(size_t i=0; i<n; i++) ret.perm[i] = i;
     
@@ -107,16 +107,16 @@ void DecomposeLUP(LUP<NumericType> &ret)
 /**
  * @brief 
  * 
- * @tparam NumericType 
+ * @tparam Numeric 
  * @param luMat 
  * @param b 
  * @param x 
  */
-template<class NumericType>
-void HelperSolve(const Matrix<NumericType> &luMat, const std::vector<NumericType> &b, std::vector<NumericType> &x)
+template<class Numeric>
+void HelperSolve(const Matrix<Numeric> &luMat, const std::vector<Numeric> &b, std::vector<Numeric> &x)
 {
     const size_t &n = luMat.Height();
-    NumericType sum;
+    Numeric sum;
     x.resize(n);
     for(size_t i=0; i<b.size(); i++) x[i] = b[i];
     
@@ -145,11 +145,11 @@ namespace Mathematics{
 /**
  * @brief 加算代入メソッド
  * 
- * @tparam NumericType 
+ * @tparam Numeric 
  * @param matrix 
- * @return Matrix<NumericType>& 
+ * @return Matrix<Numeric>& 
  */
-template<class NumericType> Matrix<NumericType> &Matrix<NumericType>::operator+=(const Matrix &matrix)
+template<class Numeric> Matrix<Numeric> &Matrix<Numeric>::operator+=(const Matrix &matrix)
 {
     if(this->Cols() != matrix.Cols() || this->Rows() != matrix.Rows()) throw "Input matrices have different sizes.";
 
@@ -164,11 +164,11 @@ template<class NumericType> Matrix<NumericType> &Matrix<NumericType>::operator+=
 /**
  * @brief 減算代入メソッド
  * 
- * @tparam NumericType 
+ * @tparam Numeric 
  * @param matrix 
- * @return Matrix<NumericType>& 
+ * @return Matrix<Numeric>& 
  */
-template<class NumericType> Matrix<NumericType> &Matrix<NumericType>::operator-=(const Matrix &matrix)
+template<class Numeric> Matrix<Numeric> &Matrix<Numeric>::operator-=(const Matrix &matrix)
 {
     if(this->Cols() != matrix.Cols() || this->Rows() != matrix.Rows()) throw "Input matrices have different sizes.";
 
@@ -183,16 +183,16 @@ template<class NumericType> Matrix<NumericType> &Matrix<NumericType>::operator-=
 /**
  * @brief 乗算メソッド
  * 
- * @tparam NumericType 
+ * @tparam Numeric 
  * @param matrix 
- * @return Matrix<NumericType> 
+ * @return Matrix<Numeric> 
  * 
 */
-template<class NumericType> Matrix<NumericType> Matrix<NumericType>::operator*(const Matrix &matrix) const 
+template<class Numeric> Matrix<Numeric> Matrix<Numeric>::operator*(const Matrix &matrix) const 
 {
     if(this->Cols() != matrix.Rows()) throw "Input matrices have different sizes.";
 
-    Matrix<NumericType> ret(this->Rows(), matrix.Cols());
+    Matrix<Numeric> ret(this->Rows(), matrix.Cols());
     for(size_t i=0; i<this->Rows(); i++){
         for(size_t k=0; k<this->Cols(); k++){
             for(size_t j=0; j<matrix.Cols(); j++){
@@ -206,11 +206,11 @@ template<class NumericType> Matrix<NumericType> Matrix<NumericType>::operator*(c
 /**
  * @brief スカラ積メソッド
  * 
- * @tparam NumericType 
+ * @tparam Numeric 
  * @param num 
- * @return Matrix<NumericType>& 
+ * @return Matrix<Numeric>& 
  */
-template<class NumericType> Matrix<NumericType> &Matrix<NumericType>::operator*=(const NumericType &num)
+template<class Numeric> Matrix<Numeric> &Matrix<Numeric>::operator*=(const Numeric &num)
 {
     for(size_t i=0; i<this->Rows(); i++){
         for(size_t j=0; j<this->Cols(); j++){
@@ -223,11 +223,11 @@ template<class NumericType> Matrix<NumericType> &Matrix<NumericType>::operator*=
 /**
  * @brief スカラ積メソッド（除算）
  * 
- * @tparam NumericType 
+ * @tparam Numeric 
  * @param num 
- * @return Matrix<NumericType>& 
+ * @return Matrix<Numeric>& 
  */
-template<class NumericType> Matrix<NumericType> &Matrix<NumericType>::operator/=(const NumericType &num)
+template<class Numeric> Matrix<Numeric> &Matrix<Numeric>::operator/=(const Numeric &num)
 {
     for(size_t i=0; i<this->Rows(); i++){
         for(size_t j=0; j<this->Cols(); j++){
@@ -240,12 +240,12 @@ template<class NumericType> Matrix<NumericType> &Matrix<NumericType>::operator/=
 /**
  * @brief 等価判定メソッド
  * 
- * @tparam NumericType 
+ * @tparam Numeric 
  * @param matrix 
  * @return true 
  * @return false 
  */
-template<class NumericType> bool Matrix<NumericType>::operator==(const Matrix &matrix) const 
+template<class Numeric> bool Matrix<Numeric>::operator==(const Matrix &matrix) const 
 {
     if(this->Cols() != matrix.Cols() || this->Rows() != matrix.Rows()) return false;
 
@@ -260,10 +260,10 @@ template<class NumericType> bool Matrix<NumericType>::operator==(const Matrix &m
 /**
  * @brief 文字列化メソッド
  * 
- * @tparam NumericType 
+ * @tparam Numeric 
  * @return std::string 
  */
-template<class NumericType> std::string Matrix<NumericType>::ToString() const
+template<class Numeric> std::string Matrix<Numeric>::ToString() const
 {
     std::string ret = "[";
 
@@ -280,24 +280,24 @@ template<class NumericType> std::string Matrix<NumericType>::ToString() const
 /**
  * @brief 逆行列計算メソッド
  * 
- * @tparam NumericType 
- * @return Matrix<NumericType> 
+ * @tparam Numeric 
+ * @return Matrix<Numeric> 
  */
-template<class NumericType> Matrix<NumericType> Matrix<NumericType>::Inverse() const
+template<class Numeric> Matrix<Numeric> Matrix<Numeric>::Inverse() const
 {
-    LUP<NumericType> lum(*this);
+    LUP<Numeric> lum(*this);
     DecomposeLUP(lum);
     if(lum.toggle == 0) throw "Unable to compute inversed matrix.";
 
     Matrix ret(*this);
     
-    std::vector<NumericType> b(this->Height());
+    std::vector<Numeric> b(this->Height());
     for(size_t i=0; i<this->Height(); i++){
         for(size_t j=0; j<this->Height(); j++){
             if(i == lum.perm[j]) b[j] = 1.0;
             else b[j] = 0.0;
         }
-        std::vector<NumericType> x;
+        std::vector<Numeric> x;
         HelperSolve(lum.mat, b, x);
         for(size_t j=0; j<this->Height(); j++) ret[j][i] = x[j];
     }
@@ -307,16 +307,16 @@ template<class NumericType> Matrix<NumericType> Matrix<NumericType>::Inverse() c
 /**
  * @brief 行列式計算メソッド
  * 
- * @tparam NumericType 
+ * @tparam Numeric 
  * @return double 
  */
-template<class NumericType> NumericType Matrix<NumericType>::Determinant() const
+template<class Numeric> Numeric Matrix<Numeric>::Determinant() const
 {
-    LUP<NumericType> lum(*this);
+    LUP<Numeric> lum(*this);
     DecomposeLUP(lum);
     if(lum.toggle == 0) throw "Unable to compute matrix determinate.";
     
-    NumericType ret = lum.toggle;
+    Numeric ret = lum.toggle;
     for(size_t i=0; i<lum.mat.Height(); i++) ret *= lum.mat[i][i];
     return ret; 
 }
@@ -324,10 +324,10 @@ template<class NumericType> NumericType Matrix<NumericType>::Determinant() const
 /**
  * @brief 転置行列計算メソッド
  * 
- * @tparam NumericType 
- * @return Matrix<NumericType> 
+ * @tparam Numeric 
+ * @return Matrix<Numeric> 
  */
-template<class NumericType> Matrix<NumericType> Matrix<NumericType>::Transpose() const
+template<class Numeric> Matrix<Numeric> Matrix<Numeric>::Transpose() const
 {
     Matrix ret(this->Cols(), this->Rows());
     for(size_t i=0; i<this->Rows(); i++){

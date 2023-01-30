@@ -9,20 +9,20 @@ namespace Mathematics{
 /**
  * @brief degree to radian
  * 
- * @tparam NumericType 
+ * @tparam Numeric 
  * @param deg 
- * @return NumericType 
+ * @return Numeric 
  */
-template<typename NumericType> inline NumericType DegToRad(const NumericType &deg){return deg * ConstantValue::M_PI / 180;}
+template<typename Numeric> inline Numeric DegToRad(const Numeric &deg){return deg * ConstantValue::M_PI / 180;}
 
 /**
  * @brief radian to degree
  * 
- * @tparam NumericType 
+ * @tparam Numeric 
  * @param rad 
- * @return NumericType degree
+ * @return Numeric degree
  */
-template<typename NumericType> inline NumericType RadToDeg(const NumericType &rad){return rad * 180 / ConstantValue::M_PI;}
+template<typename Numeric> inline Numeric RadToDeg(const Numeric &rad){return rad * 180 / ConstantValue::M_PI;}
 
 
 }

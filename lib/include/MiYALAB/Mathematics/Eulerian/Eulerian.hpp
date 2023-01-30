@@ -42,20 +42,20 @@ namespace MiYALAB {
 namespace Cpp{
 namespace Mathematics{
 /**
- * @brief roll-pitch-yaw NumericType
+ * @brief roll-pitch-yaw Numeric
  * 
- * @tparam NumericType 
+ * @tparam Numeric 
  */
-template<class NumericType>
+template<typename Numeric>
 struct EulerianAngles{
     // フィールド
-    NumericType roll;
-    NumericType pitch;
-    NumericType yaw;
+    Numeric roll;
+    Numeric pitch;
+    Numeric yaw;
 
     // コンストラクタ
     EulerianAngles(){this->roll = 0; this->pitch = 0; this->pitchaw = 0;}
-    EulerianAngles(const NumericType &_roll, const NumericType &_pitch, const NumericType &_yaw){this->roll = _roll; this->pitch = _pitch; this->yaw = _yaw;}
+    EulerianAngles(const Numeric &_roll, const Numeric &_pitch, const Numeric &_yaw){this->roll = _roll; this->pitch = _pitch; this->yaw = _yaw;}
 
     // デストラクタ
     virtual ~EulerianAngles(){}
@@ -64,13 +64,13 @@ struct EulerianAngles{
     EulerianAngles &operator+=(const EulerianAngles &point)  {this->roll+=point.x; this->pitch+=point.y; this->yaw+=point.z; return *this;}
     EulerianAngles &operator-=(const EulerianAngles &point)  {this->roll-=point.x; this->pitch-=point.y; this->yaw-=point.z; return *this;}
     EulerianAngles &operator*=(const EulerianAngles &point)  {*this=*this*point; return *this;}
-    EulerianAngles &operator*=(const NumericType &num){this->roll*=num; this->pitch*=num; this->yaw*=num; return *this;}
-    EulerianAngles &operator/=(const NumericType &num){this->roll/=num; this->pitch/=num; this->yaw/=num; return *this;}
+    EulerianAngles &operator*=(const Numeric &num){this->roll*=num; this->pitch*=num; this->yaw*=num; return *this;}
+    EulerianAngles &operator/=(const Numeric &num){this->roll/=num; this->pitch/=num; this->yaw/=num; return *this;}
     EulerianAngles operator+ (const EulerianAngles &point)   const {return (EulerianAngles(*this)+=point);}
     EulerianAngles operator- (const EulerianAngles &point)   const {return (EulerianAngles(*this)-=point);}
     EulerianAngles operator* (const EulerianAngles &point)   const {return (EulerianAngles(this->pitch*point.z-point.y*this->yaw, this->yaw*point.x-point.z*this->roll, this->roll*point.y-point.x*this->pitch));}
-    EulerianAngles operator* (const NumericType &num) const {return (EulerianAngles(*this)*=num);}
-    EulerianAngles operator/ (const NumericType &num) const {return (EulerianAngles(*this)/=num);}    
+    EulerianAngles operator* (const Numeric &num) const {return (EulerianAngles(*this)*=num);}
+    EulerianAngles operator/ (const Numeric &num) const {return (EulerianAngles(*this)/=num);}    
     
     // 比較演算子
     bool operator==(const EulerianAngles &angles) const {return (this->roll == angles.roll && this->pitch == angles.pitch && this->yaw == angles.yaw);}
@@ -80,9 +80,9 @@ struct EulerianAngles{
     std::string toString() const {return "(" + std::to_string(this->roll) + ", " + std::to_string(this->pitch) + ", " << std::to_string(this->yaw) + ")";}
 
     // 3次元ベクトル計算メソッド
-    NumericType Dot(const EulerianAngles &point) const {return (this->roll*point.x + this->pitch*point.y + this->yaw*point.z);}
-    NumericType Magnitude()     const {return std::sqrt(this->roll*this->roll + this->pitch*this->pitch + this->yaw*this->yaw);}
-    NumericType MagnitudePow2() const {return (this->roll*this->roll + this->pitch*this->pitch + this->yaw*this->yaw);}
+    Numeric Dot(const EulerianAngles &point) const {return (this->roll*point.x + this->pitch*point.y + this->yaw*point.z);}
+    Numeric Magnitude()     const {return std::sqrt(this->roll*this->roll + this->pitch*this->pitch + this->yaw*this->yaw);}
+    Numeric MagnitudePow2() const {return (this->roll*this->roll + this->pitch*this->pitch + this->yaw*this->yaw);}
 };
 }
 }

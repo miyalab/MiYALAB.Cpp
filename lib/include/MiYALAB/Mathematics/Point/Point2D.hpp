@@ -42,19 +42,19 @@ namespace MiYALAB {
 namespace Cpp{
 namespace Mathematics{
 /**
- * @brief x-y NumericType
+ * @brief x-y Numeric
  * 
- * @tparam NumericType 
+ * @tparam Numeric 
  */
-template<class NumericType>
+template<typename Numeric>
 struct Point2D{
     // フィールド
-    NumericType x;
-    NumericType y;
+    Numeric x;
+    Numeric y;
 
     // コンストラクタ
     Point2D(){this->x=0; this->y=0;}
-    Point2D(const NumericType &_x, const NumericType &_y){this->x = _x; this->y = _y;}
+    Point2D(const Numeric &_x, const Numeric &_y){this->x = _x; this->y = _y;}
 
     // デストラクタ
     virtual ~Point2D(){}
@@ -62,12 +62,12 @@ struct Point2D{
     // 算術演算子
     Point2D &operator+=(const Point2D &point)  {this->x+=point.x; this->y+=point.y; return *this;}
     Point2D &operator-=(const Point2D &point)  {this->x-=point.x; this->y-=point.y; return *this;}
-    Point2D &operator*=(const NumericType &num){this->x*=num; this->y*=num; return *this;}
-    Point2D &operator/=(const NumericType &num){this->x/=num; this->y/=num; return *this;}
+    Point2D &operator*=(const Numeric &num){this->x*=num; this->y*=num; return *this;}
+    Point2D &operator/=(const Numeric &num){this->x/=num; this->y/=num; return *this;}
     Point2D operator+ (const Point2D &point)   const {return (Point2D(*this)+=point);}
     Point2D operator- (const Point2D &point)   const {return (Point2D(*this)-=point);}
-    Point2D operator* (const NumericType &num) const {return (Point2D(*this)*=num);}
-    Point2D operator/ (const NumericType &num) const {return (Point2D(*this)/=num);}
+    Point2D operator* (const Numeric &num) const {return (Point2D(*this)*=num);}
+    Point2D operator/ (const Numeric &num) const {return (Point2D(*this)/=num);}
     
     // 比較演算子
     bool operator==(const Point2D &point) const {return (this->x == point.x && this->y == point.y);}
@@ -77,9 +77,9 @@ struct Point2D{
     std::string ToString() const {return "(" + std::to_string(this->x) + ", " + std::to_string(this->y) + ")";}
 
     // 2次元ベクトル計算メソッド
-    NumericType Dot(const Point2D &point) const {return this->x*point.x + this->y*point.y;}
-    NumericType Magnitude()     const {return std::sqrt(this->x*this->x + this->y*this->y);}
-    NumericType MagnitudePow2() const {return (this->x*this->x + this->y*this->y);}
+    Numeric Dot(const Point2D &point) const {return this->x*point.x + this->y*point.y;}
+    Numeric Magnitude()     const {return std::sqrt(this->x*this->x + this->y*this->y);}
+    Numeric MagnitudePow2() const {return (this->x*this->x + this->y*this->y);}
 };
 }
 }

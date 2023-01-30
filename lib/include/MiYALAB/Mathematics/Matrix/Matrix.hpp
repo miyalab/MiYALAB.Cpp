@@ -47,34 +47,34 @@ namespace Mathematics{
 /**
  * @brief Matrix class
  * 
- * @tparam NumericType 
+ * @tparam Numeric 
  */
-template<class NumericType>
+template<typename Numeric>
 struct Matrix{
 public:
     // コンストラクタ
     Matrix(){}
-    Matrix(const size_t &n): data(n, std::vector<NumericType>(n,0)){}
-    Matrix(const size_t &rows, const size_t &cols): data(rows, std::vector<NumericType>(cols,0)){}
+    Matrix(const size_t &n): data(n, std::vector<Numeric>(n,0)){}
+    Matrix(const size_t &rows, const size_t &cols): data(rows, std::vector<Numeric>(cols,0)){}
     
     // デストラクタ
     virtual ~Matrix(){}
 
     // 添字演算子
-    const std::vector<NumericType> &operator[](const size_t &row) const {return data[row];};
-    std::vector<NumericType> &operator[](const size_t &row) {return data[row];};
+    const std::vector<Numeric> &operator[](const size_t &row) const {return data[row];};
+    std::vector<Numeric> &operator[](const size_t &row) {return data[row];};
 
     // 算術演算子
     Matrix &operator +=(const Matrix &matrix);
     Matrix &operator -=(const Matrix &matrix);
     Matrix &operator *=(const Matrix &matrix) {return (*this = (*this)*matrix);}
-    Matrix &operator *=(const NumericType &num);
-    Matrix &operator /=(const NumericType &num);
+    Matrix &operator *=(const Numeric &num);
+    Matrix &operator /=(const Numeric &num);
     Matrix operator +(const Matrix &matrix) const {return Matrix(*this)+=matrix;};
     Matrix operator -(const Matrix &matrix) const {return Matrix(*this)-=matrix;};
     Matrix operator *(const Matrix &matrix) const;
-    Matrix operator *(const NumericType &num) const {return Matrix(*this)*=num;};
-    Matrix operator /(const NumericType &num) const {return Matrix(*this)/=num;};
+    Matrix operator *(const Numeric &num) const {return Matrix(*this)*=num;};
+    Matrix operator /(const Numeric &num) const {return Matrix(*this)/=num;};
 
     // 比較演算子
     bool operator ==(const Matrix &matrix) const;
@@ -86,7 +86,7 @@ public:
     // 行列計算計算メソッド
     Matrix Inverse() const;
     Matrix Transpose() const;
-    NumericType Determinant() const;
+    Numeric Determinant() const;
 
     // 単位行列生成メソッド
     static Matrix I(size_t n){Matrix ret(n); for(size_t i=0; i<n; i++) ret[i][i]=1; return ret;}
@@ -97,11 +97,11 @@ public:
     size_t Rows()   const {return data.size();}
     size_t Width()  const {return data.size() ? data[0].size() : 0;}
     size_t Cols()   const {return data.size() ? data[0].size() : 0;}
-    const NumericType &At(const size_t &row, const size_t &col) const {if(this->Cols()<=col || this->Rows()<=row) throw std::out_of_range("out_of_range"); return (*this)[row][col];}
-    NumericType &At(const size_t &row, const size_t &col) {if(this->Cols()<=col || this->Rows()<=row) throw std::out_of_range("out_of_range"); return (*this)[row][col];}
+    const Numeric &At(const size_t &row, const size_t &col) const {if(this->Cols()<=col || this->Rows()<=row) throw std::out_of_range("out_of_range"); return (*this)[row][col];}
+    Numeric &At(const size_t &row, const size_t &col) {if(this->Cols()<=col || this->Rows()<=row) throw std::out_of_range("out_of_range"); return (*this)[row][col];}
 
 private:
-    std::vector<std::vector<NumericType>> data;
+    std::vector<std::vector<Numeric>> data;
 };
 }
 }

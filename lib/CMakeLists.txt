@@ -26,6 +26,7 @@ link_directories(
 # Build library
 add_library(${PROJECT_NAME} SHARED
 	src/MiYALAB/Mathematics/Eulerian/Eulerian.cpp
+	src/MiYALAB/Mathematics/Eulerian/EulerianConverter.cpp
 	src/MiYALAB/Mathematics/Matrix/Matrix.cpp
 	src/MiYALAB/Mathematics/Point/Point.cpp
 	src/MiYALAB/Mathematics/Pose/Pose.cpp

@@ -33,8 +33,6 @@
 #include <string>
 #include <cmath>
 
-#include "../Point/Point3D.hpp"
-
 //-----------------------------
 // Namespace & using
 //-----------------------------
@@ -46,20 +44,20 @@ namespace MiYALAB {
 namespace Cpp{
 namespace Mathematics{
 /**
- * @brief x-y NumericType
+ * @brief x-y Numeric
  * 
- * @tparam NumericType 
+ * @tparam Numeric 
  */
-template<class NumericType>
+template<typename Numeric>
 struct Quaternion{
-    NumericType w;
-    NumericType x;
-    NumericType y;
-    NumericType z;
+    Numeric w;
+    Numeric x;
+    Numeric y;
+    Numeric z;
 
     // コンストラクタ
-    Quaternion(){this->w=0; this->x = 0; this->y = 0; this->z = 0;}
-    Quaternion(const NumericType &_w, const NumericType &_x, const NumericType &_y, const NumericType &_z){this->w = _w; this->x = _x; this->y = _y; this->z = _z;}
+    Quaternion(){this->w = 0; this->x = 0; this->y = 0; this->z = 0;}
+    Quaternion(const Numeric &_w, const Numeric &_x, const Numeric &_y, const Numeric &_z){this->w = _w; this->x = _x; this->y = _y; this->z = _z;}
 
     // デストラクタ
     virtual ~Quaternion(){}

@@ -42,32 +42,32 @@
 namespace MiYALAB {
 namespace Cpp{
 namespace Mathematics{
-template <class NumericType> Matrix<NumericType> ToMatrix(const Point2D<NumericType> &point, bool columnVector = true)
+template <typename Numeric> Matrix<Numeric> ToMatrix(const Point2D<Numeric> &point, bool columnVector = true)
 {
     if(columnVector) {
-        Matrix<NumericType> ret(2,1);
+        Matrix<Numeric> ret(2,1);
         ret[0][0] = point.x;
         ret[1][0] = point.y;
         return ret;
     }
     else{
-        Matrix<NumericType> ret(1,2);
+        Matrix<Numeric> ret(1,2);
         ret[0][0] = point.x;
         ret[0][1] = point.y;
         return ret;
     }
 }
-template <class NumericType> Matrix<NumericType> ToMatrix(const Point3D<NumericType> &point, bool columnVector = true)
+template <class Numeric> Matrix<Numeric> ToMatrix(const Point3D<Numeric> &point, bool columnVector = true)
 {
     if(columnVector) {
-        Matrix<NumericType> ret(3,1);
+        Matrix<Numeric> ret(3,1);
         ret[0][0] = point.x;
         ret[1][0] = point.y;
         ret[2][0] = point.z;
         return ret;
     }
     else{
-        Matrix<NumericType> ret(1,3);
+        Matrix<Numeric> ret(1,3);
         ret[0][0] = point.x;
         ret[0][1] = point.y;
         ret[0][2] = point.z;
