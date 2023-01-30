@@ -25,6 +25,14 @@
 #ifndef __MIYALAB_CPP_ROBOTICS_DC_MOTOR_HPP__
 #define __MIYALAB_CPP_ROBOTICS_DC_MOTOR_HPP__
 
+//-----------------------------
+// include
+//-----------------------------
+#include <functional>
+
+//-----------------------------
+// class 
+//-----------------------------
 namespace MiYALAB{
 namespace Robotics{
 class DCMotor{
@@ -35,6 +43,7 @@ public:
     void SetSpeed();
     void SetSpeedLimit();
     void SetAngle();
+    
 private:
 };
 }

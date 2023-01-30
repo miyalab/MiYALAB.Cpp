@@ -25,6 +25,14 @@
 #ifndef __MIYALAB_CPP_ROBOTICS_MECANUM_4WD_HPP__
 #define __MIYALAB_CPP_ROBOTICS_MECANUM_4WD_HPP__
 
+//-----------------------------
+// include
+//-----------------------------
+#include <functional>
+
+//-----------------------------
+// class 
+//-----------------------------
 namespace MiYALAB{
 namespace Robotics{
 
