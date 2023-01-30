@@ -22,8 +22,8 @@
  * SOFTWARE.
 */
 
-#ifndef __MIYALAB_CPP_MATHEMATICS_QUATERNION_HPP__
-#define __MIYALAB_CPP_MATHEMATICS_QUATERNION_HPP__
+#ifndef __MIYALAB_CPP_MATHEMATICS_QUATERNION_QUATERNION_HPP__
+#define __MIYALAB_CPP_MATHEMATICS_QUATERNION_QUATERNION_HPP__
 
 //-----------------------------
 // include
@@ -88,7 +88,7 @@ using Quaternion64f = Quaternion<double>;
 }
 }
 
-#endif // __MIYALAB_CPP_MATHEMATICS_QUATERNION_HPP__
+#endif // __MIYALAB_CPP_MATHEMATICS_QUATERNION_QUATERNION_HPP__
 
 //-----------------------------------------------------------------------------------
 // end of file

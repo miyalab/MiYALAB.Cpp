@@ -23,8 +23,8 @@
 */
 
 
-#ifndef __MIYALAB_CPP_MATHEMATICS_MATRIX_HPP__
-#define __MIYALAB_CPP_MATHEMATICS_MATRIX_HPP__
+#ifndef __MIYALAB_CPP_MATHEMATICS_MATRIX_MATRIX_HPP__
+#define __MIYALAB_CPP_MATHEMATICS_MATRIX_MATRIX_HPP__
 
 //-----------------------------
 // include
@@ -124,7 +124,7 @@ using Matrix64f = Matrix<double>;
 }
 }
 
-#endif
+#endif // __MIYALAB_CPP_MATHEMATICS_MATRIX_MATRIX_HPP__
 
 //-----------------------------------------------------------------------------------
 // end of file

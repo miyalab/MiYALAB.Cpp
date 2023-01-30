@@ -22,8 +22,8 @@
  * SOFTWARE.
 */
 
-#ifndef __MIYALAB_CPP_MATHEMATICS_POINT_2D_HPP__
-#define __MIYALAB_CPP_MATHEMATICS_POINT_2D_HPP__
+#ifndef __MIYALAB_CPP_MATHEMATICS_POINT_POINT_2D_HPP__
+#define __MIYALAB_CPP_MATHEMATICS_POINT_POINT_2D_HPP__
 
 //-----------------------------
 // include
@@ -103,7 +103,7 @@ using Point2d64f = Point2D<double>;
 }
 }
 
-#endif // __MIYALAB_CPP_MATHEMATICS_POINT_2D_HPP__
+#endif // __MIYALAB_CPP_MATHEMATICS_POINT_POINT_2D_HPP__
 
 //-----------------------------------------------------------------------------------
 // end of file

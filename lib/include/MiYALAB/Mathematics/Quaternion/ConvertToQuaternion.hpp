@@ -22,8 +22,8 @@
  * SOFTWARE.
 */
 
-#ifndef __MIYALAB_CPP_MATHEMATICS_QUATERNION_CONVERTER_HPP__
-#define __MIYALAB_CPP_MATHEMATICS_QUATERNION_CONVERTER_HPP__
+#ifndef __MIYALAB_CPP_MATHEMATICS_QUATERNION_QUATERNION_CONVERTER_HPP__
+#define __MIYALAB_CPP_MATHEMATICS_QUATERNION_QUATERNION_CONVERTER_HPP__
 
 //-----------------------------
 // include
@@ -49,7 +49,7 @@ template<typename Numeric> Quaternion<Numeric> ConvertToQuaternion(const EulerAn
 }
 }
 
-#endif // __MIYALAB_CPP_MATHEMATICS_POINT_3D_HPP__
+#endif // __MIYALAB_CPP_MATHEMATICS_QUATERNION_QUATERNION_CONVERTER_HPP__
 
 //-----------------------------------------------------------------------------------
 // end of file

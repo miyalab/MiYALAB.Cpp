@@ -22,8 +22,8 @@
  * SOFTWARE.
 */
 
-#ifndef __MIYALAB_CPP_MATHEMATICS_TWIST_HPP__
-#define __MIYALAB_CPP_MATHEMATICS_TWIST_HPP__
+#ifndef __MIYALAB_CPP_MATHEMATICS_TWIST_TWIST_HPP__
+#define __MIYALAB_CPP_MATHEMATICS_TWIST_TWIST_HPP__
 
 //-----------------------------
 // include
@@ -82,7 +82,7 @@ using Twist64f = Twist<double>;
 }
 }
 
-#endif // __MIYALAB_CPP_MATHEMATICS_TWIST_HPP__
+#endif // __MIYALAB_CPP_MATHEMATICS_TWIST_TWIST_HPP__
 
 //-----------------------------------------------------------------------------------
 // end of file

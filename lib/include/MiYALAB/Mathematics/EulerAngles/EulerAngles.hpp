@@ -22,8 +22,8 @@
  * SOFTWARE.
 */
 
-#ifndef __MIYALAB_CPP_MATHEMATICS_EULER_HPP__
-#define __MIYALAB_CPP_MATHEMATICS_EULER_HPP__
+#ifndef __MIYALAB_CPP_MATHEMATICS_EULER_ANGLES_EULER_ANGLES_HPP__
+#define __MIYALAB_CPP_MATHEMATICS_EULER_ANGLES_EULER_ANGLES_HPP__
 
 //-----------------------------
 // include
@@ -105,7 +105,7 @@ using EulerAngle64f = EulerAngles<double>;
 }
 }
 
-#endif // __MIYALAB_CPP_MATHEMATICS_POINT_3D_HPP__
+#endif // __MIYALAB_CPP_MATHEMATICS_EULER_ANGLES_EULER_ANGLES_HPP__
 
 //-----------------------------------------------------------------------------------
 // end of file

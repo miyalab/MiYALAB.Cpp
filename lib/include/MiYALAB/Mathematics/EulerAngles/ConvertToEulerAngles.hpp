@@ -47,7 +47,7 @@ template<typename Numeric> EulerAngles<Numeric> ConvertToEulerAngles(const Quate
 }
 }
 
-#endif // __MIYALAB_CPP_MATHEMATICS_POINT_3D_HPP__
+#endif // __MIYALAB_CPP_MATHEMATICS_EULER_ANGLES_CONVERT_TO_EULER_ANGLES_HPP__
 
 //-----------------------------------------------------------------------------------
 // end of file

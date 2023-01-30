@@ -49,7 +49,7 @@ template <typename Numeric> Matrix<Numeric> ConvertToMatrix(const Point3D<Numeri
 }
 
 
-#endif // __MIYALAB_CPP_MATHEMATICS_POINT_2D_HPP__
+#endif // __MIYALAB_CPP_MATHEMATICS_MATRIX_CONVERT_TO_MATRIX_HPP__
 
 //-----------------------------------------------------------------------------------
 // end of file
