@@ -26,7 +26,7 @@
 // include
 //-----------------------------
 #include <cmath>
-#include "MiYALAB/Mathematics/EulerAngles/EulerAnglesConverter.hpp"
+#include "MiYALAB/Mathematics/EulerAngles/ConvertToEulerAngles.hpp"
 
 //-----------------------------
 // Namespace & using
