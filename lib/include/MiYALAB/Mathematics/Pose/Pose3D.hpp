@@ -68,6 +68,28 @@ struct Pose3D{
 }
 }
 
+//-----------------------------
+// template
+//-----------------------------
+namespace MiYALAB{
+namespace Cpp{
+namespace Mathematics{
+template struct Pose3D<char>;
+template struct Pose3D<short>;
+template struct Pose3D<int>;
+template struct Pose3D<long>;
+template struct Pose3D<long long>;
+template struct Pose3D<float>;
+template struct Pose3D<double>;
+template struct Pose3D<long double>;
+
+using Pose32f = Pose3D<float>;
+using Pose64f = Pose3D<double>;
+}
+}
+}
+
+
 #endif // __MIYALAB_CPP_MATHEMATICS_POSE_3D_HPP__
 
 //-----------------------------------------------------------------------------------

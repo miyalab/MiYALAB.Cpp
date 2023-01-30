@@ -99,6 +99,10 @@ template struct Point2D<long long>;
 template struct Point2D<float>;
 template struct Point2D<double>;
 template struct Point2D<long double>;
+
+using Point2d32f = Point2D<float>;
+using Point2d64f = Point2D<double>;
+
 }
 }
 }

@@ -39,7 +39,7 @@
 namespace MiYALAB {
 namespace Cpp{
 namespace Mathematics{
-template<typename Numeric> void ConvertQuaternionToEulerianAngles(const Quaternion<Numeric> &quaternion, EulerianAngles<Numeric> &euler)
+template<typename Numeric> void ConvertQuaternionToEulerAngles(const Quaternion<Numeric> &quaternion, EulerAngles<Numeric> &euler)
 {
     const Numeric &q0q0 = quaternion.w * quaternion.w;
     const Numeric &q0q1 = quaternion.w * quaternion.x;
@@ -57,10 +57,10 @@ template<typename Numeric> void ConvertQuaternionToEulerianAngles(const Quaterni
     euler.yaw   = std::atan2(2.0 * (q1q2 + q0q3), q0q0 + q1q1 - q2q2 - q3q3);
 }
 
-template<typename Numeric> EulerianAngles<Numeric> ConvertQuaternionToEulerianAngles(const Quaternion<Numeric> &quaternion)
+template<typename Numeric> EulerAngles<Numeric> ConvertQuaternionToEulerAngles(const Quaternion<Numeric> &quaternion)
 {
-    EulerianAngles<Numeric> ret;
-    ConvertQuaternionToEulerianAngles(quaternion, ret);
+    EulerAngles<Numeric> ret;
+    ConvertQuaternionToEulerAngles(quaternion, ret);
     return ret;
 }
 

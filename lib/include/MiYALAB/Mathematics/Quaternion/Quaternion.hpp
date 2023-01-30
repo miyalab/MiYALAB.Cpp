@@ -87,6 +87,9 @@ template struct Quaternion<long long>;
 template struct Quaternion<float>;
 template struct Quaternion<double>;
 template struct Quaternion<long double>;
+
+using Quaternion32f = Quaternion<float>;
+using Quaternion64f = Quaternion<double>;
 }
 }
 }

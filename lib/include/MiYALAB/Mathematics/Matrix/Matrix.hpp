@@ -121,6 +121,9 @@ template struct Matrix<long long>;
 template struct Matrix<float>;
 template struct Matrix<double>;
 template struct Matrix<long double>;
+
+using Matrix32f = Matrix<float>;
+using Matrix64f = Matrix<double>;
 }
 }
 }

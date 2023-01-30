@@ -62,6 +62,28 @@ struct Pose2D{
 }
 }
 
+//-----------------------------
+// template
+//-----------------------------
+namespace MiYALAB{
+namespace Cpp{
+namespace Mathematics{
+template struct Pose2D<char>;
+template struct Pose2D<short>;
+template struct Pose2D<int>;
+template struct Pose2D<long>;
+template struct Pose2D<long long>;
+template struct Pose2D<float>;
+template struct Pose2D<double>;
+template struct Pose2D<long double>;
+
+using Pose2d32f = Pose2D<float>;
+using Pose2d64f = Pose2D<double>;
+
+}
+}
+}
+
 #endif // __MIYALAB_CPP_MATHEMATICS_POSE_2D_HPP__
 
 //-----------------------------------------------------------------------------------

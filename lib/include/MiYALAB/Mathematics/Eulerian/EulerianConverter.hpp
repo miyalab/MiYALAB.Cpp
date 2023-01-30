@@ -22,8 +22,8 @@
  * SOFTWARE.
 */
 
-#ifndef __MIYALAB_CPP_MATHEMATICS_EULERIAN_CONVERTER_HPP__
-#define __MIYALAB_CPP_MATHEMATICS_EULERIAN_CONVERTER_HPP__
+#ifndef __MIYALAB_CPP_MATHEMATICS_EULER_CONVERTER_HPP__
+#define __MIYALAB_CPP_MATHEMATICS_EULER_CONVERTER_HPP__
 
 //-----------------------------
 // include
@@ -44,8 +44,8 @@ namespace MiYALAB {
 namespace Cpp{
 namespace Mathematics{
 
-template<typename Numeric> void ConvertQuaternionToEulerianAngles(const Quaternion<Numeric> &quaternion, EulerianAngles<Numeric> &euler);
-template<typename Numeric> EulerianAngles<Numeric> ConvertQuaternionToEulerianAngles(const Quaternion<Numeric> &quaternion);
+template<typename Numeric> void ConvertQuaternionToEulerAngles(const Quaternion<Numeric> &quaternion, EulerAngles<Numeric> &euler);
+template<typename Numeric> EulerAngles<Numeric> ConvertQuaternionToEulerAngles(const Quaternion<Numeric> &quaternion);
 
 }
 }

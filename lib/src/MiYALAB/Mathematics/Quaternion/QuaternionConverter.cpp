@@ -40,7 +40,7 @@
 namespace MiYALAB {
 namespace Cpp{
 namespace Mathematics{
-template<typename Numeric> void ConvertEulerianAnglesToQuaternion(const EulerianAngles<Numeric> &euler, Quaternion<Numeric> &quaternion)
+template<typename Numeric> void ConvertEulerAnglesToQuaternion(const EulerAngles<Numeric> &euler, Quaternion<Numeric> &quaternion)
 {
     Numeric cosRoll = std::cos(euler.roll / 2.0);
     Numeric sinRoll = std::sin(euler.roll / 2.0);
@@ -55,10 +55,10 @@ template<typename Numeric> void ConvertEulerianAnglesToQuaternion(const Eulerian
     quaternion.z = cosRoll * cosPitch * sinYaw - sinRoll * sinPitch * cosYaw;
 }
 
-template<typename Numeric> Quaternion<Numeric> ConvertEulerianAnglesToQuaternion(const EulerianAngles<Numeric> &euler)
+template<typename Numeric> Quaternion<Numeric> ConvertEulerAnglesToQuaternion(const EulerAngles<Numeric> &euler)
 {
     Quaternion<Numeric> ret;
-    ConvertEulerianAnglesToQuaternion(euler, ret);
+    ConvertEulerAnglesToQuaternion(euler, ret);
     return ret;
 }
 }

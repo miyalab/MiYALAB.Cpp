@@ -50,9 +50,9 @@ namespace Mathematics{
  * @tparam NumericType 
  */
 template<class NumericType>
-struct Pose3D{
+struct Twist{
     Point3D<NumericType> position;
-    EulerianAngles<NumericType> orientation;
+    EulerAngles<NumericType> orientation;
 
     std::string toString() const {return "(" + std::to_string(position.x) + ", "
                                              + std::to_string(position.y) + ", " 
@@ -61,6 +61,27 @@ struct Pose3D{
                                              + std::to_string(orientation.pitch) + ", " 
                                              + std::to_string(orientation.yaw) + ")";}
 };
+}
+}
+}
+
+//-----------------------------
+// template
+//-----------------------------
+namespace MiYALAB{
+namespace Cpp{
+namespace Mathematics{
+template struct Twist<char>;
+template struct Twist<short>;
+template struct Twist<int>;
+template struct Twist<long>;
+template struct Twist<long long>;
+template struct Twist<float>;
+template struct Twist<double>;
+template struct Twist<long double>;
+
+using Twist32f = Twist<float>;
+using Twist64f = Twist<double>;
 }
 }
 }
