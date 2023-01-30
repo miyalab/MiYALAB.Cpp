@@ -29,7 +29,6 @@
 // include
 //-----------------------------
 #include <string>
-#include <cmath>
 
 //-----------------------------
 // Namespace & using

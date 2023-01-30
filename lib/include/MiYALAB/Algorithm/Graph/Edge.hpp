@@ -22,41 +22,13 @@
  * SOFTWARE.
 */
 
-#ifndef __MIYALAB_CPP_ALGORITHM_SORT_FUNCTIONS__
-#define __MIYALAB_CPP_ALGORITHM_SORT_FUNCTIONS__
+#ifndef __MIYALAB_CPP_ALGORITHM_GRAPH_EDGE__
+#define __MIYALAB_CPP_ALGORITHM_GRAPH_EDGE__
 
 namespace MiYALAB{
 namespace Algorithm{
-/**
- * @brief 選択ソート
- * 
- * @tparam type 
- * @param array ソートする配列
- * @param length 配列長
- * @param compFunc 比較関数(-1:n1が小さい 1:n2が大きい 0:等しい)
- */
-template<typename type> void SelectSort(type *array, int length, int (*cmpFunc)(type n1 , type n2))
-{
-    int i, j, calc, sel;
-    type max;
-
-    for(i=0; i<length-1; i++) {
-        max = array[i];
-        sel = i;
-        for(j=i+1; j<length; j++){
-            calc = cmpFunc(max, array[j]);
-            
-            // 第2引数の方が大きい
-            if(calc == 1){
-                sel = j;
-                max = array[j];
-            }
-        }
-        Swap(&array[i], &array[sel]);
-    }
-}
 
 }
 }
 
-#endif
+#endif // __MIYALAB_CPP_ALGORITHM_GRAPH_EDGE__

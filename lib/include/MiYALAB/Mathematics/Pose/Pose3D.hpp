@@ -29,7 +29,6 @@
 // include
 //-----------------------------
 #include <string>
-#include <cmath>
 
 #include "../Point/Point3D.hpp"
 #include "../Quaternion/Quaternion.hpp"

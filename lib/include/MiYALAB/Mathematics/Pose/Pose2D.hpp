@@ -30,7 +30,6 @@
 // include
 //-----------------------------
 #include <string>
-#include <cmath>
 
 #include "../Point/Point2D.hpp"
 

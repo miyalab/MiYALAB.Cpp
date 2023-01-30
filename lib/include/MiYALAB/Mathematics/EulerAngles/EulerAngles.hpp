@@ -100,8 +100,8 @@ template struct EulerAngles<float>;
 template struct EulerAngles<double>;
 template struct EulerAngles<long double>;
 
-using EulerAngle32f = EulerAngles<float>;
-using EulerAngle64f = EulerAngles<double>;
+using EulerAngles32f = EulerAngles<float>;
+using EulerAngles64f = EulerAngles<double>;
 }
 }
 

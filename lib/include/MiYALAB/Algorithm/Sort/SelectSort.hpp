@@ -22,33 +22,13 @@
  * SOFTWARE.
 */
 
-#ifndef __MIYALAB_CPP_MATHEMATICS_QUATERNION_QUATERNION_CONVERTER_HPP__
-#define __MIYALAB_CPP_MATHEMATICS_QUATERNION_QUATERNION_CONVERTER_HPP__
+#ifndef __MIYALAB_CPP_ALGORITHM_SORT_SELECT_SORT__
+#define __MIYALAB_CPP_ALGORITHM_SORT_SELECT_SORT__
 
-//-----------------------------
-// include
-//-----------------------------
-#include "../EulerAngles/EulerAngles.hpp"
-#include "Quaternion.hpp"
-
-//-----------------------------
-// Namespace & using
-//-----------------------------
-
-//-----------------------------
-// Class
-//-----------------------------
-namespace MiYALAB {
-namespace Mathematics{
-
-template<typename Numeric> void ConvertToQuaternion(const EulerAngles<Numeric> &euler, Quaternion<Numeric> &quaternion);
-template<typename Numeric> Quaternion<Numeric> ConvertToQuaternion(const EulerAngles<Numeric> &euler);
+namespace MiYALAB{
+namespace Algorithm{
 
 }
 }
 
-#endif // __MIYALAB_CPP_MATHEMATICS_QUATERNION_QUATERNION_CONVERTER_HPP__
-
-//-----------------------------------------------------------------------------------
-// end of file
-//-----------------------------------------------------------------------------------
+#endif // __MIYALAB_CPP_ALGORITHM_SORT_SELECT_SORT__
