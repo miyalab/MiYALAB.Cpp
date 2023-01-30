@@ -22,53 +22,18 @@
  * SOFTWARE.
 */
 
-#ifndef __MIYALAB_CPP_ALGORITHM_GRAPH_EDGE__
-#define __MIYALAB_CPP_ALGORITHM_GRAPH_EDGE__
+#ifndef __MIYALAB_CPP_ALGORITHM_GRAPH_DIJKSTRA__
+#define __MIYALAB_CPP_ALGORITHM_GRAPH_DIJKSTRA__
 
 //-----------------------------
 // include
 //-----------------------------
-#include <vector>
+#include "Edge.hpp"
 
-//-----------------------------
-// Class
-//-----------------------------
 namespace MiYALAB{
 namespace Algorithm{
-template<typename Numeric>
-struct Edge{
-public:
-    int src;        // 始点
-    int to;         // 終点
-    Numeric cost;   // コスト
 
-    Edge(int _to, Numeric _cost) : src(-1), to(_to), cost(_cost){}
-    Edge(int _src, int _to, Numeric _cost) : src(_src), to(_to), cost(_cost){}
-};
 }
 }
 
-//-----------------------------
-// template
-//-----------------------------
-namespace MiYALAB{
-namespace Algorithm{
-template struct Edge<char>;
-template struct Edge<short>;
-template struct Edge<int>;
-template struct Edge<long>;
-template struct Edge<long long>;
-template struct Edge<float>;
-template struct Edge<double>;
-template struct Edge<long double>;
-
-using Edge32f = Edge<float>;
-using Edge64f = Edge<double>;
-
-template<typename Numeric> using Edges = std::vector<Numeric>;
-template<typename Numeric> using WeightGraph = std::vector<Edges<Numeric>>;
-template<typename Numeric> using UnWeightGraph = std::vector<Edges<int>>;
-}
-}
-
-#endif // __MIYALAB_CPP_ALGORITHM_GRAPH_EDGE__
+#endif // __MIYALAB_CPP_ALGORITHM_GRAPH_DIJKSTRA__

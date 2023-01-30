@@ -52,8 +52,8 @@ struct Quaternion{
     Numeric z;
 
     // コンストラクタ
-    Quaternion(){this->w = 0; this->x = 0; this->y = 0; this->z = 0;}
-    Quaternion(const Numeric &_w, const Numeric &_x, const Numeric &_y, const Numeric &_z){this->w = _w; this->x = _x; this->y = _y; this->z = _z;}
+    Quaternion() : w(0), x(0), y(0), z(0){}
+    Quaternion(const Numeric &_w, const Numeric &_x, const Numeric &_y, const Numeric &_z) :  w(_w), x(_x), y(_y), z(_z){}
 
     // デストラクタ
     virtual ~Quaternion(){}

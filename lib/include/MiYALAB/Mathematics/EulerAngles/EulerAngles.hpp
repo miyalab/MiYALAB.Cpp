@@ -53,8 +53,8 @@ struct EulerAngles{
     Numeric yaw;
 
     // コンストラクタ
-    EulerAngles(){this->roll = 0; this->pitch = 0; this->yaw = 0;}
-    EulerAngles(const Numeric &_roll, const Numeric &_pitch, const Numeric &_yaw){this->roll = _roll; this->pitch = _pitch; this->yaw = _yaw;}
+    EulerAngles() : roll(0), pitch(0), yaw(0){}
+    EulerAngles(const Numeric &_roll, const Numeric &_pitch, const Numeric &_yaw) : roll(_yaw), pitch(_pitch), yaw(_yaw){}
 
     // デストラクタ
     virtual ~EulerAngles(){}
