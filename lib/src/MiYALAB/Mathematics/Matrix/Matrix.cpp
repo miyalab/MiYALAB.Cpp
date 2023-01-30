@@ -41,7 +41,7 @@
 namespace MiYALAB {
 namespace Mathematics{
 
-template<class Numeric>
+template<typename Numeric>
 struct LUP{
 public:
     LUP(const Matrix<Numeric> &matrix): mat(matrix), perm(matrix.Height()){}
@@ -50,7 +50,7 @@ public:
     int toggle;
 };
 
-template<class Numeric> 
+template<typename Numeric> 
 void DecomposeLUP(LUP<Numeric> &ret)
 {
     const size_t &n = ret.mat.Height();
@@ -93,7 +93,7 @@ void DecomposeLUP(LUP<Numeric> &ret)
  * @param b 
  * @param x 
  */
-template<class Numeric>
+template<typename Numeric>
 void HelperSolve(const Matrix<Numeric> &luMat, const std::vector<Numeric> &b, std::vector<Numeric> &x)
 {
     const size_t &n = luMat.Height();
@@ -128,7 +128,7 @@ namespace Mathematics{
  * @param matrix 
  * @return Matrix<Numeric>& 
  */
-template<class Numeric> Matrix<Numeric> &Matrix<Numeric>::operator+=(const Matrix &matrix)
+template<typename Numeric> Matrix<Numeric> &Matrix<Numeric>::operator+=(const Matrix &matrix)
 {
     if(this->Cols() != matrix.Cols() || this->Rows() != matrix.Rows()) throw "Input matrices have different sizes.";
 
@@ -147,7 +147,7 @@ template<class Numeric> Matrix<Numeric> &Matrix<Numeric>::operator+=(const Matri
  * @param matrix 
  * @return Matrix<Numeric>& 
  */
-template<class Numeric> Matrix<Numeric> &Matrix<Numeric>::operator-=(const Matrix &matrix)
+template<typename Numeric> Matrix<Numeric> &Matrix<Numeric>::operator-=(const Matrix &matrix)
 {
     if(this->Cols() != matrix.Cols() || this->Rows() != matrix.Rows()) throw "Input matrices have different sizes.";
 
@@ -167,7 +167,7 @@ template<class Numeric> Matrix<Numeric> &Matrix<Numeric>::operator-=(const Matri
  * @return Matrix<Numeric> 
  * 
 */
-template<class Numeric> Matrix<Numeric> Matrix<Numeric>::operator*(const Matrix &matrix) const 
+template<typename Numeric> Matrix<Numeric> Matrix<Numeric>::operator*(const Matrix &matrix) const 
 {
     if(this->Cols() != matrix.Rows()) throw "Input matrices have different sizes.";
 
@@ -189,7 +189,7 @@ template<class Numeric> Matrix<Numeric> Matrix<Numeric>::operator*(const Matrix 
  * @param num 
  * @return Matrix<Numeric>& 
  */
-template<class Numeric> Matrix<Numeric> &Matrix<Numeric>::operator*=(const Numeric &num)
+template<typename Numeric> Matrix<Numeric> &Matrix<Numeric>::operator*=(const Numeric &num)
 {
     for(size_t i=0; i<this->Rows(); i++){
         for(size_t j=0; j<this->Cols(); j++){
@@ -206,7 +206,7 @@ template<class Numeric> Matrix<Numeric> &Matrix<Numeric>::operator*=(const Numer
  * @param num 
  * @return Matrix<Numeric>& 
  */
-template<class Numeric> Matrix<Numeric> &Matrix<Numeric>::operator/=(const Numeric &num)
+template<typename Numeric> Matrix<Numeric> &Matrix<Numeric>::operator/=(const Numeric &num)
 {
     for(size_t i=0; i<this->Rows(); i++){
         for(size_t j=0; j<this->Cols(); j++){
@@ -224,7 +224,7 @@ template<class Numeric> Matrix<Numeric> &Matrix<Numeric>::operator/=(const Numer
  * @return true 
  * @return false 
  */
-template<class Numeric> bool Matrix<Numeric>::operator==(const Matrix &matrix) const 
+template<typename Numeric> bool Matrix<Numeric>::operator==(const Matrix &matrix) const 
 {
     if(this->Cols() != matrix.Cols() || this->Rows() != matrix.Rows()) return false;
 
@@ -242,7 +242,7 @@ template<class Numeric> bool Matrix<Numeric>::operator==(const Matrix &matrix) c
  * @tparam Numeric 
  * @return std::string 
  */
-template<class Numeric> std::string Matrix<Numeric>::ToString() const
+template<typename Numeric> std::string Matrix<Numeric>::ToString() const
 {
     std::string ret = "[";
 
@@ -262,7 +262,7 @@ template<class Numeric> std::string Matrix<Numeric>::ToString() const
  * @tparam Numeric 
  * @return Matrix<Numeric> 
  */
-template<class Numeric> Matrix<Numeric> Matrix<Numeric>::Inverse() const
+template<typename Numeric> Matrix<Numeric> Matrix<Numeric>::Inverse() const
 {
     LUP<Numeric> lum(*this);
     DecomposeLUP(lum);
@@ -289,7 +289,7 @@ template<class Numeric> Matrix<Numeric> Matrix<Numeric>::Inverse() const
  * @tparam Numeric 
  * @return double 
  */
-template<class Numeric> Numeric Matrix<Numeric>::Determinant() const
+template<typename Numeric> Numeric Matrix<Numeric>::Determinant() const
 {
     LUP<Numeric> lum(*this);
     DecomposeLUP(lum);
@@ -306,7 +306,7 @@ template<class Numeric> Numeric Matrix<Numeric>::Determinant() const
  * @tparam Numeric 
  * @return Matrix<Numeric> 
  */
-template<class Numeric> Matrix<Numeric> Matrix<Numeric>::Transpose() const
+template<typename Numeric> Matrix<Numeric> Matrix<Numeric>::Transpose() const
 {
     Matrix ret(this->Cols(), this->Rows());
     for(size_t i=0; i<this->Rows(); i++){

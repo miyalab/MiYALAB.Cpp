@@ -28,6 +28,7 @@ add_library(${PROJECT_NAME} SHARED
 	src/MiYALAB/Mathematics/EulerAngles/EulerAngles.cpp
 	src/MiYALAB/Mathematics/EulerAngles/ConvertToEulerAngles.cpp
 	src/MiYALAB/Mathematics/Matrix/Matrix.cpp
+	src/MiYALAB/Mathematics/Matrix/ConvertToMatrix.cpp
 	src/MiYALAB/Mathematics/Point/Point.cpp
 	src/MiYALAB/Mathematics/Pose/Pose.cpp
 	src/MiYALAB/Mathematics/Quaternion/ConvertToQuaternion.cpp

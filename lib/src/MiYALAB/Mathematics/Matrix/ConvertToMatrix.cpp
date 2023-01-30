@@ -22,16 +22,10 @@
  * SOFTWARE.
 */
 
-#ifndef __MIYALAB_CPP_MATHEMATICS_MATRIX_CONVERT_TO_MATRIX_HPP__
-#define __MIYALAB_CPP_MATHEMATICS_MATRIX_CONVERT_TO_MATRIX_HPP__
-
 //-----------------------------
 // include
 //-----------------------------
-#include "../Point/Point2D.hpp"
-#include "../Point/Point3D.hpp"
-#include "Matrix.hpp"
-
+#include "MiYALAB/Mathematics/Matrix/ConvertToMatrix.hpp"
 
 //-----------------------------
 // Namespace & using
@@ -42,14 +36,25 @@
 //-----------------------------
 namespace MiYALAB {
 namespace Mathematics{
-template <typename Numeric> Matrix<Numeric> ConvertToMatrix(const Point2D<Numeric> &point, bool columnVector = true);
-template <typename Numeric> Matrix<Numeric> ConvertToMatrix(const Point3D<Numeric> &point, bool columnVector = true);
+template <typename Numeric> Matrix<Numeric> ConvertToMatrix(const Point2D<Numeric> &point, bool columnVector)
+{
+    Matrix<Numeric> ret(1+columnVector,1+!columnVector);
+    ret[0][0] = point.x;
+    ret[columnVector][!columnVector] = point.y;
+    return ret;
+}
+
+template <typename Numeric> Matrix<Numeric> ConvertToMatrix(const Point3D<Numeric> &point, bool columnVector)
+{
+    Matrix<Numeric> ret(1+2*columnVector, 1+2*!columnVector);
+    ret[0][0] = point.x;
+    ret[columnVector][!columnVector] = point.y;
+    ret[2*columnVector][2*!columnVector] = point.z;
+    return ret;
+}
 
 }
 }
-
-
-#endif // __MIYALAB_CPP_MATHEMATICS_POINT_2D_HPP__
 
 //-----------------------------------------------------------------------------------
 // end of file
