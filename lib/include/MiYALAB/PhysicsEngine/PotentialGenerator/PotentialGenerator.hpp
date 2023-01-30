@@ -28,7 +28,7 @@
 //-----------------------------
 // include
 //-----------------------------
-#include "../../Mathematics/Point/Point.hpp"
+#include "../../Mathematics/Point/Point2D.hpp"
 
 //-----------------------------
 // Namespace & using

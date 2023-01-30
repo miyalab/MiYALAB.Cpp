@@ -29,7 +29,6 @@
 #include <vector>
 #include <string>
 #include <algorithm>
-#include "MiYALAB/Mathematics/Point/Point.hpp"
 #include "MiYALAB/Mathematics/Point/Point2D.hpp"
 #include "MiYALAB/Mathematics/Point/Point3D.hpp"
 
