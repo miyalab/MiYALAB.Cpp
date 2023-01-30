@@ -42,7 +42,7 @@ namespace MiYALAB {
 namespace Cpp{
 namespace Mathematics{
 /**
- * @brief x-y-z NumericType
+ * @brief roll-pitch-yaw NumericType
  * 
  * @tparam NumericType 
  */

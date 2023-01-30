@@ -56,6 +56,20 @@ struct Quaternion{
     NumericType x;
     NumericType y;
     NumericType z;
+
+    // コンストラクタ
+    Quaternion(){this->w=0; this->x = 0; this->y = 0; this->z = 0;}
+    Quaternion(const NumericType &_w, const NumericType &_x, const NumericType &_y, const NumericType &_z){this->w = _w; this->x = _x; this->y = _y; this->z = _z;}
+
+    // デストラクタ
+    virtual ~Quaternion(){}
+
+    // 比較演算子
+    bool operator==(const Quaternion &quaternion) const {return (this->w == quaternion.w && this->x == quaternion.x && this->y == quaternion.y && this->z == quaternion.z);}
+    bool operator!=(const Quaternion &quaternion) const {return (this->w != quaternion.w || this->x != quaternion.x || this->y != quaternion.y || this->z != quaternion.z);}
+
+    std::string toString() const {return "("+ std::to_string(this->w) + ", " + std::to_string(this->x) + ", " + std::to_string(this->y) + ", " << std::to_string(this->z) + ")";}
+
 };
 }
 }
