@@ -31,13 +31,12 @@
 //-----------------------------
 // Namespace & using
 //-----------------------------
-namespace math = MiYALAB::Cpp::Mathematics;
+namespace math = MiYALAB::Mathematics;
 
 //-----------------------------
 // Methods
 //-----------------------------
 namespace MiYALAB {
-namespace Cpp{
 namespace PhysicsEngine{
 /**
  * @brief x-y
@@ -55,7 +54,6 @@ math::Point2D<double> RotatePotentialGenerator::CalcPotential(const math::Point2
     ret.y = - this->GetGain() * pt.x / r2;             // y = Gain * cos(theta) / r
     
     return ret;
-}
 }
 }
 }

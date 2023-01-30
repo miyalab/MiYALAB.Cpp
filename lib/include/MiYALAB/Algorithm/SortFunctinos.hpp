@@ -26,7 +26,6 @@
 #define __MIYALAB_CPP_ALGORITHM_SORT_FUNCTIONS__
 
 namespace MiYALAB{
-namespace Cpp{
 namespace Algorithm{
 /**
  * @brief 選択ソート
@@ -57,7 +56,6 @@ template<typename type> void SelectSort(type *array, int length, int (*cmpFunc)(
     }
 }
 
-}
 }
 }
 

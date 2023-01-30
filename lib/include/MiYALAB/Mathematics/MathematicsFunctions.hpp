@@ -4,7 +4,6 @@
 #include "MathematicsValue.hpp"
 
 namespace MiYALAB{
-namespace Cpp{
 namespace Mathematics{
 /**
  * @brief degree to radian
@@ -27,7 +26,7 @@ template<typename Numeric> inline Numeric RadToDeg(const Numeric &rad){return ra
 
 }
 }
-}
+
 
 #endif
 

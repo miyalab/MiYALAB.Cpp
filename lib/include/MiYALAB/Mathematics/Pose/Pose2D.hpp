@@ -42,7 +42,6 @@
 // Class
 //-----------------------------
 namespace MiYALAB {
-namespace Cpp{
 namespace Mathematics{
 /**
  * @brief x-y NumericType
@@ -60,13 +59,11 @@ struct Pose2D{
 };
 }
 }
-}
 
 //-----------------------------
 // template
 //-----------------------------
 namespace MiYALAB{
-namespace Cpp{
 namespace Mathematics{
 template struct Pose2D<char>;
 template struct Pose2D<short>;
@@ -80,7 +77,6 @@ template struct Pose2D<long double>;
 using Pose2d32f = Pose2D<float>;
 using Pose2d64f = Pose2D<double>;
 
-}
 }
 }
 

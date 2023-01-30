@@ -42,7 +42,6 @@
 // Class
 //-----------------------------
 namespace MiYALAB {
-namespace Cpp{
 namespace Mathematics{
 /**
  * @brief Matrix class
@@ -105,13 +104,11 @@ private:
 };
 }
 }
-}
 
 //-----------------------------
 // template
 //-----------------------------
 namespace MiYALAB{
-namespace Cpp{
 namespace Mathematics{
 template struct Matrix<char>;
 template struct Matrix<short>;
@@ -124,7 +121,6 @@ template struct Matrix<long double>;
 
 using Matrix32f = Matrix<float>;
 using Matrix64f = Matrix<double>;
-}
 }
 }
 

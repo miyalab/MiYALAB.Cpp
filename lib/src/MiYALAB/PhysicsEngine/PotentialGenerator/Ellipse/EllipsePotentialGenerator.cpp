@@ -31,13 +31,12 @@
 //-----------------------------
 // Namespace & using
 //-----------------------------
-namespace math = MiYALAB::Cpp::Mathematics;
+namespace math = MiYALAB::Mathematics;
 
 //-----------------------------
 // Methods
 //-----------------------------
 namespace MiYALAB {
-namespace Cpp{
 namespace PhysicsEngine{
 
 /**
@@ -67,7 +66,6 @@ math::Point2D<double> EllipsePotentialGenerator::CalcPotential(const math::Point
     ret.y = this->GetGain() * std::sin(theta + this->GetAngle()) / r;
     
     return ret;
-}
 }
 }
 }

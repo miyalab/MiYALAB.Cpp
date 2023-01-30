@@ -38,7 +38,6 @@
 // Class
 //-----------------------------
 namespace MiYALAB {
-namespace Cpp{
 namespace PhysicsEngine{
 class PotentialGenerator{
 public:
@@ -56,7 +55,6 @@ protected:
     const double &GetGain() const {return gain;}
     const Mathematics::Point2D<double> &GetOffset() const {return offset;}
 };
-}
 }
 }
 

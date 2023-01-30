@@ -1,9 +1,7 @@
-
-
 /*
  * MIT License
  * 
- * Copyright (c) 2022-2023 MiYA LAB(K.Miyauchi)
+ * Copyright (c) 2022 MiYA LAB(K.Miyauchi)
  * 
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -24,16 +22,15 @@
  * SOFTWARE.
 */
 
-#ifndef __MIYALAB_CPP_MATHEMATICS_POSE_3D_HPP__
-#define __MIYALAB_CPP_MATHEMATICS_POSE_3D_HPP__
+#ifndef __MIYALAB_CPP_MATHEMATICS_EULER_CONVERTER_HPP__
+#define __MIYALAB_CPP_MATHEMATICS_EULER_CONVERTER_HPP__
 
 //-----------------------------
 // include
 //-----------------------------
 #include <string>
 #include <cmath>
-
-#include "../Point/Point3D.hpp"
+#include "EulerAngles.hpp"
 #include "../Quaternion/Quaternion.hpp"
 
 //-----------------------------
@@ -45,48 +42,14 @@
 //-----------------------------
 namespace MiYALAB {
 namespace Mathematics{
-/**
- * @brief x-y NumericType
- * 
- * @tparam NumericType 
- */
-template<class NumericType>
-struct Pose3D{
-    Point3D<NumericType> position;
-    Quaternion<NumericType> orientation;
 
-    std::string toString() const {return "(" + std::to_string(position.x) + ", "
-                                             + std::to_string(position.y) + ", " 
-                                             + std::to_string(position.z) + ", "
-                                             + std::to_string(orientation.w) + ", "
-                                             + std::to_string(orientation.x) + ", "
-                                             + std::to_string(orientation.y) + ", " 
-                                             + std::to_string(orientation.z) + ")";}
-};
+template<typename Numeric> void ConvertQuaternionToEulerAngles(const Quaternion<Numeric> &quaternion, EulerAngles<Numeric> &euler);
+template<typename Numeric> EulerAngles<Numeric> ConvertQuaternionToEulerAngles(const Quaternion<Numeric> &quaternion);
+
 }
 }
 
-//-----------------------------
-// template
-//-----------------------------
-namespace MiYALAB{
-namespace Mathematics{
-template struct Pose3D<char>;
-template struct Pose3D<short>;
-template struct Pose3D<int>;
-template struct Pose3D<long>;
-template struct Pose3D<long long>;
-template struct Pose3D<float>;
-template struct Pose3D<double>;
-template struct Pose3D<long double>;
-
-using Pose32f = Pose3D<float>;
-using Pose64f = Pose3D<double>;
-}
-}
-
-
-#endif // __MIYALAB_CPP_MATHEMATICS_POSE_3D_HPP__
+#endif // __MIYALAB_CPP_MATHEMATICS_POINT_3D_HPP__
 
 //-----------------------------------------------------------------------------------
 // end of file

@@ -41,7 +41,6 @@
 // Class
 //-----------------------------
 namespace MiYALAB {
-namespace Cpp{
 namespace Mathematics{
 /**
  * @brief x-y Numeric
@@ -71,13 +70,11 @@ struct Quaternion{
 };
 }
 }
-}
 
 //-----------------------------
 // template
 //-----------------------------
 namespace MiYALAB{
-namespace Cpp{
 namespace Mathematics{
 template struct Quaternion<char>;
 template struct Quaternion<short>;
@@ -90,7 +87,6 @@ template struct Quaternion<long double>;
 
 using Quaternion32f = Quaternion<float>;
 using Quaternion64f = Quaternion<double>;
-}
 }
 }
 

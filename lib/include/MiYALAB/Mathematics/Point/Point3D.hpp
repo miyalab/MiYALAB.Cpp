@@ -39,7 +39,6 @@
 // Class
 //-----------------------------
 namespace MiYALAB {
-namespace Cpp{
 namespace Mathematics{
 /**
  * @brief x-y-z Numeric
@@ -86,13 +85,11 @@ struct Point3D{
 };
 }
 }
-}
 
 //-----------------------------
 // template
 //-----------------------------
 namespace MiYALAB{
-namespace Cpp{
 namespace Mathematics{
 template struct Point3D<char>;
 template struct Point3D<short>;
@@ -105,7 +102,6 @@ template struct Point3D<long double>;
 
 using Point32f = Point3D<float>;
 using Point64f = Point3D<double>;
-}
 }
 }
 

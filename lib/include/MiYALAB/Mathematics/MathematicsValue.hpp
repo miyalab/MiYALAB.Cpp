@@ -26,7 +26,6 @@
 #define __MIYALAB_CPP_MATHEMATICS_CONST_HPP__
 
 namespace MiYALAB{
-namespace Cpp{
 namespace Mathematics{
 namespace ConstantValue{
 
@@ -46,7 +45,6 @@ constexpr double M_4_PI = 3.141592653589793238462643 * 4;       // 円周率　4
 constexpr double R = 8.31446262;                                // 気体定数
 constexpr double k = 1.380649E-23;                              // ネイピア数
 constexpr double Na = 6.02214076E23;                            // アボガドロ数
-}
 }
 }
 }

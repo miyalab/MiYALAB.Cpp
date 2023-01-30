@@ -38,7 +38,6 @@
 // Class
 //-----------------------------
 namespace MiYALAB {
-namespace Cpp{
 namespace PhysicsEngine{
 class EllipsePotentialGenerator: public PotentialGenerator{
 public:
@@ -54,7 +53,6 @@ protected:
     const double &GetAspectRatio() const {return m_aspect_ratio;}
     const double &GetAngle() const {return m_angle;}
 };
-}
 }
 }
 

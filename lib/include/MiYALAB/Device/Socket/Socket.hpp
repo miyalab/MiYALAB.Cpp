@@ -27,7 +27,6 @@
 #include <sys/socket.h>
 
 namespace MiYALAB{
-namespace Cpp{
 namespace Device{
     /**
      * @brief ストップビット列挙型
@@ -65,6 +64,5 @@ namespace Device{
         termios tio;
         
     };
-}
 }
 }

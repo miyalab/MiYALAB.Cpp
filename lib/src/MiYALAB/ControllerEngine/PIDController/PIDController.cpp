@@ -27,7 +27,6 @@
 //-----------------------------
 // STL
 #include <chrono>
-
 #include "MiYALAB/ControllerEngine/PIDController/PIDController.hpp"
 
 //-----------------------------
@@ -38,7 +37,6 @@
 // Methods
 //-----------------------------
 namespace MiYALAB{
-namespace Cpp{
 namespace ControllerEngine{
 
 /**
@@ -143,7 +141,6 @@ double PIDController::CalcManipulateVal(const double &error)
     this->timeBefore = time_now;
 
     return ret;
-}
 }
 }
 }

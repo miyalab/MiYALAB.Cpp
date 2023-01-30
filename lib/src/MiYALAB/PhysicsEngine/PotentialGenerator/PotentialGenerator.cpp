@@ -31,13 +31,12 @@
 //-----------------------------
 // Namespace & using
 //-----------------------------
-namespace math = MiYALAB::Cpp::Mathematics;
+namespace math = MiYALAB::Mathematics;
 
 //-----------------------------
 // Methods
 //-----------------------------
 namespace MiYALAB {
-namespace Cpp{
 namespace PhysicsEngine{
 double PotentialGenerator::CalcPotential(const double &x, const double &y) const
 {
@@ -63,7 +62,6 @@ math::Point2D<double> PotentialGenerator::CalcPotential(const math::Point2D<doub
     return ret;
 }
 
-}
 }
 }
 

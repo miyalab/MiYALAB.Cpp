@@ -38,7 +38,6 @@
 // Class
 //-----------------------------
 namespace MiYALAB{
-namespace Cpp{
 namespace ControllerEngine{
 
 /**
@@ -80,7 +79,6 @@ private:
     double brakeLimit;
 };
  
-}
 }
 }
 

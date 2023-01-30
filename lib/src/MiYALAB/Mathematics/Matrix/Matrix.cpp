@@ -39,7 +39,6 @@
 // Helper function
 //-----------------------------
 namespace MiYALAB {
-namespace Cpp{
 namespace Mathematics{
 
 template<class Numeric>
@@ -116,13 +115,11 @@ void HelperSolve(const Matrix<Numeric> &luMat, const std::vector<Numeric> &b, st
 }
 }
 }
-}
 
 //-----------------------------
 // Methods
 //-----------------------------
 namespace MiYALAB {
-namespace Cpp{
 namespace Mathematics{
 /**
  * @brief 加算代入メソッド
@@ -320,7 +317,6 @@ template<class Numeric> Matrix<Numeric> Matrix<Numeric>::Transpose() const
     return ret;
 }
 
-}
 }
 }
 

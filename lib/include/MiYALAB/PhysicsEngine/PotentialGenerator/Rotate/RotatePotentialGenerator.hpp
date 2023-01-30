@@ -38,7 +38,6 @@
 // Class
 //-----------------------------
 namespace MiYALAB {
-namespace Cpp{
 namespace PhysicsEngine{
 class RotatePotentialGenerator: public PotentialGenerator{
 public:
@@ -49,7 +48,6 @@ private:
 
 protected:
 };
-}
 }
 }
 

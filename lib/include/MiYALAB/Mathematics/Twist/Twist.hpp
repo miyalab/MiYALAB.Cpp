@@ -32,7 +32,7 @@
 #include <cmath>
 
 #include "../Point/Point3D.hpp"
-#include "../Eulerian/Eulerian.hpp"
+#include "../EulerAngles/EulerAngles.hpp"
 
 //-----------------------------
 // Namespace & using
@@ -42,17 +42,16 @@
 // Class
 //-----------------------------
 namespace MiYALAB {
-namespace Cpp{
 namespace Mathematics{
 /**
  * @brief x-y NumericType
  * 
  * @tparam NumericType 
  */
-template<class NumericType>
+template<class Numeric>
 struct Twist{
-    Point3D<NumericType> position;
-    EulerAngles<NumericType> orientation;
+    Point3D<Numeric> position;
+    EulerAngles<Numeric> orientation;
 
     std::string toString() const {return "(" + std::to_string(position.x) + ", "
                                              + std::to_string(position.y) + ", " 
@@ -63,13 +62,11 @@ struct Twist{
 };
 }
 }
-}
 
 //-----------------------------
 // template
 //-----------------------------
 namespace MiYALAB{
-namespace Cpp{
 namespace Mathematics{
 template struct Twist<char>;
 template struct Twist<short>;
@@ -82,7 +79,6 @@ template struct Twist<long double>;
 
 using Twist32f = Twist<float>;
 using Twist64f = Twist<double>;
-}
 }
 }
 

@@ -40,7 +40,6 @@
 // Class
 //-----------------------------
 namespace MiYALAB {
-namespace Cpp{
 namespace Mathematics{
 template <typename Numeric> Matrix<Numeric> ToMatrix(const Point2D<Numeric> &point, bool columnVector = true)
 {
@@ -77,7 +76,7 @@ template <class Numeric> Matrix<Numeric> ToMatrix(const Point3D<Numeric> &point,
 
 }
 }
-}
+
 
 #endif // __MIYALAB_CPP_MATHEMATICS_POINT_2D_HPP__
 
