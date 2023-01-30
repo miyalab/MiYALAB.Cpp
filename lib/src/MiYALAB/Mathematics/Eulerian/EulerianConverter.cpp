@@ -37,7 +37,6 @@
 // Class
 //-----------------------------
 namespace MiYALAB {
-namespace Cpp{
 namespace Mathematics{
 template<typename Numeric> void ConvertQuaternionToEulerAngles(const Quaternion<Numeric> &quaternion, EulerAngles<Numeric> &euler)
 {
@@ -64,7 +63,6 @@ template<typename Numeric> EulerAngles<Numeric> ConvertQuaternionToEulerAngles(c
     return ret;
 }
 
-}
 }
 }
 
