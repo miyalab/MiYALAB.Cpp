@@ -25,9 +25,28 @@
 #ifndef __MIYALAB_CPP_ALGORITHM_SORT_SELECT_SORT__
 #define __MIYALAB_CPP_ALGORITHM_SORT_SELECT_SORT__
 
+//-----------------------------
+// include
+//-----------------------------
+#include <vector>
+#include <functional>
+
+//-----------------------------
+// Function
+//-----------------------------
 namespace MiYALAB{
 namespace Algorithm{
+template<class T> void SelectSort(std::vector<T> &array);
+template<class T> void SelectSort(std::vector<T> &array, std::function<int(T, T)> compFunctionPtr);
 
+template<class T> void MergeSort(std::vector<T> &array);
+template<class T> void MergeSort(std::vector<T> &array, std::function<int(T, T)> compFunctionPtr);
+
+template<class T> void BubbleSort(std::vector<T> &array);
+template<class T> void BubbleSort(std::vector<T> &array, std::function<int(T, T)> compFunctionPtr);
+
+template<class T> void QuickSort(std::vector<T> &array);
+template<class T> void QuickSort(std::vector<T> &array, std::function<int(T, T)> compFunctionPtr);
 }
 }
 
