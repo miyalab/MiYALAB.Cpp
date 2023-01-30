@@ -27,7 +27,16 @@
 
 namespace MiYALAB{
 namespace Robotics{
+class DCMotor{
+public:
+    DCMotor(){}
+    virtual ~DCMotor(){}
 
+    void SetSpeed();
+    void SetSpeedLimit();
+    void SetAngle();
+private:
+};
 }
 }
 
