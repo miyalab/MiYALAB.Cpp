@@ -57,7 +57,7 @@ template<typename Numeric> EulerianAngles<Numeric> ConvertQuaternionToEulerianAn
 }
 }
 
-#endif // __MIYALAB_CPP_MATHEMATICS_POINT_3D_HPP__
+#endif // __MIYALAB_CPP_MATHEMATICS_EULERIAN_CONVERTER_HPP__
 
 //-----------------------------------------------------------------------------------
 // end of file
