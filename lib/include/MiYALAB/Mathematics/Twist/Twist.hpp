@@ -63,19 +63,10 @@ struct Twist{
 }
 
 //-----------------------------
-// template
+// using
 //-----------------------------
 namespace MiYALAB{
 namespace Mathematics{
-template struct Twist<char>;
-template struct Twist<short>;
-template struct Twist<int>;
-template struct Twist<long>;
-template struct Twist<long long>;
-template struct Twist<float>;
-template struct Twist<double>;
-template struct Twist<long double>;
-
 using Twist32f = Twist<float>;
 using Twist64f = Twist<double>;
 }

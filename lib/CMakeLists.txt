@@ -31,7 +31,8 @@ add_library(${PROJECT_NAME} SHARED
 	src/MiYALAB/Mathematics/Matrix/ConvertToMatrix.cpp
 	src/MiYALAB/Mathematics/Point/Point2D.cpp
 	src/MiYALAB/Mathematics/Point/Point3D.cpp
-	src/MiYALAB/Mathematics/Pose/Pose.cpp
+	src/MiYALAB/Mathematics/Pose/Pose2D.cpp
+	src/MiYALAB/Mathematics/Pose/Pose3D.cpp
 	src/MiYALAB/Mathematics/Quaternion/Quaternion.cpp
 	src/MiYALAB/Mathematics/Quaternion/ConvertToQuaternion.cpp
 	src/MiYALAB/Mathematics/Twist/Twist.cpp

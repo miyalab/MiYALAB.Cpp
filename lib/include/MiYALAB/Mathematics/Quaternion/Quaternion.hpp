@@ -69,19 +69,10 @@ struct Quaternion{
 }
 
 //-----------------------------
-// template
+// using
 //-----------------------------
 namespace MiYALAB{
 namespace Mathematics{
-template struct Quaternion<char>;
-template struct Quaternion<short>;
-template struct Quaternion<int>;
-template struct Quaternion<long>;
-template struct Quaternion<long long>;
-template struct Quaternion<float>;
-template struct Quaternion<double>;
-template struct Quaternion<long double>;
-
 using Quaternion32f = Quaternion<float>;
 using Quaternion64f = Quaternion<double>;
 }

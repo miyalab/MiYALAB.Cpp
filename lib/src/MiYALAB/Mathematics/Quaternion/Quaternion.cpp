@@ -25,11 +25,24 @@
 //-----------------------------
 // include
 //-----------------------------
-#include <cmath>
-#include <vector>
-#include <string>
-#include <algorithm>
 #include "MiYALAB/Mathematics/Quaternion/Quaternion.hpp"
+
+//-----------------------------
+// template
+//-----------------------------
+namespace MiYALAB{
+namespace Mathematics{
+template struct Quaternion<char>;
+template struct Quaternion<short>;
+template struct Quaternion<int>;
+template struct Quaternion<long>;
+template struct Quaternion<long long>;
+template struct Quaternion<float>;
+template struct Quaternion<double>;
+template struct Quaternion<long double>;
+}
+}
+
 
 //-----------------------------------------------------------------------------------
 // end of file

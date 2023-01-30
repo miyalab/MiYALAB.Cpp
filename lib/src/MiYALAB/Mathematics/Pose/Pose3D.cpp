@@ -25,12 +25,23 @@
 //-----------------------------
 // include
 //-----------------------------
-#include <cmath>
-#include <vector>
-#include <string>
-#include <algorithm>
-#include "MiYALAB/Mathematics/Pose/Pose2D.hpp"
 #include "MiYALAB/Mathematics/Pose/Pose3D.hpp"
+
+//-----------------------------
+// template
+//-----------------------------
+namespace MiYALAB{
+namespace Mathematics{
+template struct Pose3D<char>;
+template struct Pose3D<short>;
+template struct Pose3D<int>;
+template struct Pose3D<long>;
+template struct Pose3D<long long>;
+template struct Pose3D<float>;
+template struct Pose3D<double>;
+template struct Pose3D<long double>;
+}
+}
 
 //-----------------------------------------------------------------------------------
 // end of file

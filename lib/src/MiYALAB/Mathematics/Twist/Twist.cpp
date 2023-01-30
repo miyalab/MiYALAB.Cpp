@@ -25,11 +25,23 @@
 //-----------------------------
 // include
 //-----------------------------
-#include <cmath>
-#include <vector>
-#include <string>
-#include <algorithm>
 #include "MiYALAB/Mathematics/Twist/Twist.hpp"
+
+//-----------------------------
+// template
+//-----------------------------
+namespace MiYALAB{
+namespace Mathematics{
+template struct Twist<char>;
+template struct Twist<short>;
+template struct Twist<int>;
+template struct Twist<long>;
+template struct Twist<long long>;
+template struct Twist<float>;
+template struct Twist<double>;
+template struct Twist<long double>;
+}
+}
 
 //-----------------------------------------------------------------------------------
 // end of file

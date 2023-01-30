@@ -22,59 +22,26 @@
  * SOFTWARE.
 */
 
-#ifndef __MIYALAB_CPP_MATHEMATICS_POSE_POSE_3D_HPP__
-#define __MIYALAB_CPP_MATHEMATICS_POSE_POSE_3D_HPP__
-
 //-----------------------------
 // include
 //-----------------------------
-#include <string>
-
-#include "../Point/Point3D.hpp"
-#include "../Quaternion/Quaternion.hpp"
+#include "MiYALAB/Mathematics/Pose/Pose2D.hpp"
 
 //-----------------------------
-// Namespace & using
-//-----------------------------
-
-//-----------------------------
-// Class
-//-----------------------------
-namespace MiYALAB {
-namespace Mathematics{
-/**
- * @brief x-y NumericType
- * 
- * @tparam NumericType 
- */
-template<class NumericType>
-struct Pose3D{
-    Point3D<NumericType> position;
-    Quaternion<NumericType> orientation;
-
-    std::string toString() const {return "(" + std::to_string(position.x) + ", "
-                                             + std::to_string(position.y) + ", " 
-                                             + std::to_string(position.z) + ", "
-                                             + std::to_string(orientation.w) + ", "
-                                             + std::to_string(orientation.x) + ", "
-                                             + std::to_string(orientation.y) + ", " 
-                                             + std::to_string(orientation.z) + ")";}
-};
-}
-}
-
-//-----------------------------
-// using
+// template
 //-----------------------------
 namespace MiYALAB{
 namespace Mathematics{
-using Pose32f = Pose3D<float>;
-using Pose64f = Pose3D<double>;
+template struct Pose2D<char>;
+template struct Pose2D<short>;
+template struct Pose2D<int>;
+template struct Pose2D<long>;
+template struct Pose2D<long long>;
+template struct Pose2D<float>;
+template struct Pose2D<double>;
+template struct Pose2D<long double>;
 }
 }
-
-
-#endif // __MIYALAB_CPP_MATHEMATICS_POSE_POSE_3D_HPP__
 
 //-----------------------------------------------------------------------------------
 // end of file

@@ -87,7 +87,7 @@ struct Point3D{
 }
 
 //-----------------------------
-// template
+// using
 //-----------------------------
 namespace MiYALAB{
 namespace Mathematics{
