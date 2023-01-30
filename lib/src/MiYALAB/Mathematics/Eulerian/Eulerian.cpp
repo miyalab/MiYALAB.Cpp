@@ -30,7 +30,6 @@
 #include <string>
 #include <algorithm>
 #include "MiYALAB/Mathematics/Eulerian/Eulerian.hpp"
-#include "MiYALAB/Mathematics/Eulerian/EulerianConverter.hpp"
 
 //-----------------------------------------------------------------------------------
 // end of file
