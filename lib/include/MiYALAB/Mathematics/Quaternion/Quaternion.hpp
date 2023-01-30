@@ -66,9 +66,27 @@ struct Quaternion{
     bool operator==(const Quaternion &quaternion) const {return (this->w == quaternion.w && this->x == quaternion.x && this->y == quaternion.y && this->z == quaternion.z);}
     bool operator!=(const Quaternion &quaternion) const {return (this->w != quaternion.w || this->x != quaternion.x || this->y != quaternion.y || this->z != quaternion.z);}
 
-    std::string toString() const {return "("+ std::to_string(this->w) + ", " + std::to_string(this->x) + ", " + std::to_string(this->y) + ", " << std::to_string(this->z) + ")";}
+    std::string toString() const {return "(" + std::to_string(this->w) + ", " + std::to_string(this->x) + ", " + std::to_string(this->y) + ", " + std::to_string(this->z) + ")";}
 
 };
+}
+}
+}
+
+//-----------------------------
+// template
+//-----------------------------
+namespace MiYALAB{
+namespace Cpp{
+namespace Mathematics{
+template struct Quaternion<char>;
+template struct Quaternion<short>;
+template struct Quaternion<int>;
+template struct Quaternion<long>;
+template struct Quaternion<long long>;
+template struct Quaternion<float>;
+template struct Quaternion<double>;
+template struct Quaternion<long double>;
 }
 }
 }

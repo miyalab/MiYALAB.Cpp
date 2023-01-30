@@ -85,6 +85,24 @@ struct Point2D{
 }
 }
 
+//-----------------------------
+// template
+//-----------------------------
+namespace MiYALAB{
+namespace Cpp{
+namespace Mathematics{
+template struct Point2D<char>;
+template struct Point2D<short>;
+template struct Point2D<int>;
+template struct Point2D<long>;
+template struct Point2D<long long>;
+template struct Point2D<float>;
+template struct Point2D<double>;
+template struct Point2D<long double>;
+}
+}
+}
+
 #endif // __MIYALAB_CPP_MATHEMATICS_POINT_2D_HPP__
 
 //-----------------------------------------------------------------------------------

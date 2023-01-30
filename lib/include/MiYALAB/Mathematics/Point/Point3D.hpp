@@ -77,13 +77,31 @@ struct Point3D{
     bool operator!=(const Point3D &point) const {return (this->x != point.x || this->y != point.y || this->z != point.z);}
 
     // 文字列化メソッド
-    std::string toString() const {return "(" + std::to_string(this->x) + ", " + std::to_string(this->y) + ", " << std::to_string(this->z) + ")";}
+    std::string toString() const {return "(" + std::to_string(this->x) + ", " + std::to_string(this->y) + ", " + std::to_string(this->z) + ")";}
 
     // 3次元ベクトル計算メソッド
     Numeric Dot(const Point3D &point) const {return (this->x*point.x + this->y*point.y + this->z*point.z);}
     Numeric Magnitude()     const {return std::sqrt(this->x*this->x + this->y*this->y + this->z*this->z);}
     Numeric MagnitudePow2() const {return (this->x*this->x + this->y*this->y + this->z*this->z);}
 };
+}
+}
+}
+
+//-----------------------------
+// template
+//-----------------------------
+namespace MiYALAB{
+namespace Cpp{
+namespace Mathematics{
+template struct Point3D<char>;
+template struct Point3D<short>;
+template struct Point3D<int>;
+template struct Point3D<long>;
+template struct Point3D<long long>;
+template struct Point3D<float>;
+template struct Point3D<double>;
+template struct Point3D<long double>;
 }
 }
 }

@@ -36,24 +36,6 @@
 //-----------------------------
 
 //-----------------------------
-// template 
-//-----------------------------
-namespace MiYALAB {
-namespace Cpp{
-namespace Mathematics{
-template struct Matrix<char>;
-template struct Matrix<short>;
-template struct Matrix<int>;
-template struct Matrix<long>;
-template struct Matrix<long long>;
-template struct Matrix<float>;
-template struct Matrix<double>;
-template struct Matrix<long double>;
-}
-}
-}
-
-//-----------------------------
 // Helper function
 //-----------------------------
 namespace MiYALAB {
