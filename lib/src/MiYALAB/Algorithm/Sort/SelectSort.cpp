@@ -63,7 +63,7 @@ template void SelectSort<float>(std::vector<float>&);
 template void SelectSort<double>(std::vector<double>&);
 template void SelectSort<long double>(std::vector<long double>&);
 
-template<class T> void SelectSort(std::vector<T> &array, std::function<int(T, T)> compareFunctionPtr)
+template<class T> void SelectSort(std::vector<T> &array, const std::function<int(T, T)> &compareFunctionPtr)
 {
     for(int i=0, loop1 = array.size() - 1; i<loop1; i++){
         int index = i;
@@ -73,19 +73,19 @@ template<class T> void SelectSort(std::vector<T> &array, std::function<int(T, T)
         std::swap(array[i], array[index]);
     }
 }
-template void SelectSort<char>(std::vector<char>&, std::function<int(char, char)> compareFunctionPtr);
-template void SelectSort<unsigned char>(std::vector<unsigned char>&, std::function<int(unsigned char, unsigned char)> compareFunctionPtr);
-template void SelectSort<short>(std::vector<short>&, std::function<int(short, short)> compareFunctionPtr);
-template void SelectSort<unsigned short>(std::vector<unsigned short>&, std::function<int(unsigned short, unsigned short)> compareFunctionPtr);
-template void SelectSort<int>(std::vector<int>&, std::function<int(int, int)> compareFunctionPtr);
-template void SelectSort<unsigned int>(std::vector<unsigned int>&, std::function<int(unsigned int, unsigned int)> compareFunctionPtr);
-template void SelectSort<long>(std::vector<long>&, std::function<int(long, long)> compareFunctionPtr);
-template void SelectSort<unsigned long>(std::vector<unsigned long>&, std::function<int(unsigned long, unsigned long)> compareFunctionPtr);
-template void SelectSort<long long>(std::vector<long long>&, std::function<int(long long, long long)> compareFunctionPtr);
-template void SelectSort<unsigned long long>(std::vector<unsigned long long>&, std::function<int(unsigned long long, unsigned long long)> compareFunctionPtr);
-template void SelectSort<float>(std::vector<float>&, std::function<int(float, float)> compareFunctionPtr);
-template void SelectSort<double>(std::vector<double>&, std::function<int(double, double)> compareFunctionPtr);
-template void SelectSort<long double>(std::vector<long double>&, std::function<int(long double, long double)> compareFunctionPtr);
+template void SelectSort<char>(std::vector<char>&, const std::function<int(char, char)>&);
+template void SelectSort<unsigned char>(std::vector<unsigned char>&, const std::function<int(unsigned char, unsigned char)>&);
+template void SelectSort<short>(std::vector<short>&, const std::function<int(short, short)>&);
+template void SelectSort<unsigned short>(std::vector<unsigned short>&, const std::function<int(unsigned short, unsigned short)>&);
+template void SelectSort<int>(std::vector<int>&, const std::function<int(int, int)>&);
+template void SelectSort<unsigned int>(std::vector<unsigned int>&, const std::function<int(unsigned int, unsigned int)>&);
+template void SelectSort<long>(std::vector<long>&, const std::function<int(long, long)>&);
+template void SelectSort<unsigned long>(std::vector<unsigned long>&, const std::function<int(unsigned long, unsigned long)>&);
+template void SelectSort<long long>(std::vector<long long>&, const std::function<int(long long, long long)>&);
+template void SelectSort<unsigned long long>(std::vector<unsigned long long>&, const std::function<int(unsigned long long, unsigned long long)>&);
+template void SelectSort<float>(std::vector<float>&, const std::function<int(float, float)>&);
+template void SelectSort<double>(std::vector<double>&, const std::function<int(double, double)>&);
+template void SelectSort<long double>(std::vector<long double>&, const std::function<int(long double, long double)>&);
 }
 }
 
