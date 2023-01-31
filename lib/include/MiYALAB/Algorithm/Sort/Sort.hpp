@@ -39,14 +39,9 @@ namespace Algorithm{
 template<class T> void SelectSort(std::vector<T> &array);
 template<class T> void SelectSort(std::vector<T> &array, const std::function<int(T, T)> &compareFunctionPtr);
 
-template<class T> void MergeSort(std::vector<T> &array);
-template<class T> void MergeSort(std::vector<T> &array, const std::function<int(T, T)> &compareFunctionPtr);
-
 template<class T> void BubbleSort(std::vector<T> &array);
 template<class T> void BubbleSort(std::vector<T> &array, const std::function<int(T, T)> &compareFunctionPtr);
 
-template<class T> void QuickSort(std::vector<T> &array);
-template<class T> void QuickSort(std::vector<T> &array, const std::function<int(T, T)> &compareFunctionPtr);
 }
 }
 

@@ -26,9 +26,7 @@ link_directories(
 # Build library
 add_library(${PROJECT_NAME} SHARED
 	src/MiYALAB/Algorithm/Sort/SelectSort.cpp
-	src/MiYALAB/Algorithm/Sort/MergeSort.cpp
 	src/MiYALAB/Algorithm/Sort/BubbleSort.cpp
-	src/MiYALAB/Algorithm/Sort/QuickSort.cpp
 	src/MiYALAB/Mathematics/EulerAngles/EulerAngles.cpp
 	src/MiYALAB/Mathematics/EulerAngles/ConvertToEulerAngles.cpp
 	src/MiYALAB/Mathematics/Matrix/Matrix.cpp
