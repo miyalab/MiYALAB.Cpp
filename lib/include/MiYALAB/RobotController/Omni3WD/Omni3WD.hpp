@@ -22,8 +22,8 @@
  * SOFTWARE.
 */
 
-#ifndef __MIYALAB_CPP_ROBOTICS_OMNI_3WD_HPP__
-#define __MIYALAB_CPP_ROBOTICS_OMNI_3WD_HPP__
+#ifndef __MIYALAB_CPP_ROBOT_CONTROLLER_OMNI_3WD_HPP__
+#define __MIYALAB_CPP_ROBOT_CONTROLLER_OMNI_3WD_HPP__
 
 //-----------------------------
 // include
@@ -34,9 +34,9 @@
 // class 
 //-----------------------------
 namespace MiYALAB{
-namespace Robotics{
+namespace RobotController{
 
 }
 }
 
-#endif // __MIYALAB_CPP_ROBOTICS_OMNI_3WD_HPP__
+#endif // __MIYALAB_CPP_ROBOT_CONTROLLER_OMNI_3WD_HPP__

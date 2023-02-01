@@ -22,8 +22,8 @@
  * SOFTWARE.
 */
 
-#ifndef __MIYALAB_CPP_ROBOTICS_DC_MOTOR_HPP__
-#define __MIYALAB_CPP_ROBOTICS_DC_MOTOR_HPP__
+#ifndef __MIYALAB_CPP_ROBOT_CONTROLLER_DC_MOTOR_HPP__
+#define __MIYALAB_CPP_ROBOT_CONTROLLER_DC_MOTOR_HPP__
 
 //-----------------------------
 // include
@@ -34,7 +34,7 @@
 // class 
 //-----------------------------
 namespace MiYALAB{
-namespace Robotics{
+namespace RobotController{
 class DCMotor{
 public:
     DCMotor(){}
@@ -43,10 +43,15 @@ public:
     void SetSpeed();
     void SetSpeedLimit();
     void SetAngle();
+
+    void SetSpeedSetMethod(std::function<bool(double)> function);
+    void SetCurrentAngleSetMethod(std::function<bool(double)> function);
     
 private:
+    std::function<bool(double)> DCMotorSpeedSetMethod;
+    std::function<bool(double)> DCMotorCurrentAngleGetMethod;
 };
 }
 }
 
-#endif // __MIYALAB_CPP_ROBOTICS_DC_MOTOR_HPP__
+#endif // __MIYALAB_CPP_ROBOT_CONTROLLER_DC_MOTOR_HPP__
