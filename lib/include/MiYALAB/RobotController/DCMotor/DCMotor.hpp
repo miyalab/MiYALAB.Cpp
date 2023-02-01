@@ -40,13 +40,12 @@ public:
     DCMotor(){}
     virtual ~DCMotor(){}
 
-    void SetSpeed();
-    void SetSpeedLimit();
-    void SetAngle();
+    void SetSpeed(double speed);
+    void SetSpeedLimit(double speed);
+    void SetAngle(double angle);
 
-    void SetSpeedSetMethod(std::function<bool(double)> function);
-    void SetCurrentAngleSetMethod(std::function<bool(double)> function);
-    
+    void SetSpeedSetMethod(std::function<bool(double)> function){DCMotorSpeedSetMethod = function;}
+    void SetCurrentAngleSetMethod(std::function<bool(double)> function){DCMotorCurrentAngleGetMethod = function;}
 private:
     std::function<bool(double)> DCMotorSpeedSetMethod;
     std::function<bool(double)> DCMotorCurrentAngleGetMethod;
