@@ -40,9 +40,10 @@ class ICPMatching{
 public:
     ICPMatching();
     virtual ~ICPMatching();
-
+private:
     
-}
+    
+};
 }
 }
 
