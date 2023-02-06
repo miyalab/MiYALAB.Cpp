@@ -30,18 +30,20 @@
 //-----------------------------
 #include <vector>
 #include <string>
+#include "../../Mathematics/Pose/Pose2D.hpp"
 
 //-----------------------------
 // class 
 //-----------------------------
 namespace MiYALAB{
 namespace Robotics{
-class ICPMatching{
+class ICPMatching2D{
 public:
-    ICPMatching();
-    virtual ~ICPMatching();
-private:
+    ICPMatching2D();
+    virtual ~ICPMatching2D();
     
+private:
+
     
 };
 }

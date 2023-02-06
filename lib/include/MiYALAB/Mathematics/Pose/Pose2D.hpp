@@ -64,8 +64,8 @@ struct Pose2D{
 //-----------------------------
 namespace MiYALAB{
 namespace Mathematics{
-using Pose2d32f = Pose2D<float>;
-using Pose2d64f = Pose2D<double>;
+using Pose2D32f = Pose2D<float>;
+using Pose2D64f = Pose2D<double>;
 }
 }
 
