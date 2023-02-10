@@ -41,8 +41,8 @@ namespace MiYALAB {
 namespace Robotics{
 struct LaserScan{
 public:
-    LaserScan();
-    virtual ~LaserScan();
+    LaserScan(){}
+    virtual ~LaserScan(){}
 
     float angleMin;
     float angleMax;
