@@ -50,13 +50,13 @@ namespace Device{
     class SerialPort{
     public:
         SerialPort();
-        ~SerialPort();
-        bool Open();
-        std::string Read();
-        std::string Write();
+        virtual ~SerialPort();
+        bool open();
+        std::string read();
+        std::string write();
 
     private:
-        int hPort;
+        int h_port;
         int baudrate;
         int stopbits;
         int databits;

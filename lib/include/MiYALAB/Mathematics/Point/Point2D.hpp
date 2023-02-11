@@ -73,12 +73,12 @@ struct Point2D{
     bool operator!=(const Point2D &point) const {return (this->x != point.x || this->y != point.y);}
 
     // 文字列化メソッド
-    std::string ToString() const {return "(" + std::to_string(this->x) + ", " + std::to_string(this->y) + ")";}
+    std::string toString() const {return "(" + std::to_string(this->x) + ", " + std::to_string(this->y) + ")";}
 
     // 2次元ベクトル計算メソッド
-    Numeric Dot(const Point2D &point) const {return this->x*point.x + this->y*point.y;}
-    Numeric Magnitude()     const {return std::sqrt(this->x*this->x + this->y*this->y);}
-    Numeric MagnitudePow2() const {return (this->x*this->x + this->y*this->y);}
+    Numeric dot(const Point2D &point) const {return this->x*point.x + this->y*point.y;}
+    Numeric magnitude()     const {return std::sqrt(this->x*this->x + this->y*this->y);}
+    Numeric magnitudePow2() const {return (this->x*this->x + this->y*this->y);}
 };
 }
 }

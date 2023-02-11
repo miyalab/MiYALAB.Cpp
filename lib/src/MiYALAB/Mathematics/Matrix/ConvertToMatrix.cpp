@@ -36,20 +36,20 @@
 //-----------------------------
 namespace MiYALAB {
 namespace Mathematics{
-template <typename Numeric> Matrix<Numeric> ConvertToMatrix(const Point2D<Numeric> &point, bool columnVector)
+template <typename Numeric> Matrix<Numeric> convertToMatrix(const Point2D<Numeric> &point, bool column_vector)
 {
-    Matrix<Numeric> ret(1+columnVector,1+!columnVector);
+    Matrix<Numeric> ret(1+column_vector,1+!column_vector);
     ret[0][0] = point.x;
-    ret[columnVector][!columnVector] = point.y;
+    ret[column_vector][!column_vector] = point.y;
     return ret;
 }
 
-template <typename Numeric> Matrix<Numeric> ConvertToMatrix(const Point3D<Numeric> &point, bool columnVector)
+template <typename Numeric> Matrix<Numeric> convertToMatrix(const Point3D<Numeric> &point, bool column_vector)
 {
-    Matrix<Numeric> ret(1+2*columnVector, 1+2*!columnVector);
+    Matrix<Numeric> ret(1+2*column_vector, 1+2*!column_vector);
     ret[0][0] = point.x;
-    ret[columnVector][!columnVector] = point.y;
-    ret[2*columnVector][2*!columnVector] = point.z;
+    ret[column_vector][!column_vector] = point.y;
+    ret[2*column_vector][2*!column_vector] = point.z;
     return ret;
 }
 

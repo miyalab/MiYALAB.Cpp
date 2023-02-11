@@ -42,8 +42,8 @@
 //-----------------------------
 namespace MiYALAB {
 namespace Mathematics{
-template <typename Numeric> Matrix<Numeric> ConvertToMatrix(const Point2D<Numeric> &point, bool columnVector = true);
-template <typename Numeric> Matrix<Numeric> ConvertToMatrix(const Point3D<Numeric> &point, bool columnVector = true);
+template <typename Numeric> Matrix<Numeric> convertToMatrix(const Point2D<Numeric> &point, bool column_vector = true);
+template <typename Numeric> Matrix<Numeric> convertToMatrix(const Point3D<Numeric> &point, bool column_vector = true);
 
 }
 }

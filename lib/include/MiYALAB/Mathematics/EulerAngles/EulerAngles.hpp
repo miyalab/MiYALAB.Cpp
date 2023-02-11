@@ -79,9 +79,9 @@ struct EulerAngles{
     std::string toString() const {return "(" + std::to_string(this->roll) + ", " + std::to_string(this->pitch) + ", " + std::to_string(this->yaw) + ")";}
 
     // 3次元ベクトル計算メソッド
-    Numeric Dot(const EulerAngles &point) const {return (this->roll*point.roll + this->pitch*point.pitch + this->yaw*point.yaw);}
-    Numeric Magnitude()     const {return std::sqrt(this->roll*this->roll + this->pitch*this->pitch + this->yaw*this->yaw);}
-    Numeric MagnitudePow2() const {return (this->roll*this->roll + this->pitch*this->pitch + this->yaw*this->yaw);}
+    Numeric dot(const EulerAngles &point) const {return (this->roll*point.roll + this->pitch*point.pitch + this->yaw*point.yaw);}
+    Numeric magnitude()     const {return std::sqrt(this->roll*this->roll + this->pitch*this->pitch + this->yaw*this->yaw);}
+    Numeric magnitudePow2() const {return (this->roll*this->roll + this->pitch*this->pitch + this->yaw*this->yaw);}
 };
 }
 }

@@ -44,7 +44,7 @@ namespace Mathematics{
 template<typename Numeric>
 struct LUP{
 public:
-    LUP(const Matrix<Numeric> &matrix): mat(matrix), perm(matrix.Height()){}
+    LUP(const Matrix<Numeric> &matrix): mat(matrix), perm(matrix.height()){}
     Matrix<Numeric> mat;
     std::vector<Numeric> perm;
     int toggle;
@@ -53,7 +53,7 @@ public:
 template<typename Numeric> 
 void DecomposeLUP(LUP<Numeric> &ret)
 {
-    const size_t &n = ret.mat.Height();
+    const size_t &n = ret.mat.height();
 
     int pRow;
     Numeric colMax;
@@ -96,7 +96,7 @@ void DecomposeLUP(LUP<Numeric> &ret)
 template<typename Numeric>
 void HelperSolve(const Matrix<Numeric> &luMat, const std::vector<Numeric> &b, std::vector<Numeric> &x)
 {
-    const size_t &n = luMat.Height();
+    const size_t &n = luMat.height();
     Numeric sum;
     x.resize(n);
     for(size_t i=0; i<b.size(); i++) x[i] = b[i];
@@ -130,10 +130,10 @@ namespace Mathematics{
  */
 template<typename Numeric> Matrix<Numeric> &Matrix<Numeric>::operator+=(const Matrix &matrix)
 {
-    if(this->Cols() != matrix.Cols() || this->Rows() != matrix.Rows()) throw "Input matrices have different sizes.";
+    if(this->cols() != matrix.cols() || this->rows() != matrix.rows()) throw "Input matrices have different sizes.";
 
-    for(size_t i=0; i<this->Rows(); i++){
-        for(size_t j=0; j<this->Cols(); j++){
+    for(size_t i=0; i<this->rows(); i++){
+        for(size_t j=0; j<this->cols(); j++){
             (*this)[i][j] += matrix[i][j];
         }
     }
@@ -149,10 +149,10 @@ template<typename Numeric> Matrix<Numeric> &Matrix<Numeric>::operator+=(const Ma
  */
 template<typename Numeric> Matrix<Numeric> &Matrix<Numeric>::operator-=(const Matrix &matrix)
 {
-    if(this->Cols() != matrix.Cols() || this->Rows() != matrix.Rows()) throw "Input matrices have different sizes.";
+    if(this->cols() != matrix.cols() || this->rows() != matrix.rows()) throw "Input matrices have different sizes.";
 
-    for(size_t i=0; i<this->Rows(); i++){
-        for(size_t j=0; j<this->Cols(); j++){
+    for(size_t i=0; i<this->rows(); i++){
+        for(size_t j=0; j<this->cols(); j++){
             (*this)[i][j] -= matrix[i][j];
         }
     }
@@ -169,12 +169,12 @@ template<typename Numeric> Matrix<Numeric> &Matrix<Numeric>::operator-=(const Ma
 */
 template<typename Numeric> Matrix<Numeric> Matrix<Numeric>::operator*(const Matrix &matrix) const 
 {
-    if(this->Cols() != matrix.Rows()) throw "Input matrices have different sizes.";
+    if(this->cols() != matrix.rows()) throw "Input matrices have different sizes.";
 
-    Matrix<Numeric> ret(this->Rows(), matrix.Cols());
-    for(size_t i=0; i<this->Rows(); i++){
-        for(size_t k=0; k<this->Cols(); k++){
-            for(size_t j=0; j<matrix.Cols(); j++){
+    Matrix<Numeric> ret(this->rows(), matrix.cols());
+    for(size_t i=0; i<this->rows(); i++){
+        for(size_t k=0; k<this->cols(); k++){
+            for(size_t j=0; j<matrix.cols(); j++){
                 ret[i][j] += (*this)[i][k] * matrix[k][j];
             }
         }
@@ -191,8 +191,8 @@ template<typename Numeric> Matrix<Numeric> Matrix<Numeric>::operator*(const Matr
  */
 template<typename Numeric> Matrix<Numeric> &Matrix<Numeric>::operator*=(const Numeric &num)
 {
-    for(size_t i=0; i<this->Rows(); i++){
-        for(size_t j=0; j<this->Cols(); j++){
+    for(size_t i=0; i<this->rows(); i++){
+        for(size_t j=0; j<this->cols(); j++){
             (*this)[i][j] *= num;
         }
     }
@@ -208,8 +208,8 @@ template<typename Numeric> Matrix<Numeric> &Matrix<Numeric>::operator*=(const Nu
  */
 template<typename Numeric> Matrix<Numeric> &Matrix<Numeric>::operator/=(const Numeric &num)
 {
-    for(size_t i=0; i<this->Rows(); i++){
-        for(size_t j=0; j<this->Cols(); j++){
+    for(size_t i=0; i<this->rows(); i++){
+        for(size_t j=0; j<this->cols(); j++){
             (*this)[i][j] /= num;
         }
     }
@@ -226,10 +226,10 @@ template<typename Numeric> Matrix<Numeric> &Matrix<Numeric>::operator/=(const Nu
  */
 template<typename Numeric> bool Matrix<Numeric>::operator==(const Matrix &matrix) const 
 {
-    if(this->Cols() != matrix.Cols() || this->Rows() != matrix.Rows()) return false;
+    if(this->cols() != matrix.cols() || this->rows() != matrix.rows()) return false;
 
-    for(size_t i=0; i<this->Rows(); i++){
-        for(size_t j=0; j<this->Cols(); j++){
+    for(size_t i=0; i<this->rows(); i++){
+        for(size_t j=0; j<this->cols(); j++){
             if((*this)[i][j] != matrix[i][j]) return false;
         }
     }
@@ -242,13 +242,13 @@ template<typename Numeric> bool Matrix<Numeric>::operator==(const Matrix &matrix
  * @tparam Numeric 
  * @return std::string 
  */
-template<typename Numeric> std::string Matrix<Numeric>::ToString() const
+template<typename Numeric> std::string Matrix<Numeric>::toString() const
 {
     std::string ret = "[";
 
-    for(size_t i=0; i<this->Rows(); i++){
+    for(size_t i=0; i<this->rows(); i++){
         ret += "[";
-        for(size_t j=0; j<this->Cols(); j++) ret += std::to_string((*this)[i][j]) + ", ";
+        for(size_t j=0; j<this->cols(); j++) ret += std::to_string((*this)[i][j]) + ", ";
         ret[ret.length() - 2] = ']';
         ret[ret.length() - 1] = '\n';
     }
@@ -262,7 +262,7 @@ template<typename Numeric> std::string Matrix<Numeric>::ToString() const
  * @tparam Numeric 
  * @return Matrix<Numeric> 
  */
-template<typename Numeric> Matrix<Numeric> Matrix<Numeric>::Inverse() const
+template<typename Numeric> Matrix<Numeric> Matrix<Numeric>::inverse() const
 {
     LUP<Numeric> lum(*this);
     DecomposeLUP(lum);
@@ -270,15 +270,15 @@ template<typename Numeric> Matrix<Numeric> Matrix<Numeric>::Inverse() const
 
     Matrix ret(*this);
     
-    std::vector<Numeric> b(this->Height());
-    for(size_t i=0; i<this->Height(); i++){
-        for(size_t j=0; j<this->Height(); j++){
+    std::vector<Numeric> b(this->height());
+    for(size_t i=0; i<this->height(); i++){
+        for(size_t j=0; j<this->height(); j++){
             if(i == lum.perm[j]) b[j] = 1.0;
             else b[j] = 0.0;
         }
         std::vector<Numeric> x;
         HelperSolve(lum.mat, b, x);
-        for(size_t j=0; j<this->Height(); j++) ret[j][i] = x[j];
+        for(size_t j=0; j<this->height(); j++) ret[j][i] = x[j];
     }
     return ret;
 }
@@ -289,14 +289,14 @@ template<typename Numeric> Matrix<Numeric> Matrix<Numeric>::Inverse() const
  * @tparam Numeric 
  * @return double 
  */
-template<typename Numeric> Numeric Matrix<Numeric>::Determinant() const
+template<typename Numeric> Numeric Matrix<Numeric>::determinant() const
 {
     LUP<Numeric> lum(*this);
     DecomposeLUP(lum);
     if(lum.toggle == 0) throw "Unable to compute matrix determinate.";
     
     Numeric ret = lum.toggle;
-    for(size_t i=0; i<lum.mat.Height(); i++) ret *= lum.mat[i][i];
+    for(size_t i=0; i<lum.mat.height(); i++) ret *= lum.mat[i][i];
     return ret; 
 }
 
@@ -306,11 +306,11 @@ template<typename Numeric> Numeric Matrix<Numeric>::Determinant() const
  * @tparam Numeric 
  * @return Matrix<Numeric> 
  */
-template<typename Numeric> Matrix<Numeric> Matrix<Numeric>::Transpose() const
+template<typename Numeric> Matrix<Numeric> Matrix<Numeric>::transpose() const
 {
-    Matrix ret(this->Cols(), this->Rows());
-    for(size_t i=0; i<this->Rows(); i++){
-        for(size_t j=0; j<this->Cols(); j++){
+    Matrix ret(this->cols(), this->rows());
+    for(size_t i=0; i<this->rows(); i++){
+        for(size_t j=0; j<this->cols(); j++){
             ret[j][i] = (*this)[i][j];
         }
     }

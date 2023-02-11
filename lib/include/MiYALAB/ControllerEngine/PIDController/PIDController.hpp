@@ -52,31 +52,31 @@ public:
     PIDController(const double &kp, const double &ki, const double &kd);
     PIDController(const double &kp, const double &ki, const double &kd, const double &manipulation, const double &acceleration, const double &brake);
     virtual ~PIDController(){}
-    void SetGain(const double &kp, const double &ki, const double &kd){gainP = kp; gainI = ki; gainD = kd;}
-    void SetManipulateLimit(const double &limit){manipulateLimit = limit;}
-    void SetAccelerateLimit(const double &limit){accelerateLimit = limit;}
-    void SetBrakeLimit(const double &limit)     {brakeLimit = limit;}
-    void Reset();
-    double CalcManipulateVal(const double &error);
-    double GetManipulateVal(){return manipulateBefore;}
+    void setGain(const double &kp, const double &ki, const double &kd){gain_p = kp; gain_i = ki; gain_d = kd;}
+    void setManipulateLimit(const double &limit){manipulate_limit = limit;}
+    void setAccelerateLimit(const double &limit){accelerate_limit = limit;}
+    void setBrakeLimit(const double &limit)     {brake_limit = limit;}
+    void reset();
+    double calcManipulateVal(const double &error);
+    double getManipulateVal(){return manipulate_before;}
 private:
     // PIDゲイン関連
-    double gainP;
-    double gainI;
-    double gainD;
+    double gain_p;
+    double gain_i;
+    double gain_d;
 
     // PID操作量計算用
-    std::chrono::_V2::system_clock::time_point timeBefore;
-    double errorBefore;
-    double errorInt;
+    std::chrono::_V2::system_clock::time_point time_before;
+    double error_before;
+    double error_int;
 
     // 制御量制限
-    double manipulateLimit;
+    double manipulate_limit;
 
     // 制御量変化制限
-    double manipulateBefore;
-    double accelerateLimit;
-    double brakeLimit;
+    double manipulate_before;
+    double accelerate_limit;
+    double brake_limit;
 };
  
 }

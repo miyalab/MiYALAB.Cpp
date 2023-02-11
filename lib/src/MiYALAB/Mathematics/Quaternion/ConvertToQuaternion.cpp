@@ -37,7 +37,7 @@
 //-----------------------------
 namespace MiYALAB {
 namespace Mathematics{
-template<typename Numeric> void ConvertToQuaternion(const EulerAngles<Numeric> &euler, Quaternion<Numeric> &quaternion)
+template<typename Numeric> void convertToQuaternion(const EulerAngles<Numeric> &euler, Quaternion<Numeric> &quaternion)
 {
     Numeric cosRoll = std::cos(euler.roll / 2.0);
     Numeric sinRoll = std::sin(euler.roll / 2.0);
@@ -51,29 +51,29 @@ template<typename Numeric> void ConvertToQuaternion(const EulerAngles<Numeric> &
     quaternion.y = cosRoll * sinPitch * cosYaw + sinRoll * cosPitch * sinYaw;
     quaternion.z = cosRoll * cosPitch * sinYaw - sinRoll * sinPitch * cosYaw;
 }
-template void ConvertToQuaternion<char>(const EulerAngles<char>&, Quaternion<char>&);
-template void ConvertToQuaternion<short>(const EulerAngles<short>&, Quaternion<short>&);
-template void ConvertToQuaternion<int>(const EulerAngles<int>&, Quaternion<int>&);
-template void ConvertToQuaternion<long>(const EulerAngles<long>&, Quaternion<long>&);
-template void ConvertToQuaternion<long long>(const EulerAngles<long long>&, Quaternion<long long>&);
-template void ConvertToQuaternion<float>(const EulerAngles<float>&, Quaternion<float>&);
-template void ConvertToQuaternion<double>(const EulerAngles<double>&, Quaternion<double>&);
-template void ConvertToQuaternion<long double>(const EulerAngles<long double>&, Quaternion<long double>&);
+template void convertToQuaternion<char>(const EulerAngles<char>&, Quaternion<char>&);
+template void convertToQuaternion<short>(const EulerAngles<short>&, Quaternion<short>&);
+template void convertToQuaternion<int>(const EulerAngles<int>&, Quaternion<int>&);
+template void convertToQuaternion<long>(const EulerAngles<long>&, Quaternion<long>&);
+template void convertToQuaternion<long long>(const EulerAngles<long long>&, Quaternion<long long>&);
+template void convertToQuaternion<float>(const EulerAngles<float>&, Quaternion<float>&);
+template void convertToQuaternion<double>(const EulerAngles<double>&, Quaternion<double>&);
+template void convertToQuaternion<long double>(const EulerAngles<long double>&, Quaternion<long double>&);
 
-template<typename Numeric> Quaternion<Numeric> ConvertToQuaternion(const EulerAngles<Numeric> &euler)
+template<typename Numeric> Quaternion<Numeric> convertToQuaternion(const EulerAngles<Numeric> &euler)
 {
     Quaternion<Numeric> ret;
-    ConvertToQuaternion(euler, ret);
+    convertToQuaternion(euler, ret);
     return ret;
 }
-template Quaternion<char> ConvertToQuaternion<char>(const EulerAngles<char>&);
-template Quaternion<short> ConvertToQuaternion<short>(const EulerAngles<short>&);
-template Quaternion<int> ConvertToQuaternion<int>(const EulerAngles<int>&);
-template Quaternion<long> ConvertToQuaternion<long>(const EulerAngles<long>&);
-template Quaternion<long long> ConvertToQuaternion<long long>(const EulerAngles<long long>&);
-template Quaternion<float> ConvertToQuaternion<float>(const EulerAngles<float>&);
-template Quaternion<double> ConvertToQuaternion<double>(const EulerAngles<double>&);
-template Quaternion<long double> ConvertToQuaternion<long double>(const EulerAngles<long double>&);
+template Quaternion<char> convertToQuaternion<char>(const EulerAngles<char>&);
+template Quaternion<short> convertToQuaternion<short>(const EulerAngles<short>&);
+template Quaternion<int> convertToQuaternion<int>(const EulerAngles<int>&);
+template Quaternion<long> convertToQuaternion<long>(const EulerAngles<long>&);
+template Quaternion<long long> convertToQuaternion<long long>(const EulerAngles<long long>&);
+template Quaternion<float> convertToQuaternion<float>(const EulerAngles<float>&);
+template Quaternion<double> convertToQuaternion<double>(const EulerAngles<double>&);
+template Quaternion<long double> convertToQuaternion<long double>(const EulerAngles<long double>&);
 
 }
 }

@@ -39,7 +39,7 @@
 namespace MiYALAB {
 
 namespace Algorithm{
-template<class T> void BubbleSort(std::vector<T> &array)
+template<class T> void bubbleSort(std::vector<T> &array)
 {
     for(int i=0, loop = array.size() - 1; i<loop; i++){
         for(int j=loop + 1; j>i; j++){
@@ -47,41 +47,41 @@ template<class T> void BubbleSort(std::vector<T> &array)
         }
     }  
 }
-template void BubbleSort<char>(std::vector<char>&);
-template void BubbleSort<unsigned char>(std::vector<unsigned char>&);
-template void BubbleSort<short>(std::vector<short>&);
-template void BubbleSort<unsigned short>(std::vector<unsigned short>&);
-template void BubbleSort<int>(std::vector<int>&);
-template void BubbleSort<unsigned int>(std::vector<unsigned int>&);
-template void BubbleSort<long>(std::vector<long>&);
-template void BubbleSort<unsigned long>(std::vector<unsigned long>&);
-template void BubbleSort<long long>(std::vector<long long>&);
-template void BubbleSort<unsigned long long>(std::vector<unsigned long long>&);
-template void BubbleSort<float>(std::vector<float>&);
-template void BubbleSort<double>(std::vector<double>&);
-template void BubbleSort<long double>(std::vector<long double>&);
+template void bubbleSort<char>(std::vector<char>&);
+template void bubbleSort<unsigned char>(std::vector<unsigned char>&);
+template void bubbleSort<short>(std::vector<short>&);
+template void bubbleSort<unsigned short>(std::vector<unsigned short>&);
+template void bubbleSort<int>(std::vector<int>&);
+template void bubbleSort<unsigned int>(std::vector<unsigned int>&);
+template void bubbleSort<long>(std::vector<long>&);
+template void bubbleSort<unsigned long>(std::vector<unsigned long>&);
+template void bubbleSort<long long>(std::vector<long long>&);
+template void bubbleSort<unsigned long long>(std::vector<unsigned long long>&);
+template void bubbleSort<float>(std::vector<float>&);
+template void bubbleSort<double>(std::vector<double>&);
+template void bubbleSort<long double>(std::vector<long double>&);
 
-template<class T> void BubbleSort(std::vector<T> &array, const std::function<int(T, T)> &compareFunctionPtr)
+template<class T> void bubbleSort(std::vector<T> &array, const std::function<int(T, T)> &compareFunction)
 {
     for(int i=0, loop = array.size() - 1; i<loop; i++){
         for(int j=loop + 1; j>i; j++){
-            if(compareFunctionPtr(array[j], array[j+1]) > 0) std::swap(array[j], array[j+1]);
+            if(compareFunction(array[j], array[j+1]) > 0) std::swap(array[j], array[j+1]);
         }
     }
 }
-template void BubbleSort<char>(std::vector<char>&, const std::function<int(char, char)>&);
-template void BubbleSort<unsigned char>(std::vector<unsigned char>&, const std::function<int(unsigned char, unsigned char)>&);
-template void BubbleSort<short>(std::vector<short>&, const std::function<int(short, short)>&);
-template void BubbleSort<unsigned short>(std::vector<unsigned short>&, const std::function<int(unsigned short, unsigned short)>&);
-template void BubbleSort<int>(std::vector<int>&, const std::function<int(int, int)>&);
-template void BubbleSort<unsigned int>(std::vector<unsigned int>&, const std::function<int(unsigned int, unsigned int)>&);
-template void BubbleSort<long>(std::vector<long>&, const std::function<int(long, long)>&);
-template void BubbleSort<unsigned long>(std::vector<unsigned long>&, const std::function<int(unsigned long, unsigned long)>&);
-template void BubbleSort<long long>(std::vector<long long>&, const std::function<int(long long, long long)>&);
-template void BubbleSort<unsigned long long>(std::vector<unsigned long long>&, const std::function<int(unsigned long long, unsigned long long)>&);
-template void BubbleSort<float>(std::vector<float>&, const std::function<int(float, float)>&);
-template void BubbleSort<double>(std::vector<double>&, const std::function<int(double, double)>&);
-template void BubbleSort<long double>(std::vector<long double>&, const std::function<int(long double, long double)>&);
+template void bubbleSort<char>(std::vector<char>&, const std::function<int(char, char)>&);
+template void bubbleSort<unsigned char>(std::vector<unsigned char>&, const std::function<int(unsigned char, unsigned char)>&);
+template void bubbleSort<short>(std::vector<short>&, const std::function<int(short, short)>&);
+template void bubbleSort<unsigned short>(std::vector<unsigned short>&, const std::function<int(unsigned short, unsigned short)>&);
+template void bubbleSort<int>(std::vector<int>&, const std::function<int(int, int)>&);
+template void bubbleSort<unsigned int>(std::vector<unsigned int>&, const std::function<int(unsigned int, unsigned int)>&);
+template void bubbleSort<long>(std::vector<long>&, const std::function<int(long, long)>&);
+template void bubbleSort<unsigned long>(std::vector<unsigned long>&, const std::function<int(unsigned long, unsigned long)>&);
+template void bubbleSort<long long>(std::vector<long long>&, const std::function<int(long long, long long)>&);
+template void bubbleSort<unsigned long long>(std::vector<unsigned long long>&, const std::function<int(unsigned long long, unsigned long long)>&);
+template void bubbleSort<float>(std::vector<float>&, const std::function<int(float, float)>&);
+template void bubbleSort<double>(std::vector<double>&, const std::function<int(double, double)>&);
+template void bubbleSort<long double>(std::vector<long double>&, const std::function<int(long double, long double)>&);
 }
 }
 

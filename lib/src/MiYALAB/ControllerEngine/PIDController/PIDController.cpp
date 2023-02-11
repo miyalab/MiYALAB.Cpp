@@ -45,11 +45,11 @@ namespace ControllerEngine{
  */
 PIDController::PIDController()
 {
-    this->Reset();
-    this->SetGain(0.0, 0.0, 0.0);
-    this->SetAccelerateLimit(0.0);
-    this->SetManipulateLimit(0.0);
-    this->SetBrakeLimit(0.0);
+    this->reset();
+    this->setGain(0.0, 0.0, 0.0);
+    this->setAccelerateLimit(0.0);
+    this->setManipulateLimit(0.0);
+    this->setBrakeLimit(0.0);
 }
 
 /**
@@ -61,11 +61,11 @@ PIDController::PIDController()
  */
 PIDController::PIDController(const double &kp, const double &ki, const double &kd)
 {
-    this->Reset();
-    this->SetGain(kp, ki, kd);
-    this->SetManipulateLimit(-1.0);
-    this->SetAccelerateLimit(-1.0);
-    this->SetBrakeLimit(-1.0);
+    this->reset();
+    this->setGain(kp, ki, kd);
+    this->setManipulateLimit(-1.0);
+    this->setAccelerateLimit(-1.0);
+    this->setBrakeLimit(-1.0);
 }
 
 /**
@@ -80,23 +80,23 @@ PIDController::PIDController(const double &kp, const double &ki, const double &k
  */
 PIDController::PIDController(const double &kp, const double &ki, const double &kd, const double &manipulate, const double &accelerate, const double &brake)
 {
-    this->Reset();
-    this->SetGain(kp, ki, kd);
-    this->SetManipulateLimit(manipulate);
-    this->SetAccelerateLimit(accelerate);
-    this->SetBrakeLimit(brake);
+    this->reset();
+    this->setGain(kp, ki, kd);
+    this->setManipulateLimit(manipulate);
+    this->setAccelerateLimit(accelerate);
+    this->setBrakeLimit(brake);
 }
 
 /**
  * @brief PIDコントローラーリセットメソッド
  * 
  */
-void PIDController::Reset()
+void PIDController::reset()
 {
-    this->manipulateBefore = 0.0;
-    this->errorBefore = 0.0;
-    this->errorInt = 0.0;
-    this->timeBefore = std::chrono::high_resolution_clock::now();
+    this->manipulate_before = 0.0;
+    this->error_before = 0.0;
+    this->error_int = 0.0;
+    this->time_before = std::chrono::high_resolution_clock::now();
 }
 
 /**
@@ -105,40 +105,40 @@ void PIDController::Reset()
  * @param error 偏差
  * @return double 制御量
  */
-double PIDController::CalcManipulateVal(const double &error)
+double PIDController::calcManipulateVal(const double &error)
 {
     // 時間変化
     const auto &time_now = std::chrono::high_resolution_clock::now();
-    const double &dt = (double)std::chrono::duration_cast<std::chrono::microseconds>(time_now - timeBefore).count() / 1000000.0;
+    const double &dt = (double)std::chrono::duration_cast<std::chrono::microseconds>(time_now - time_before).count() / 1000000.0;
     
     // 積分計算(台形面積)
-    this->errorInt += (error + errorBefore) / 2.0 * dt;
+    this->error_int += (error + error_before) / 2.0 * dt;
 
     // PID制御量計算
-    double ret =  gainP * error                         // 比例制御
-                + gainI * errorInt                      // 積分制御
-                + gainD * (error - errorBefore) / dt;   // 微分制御
+    double ret =  this->gain_p * error                         // 比例制御
+                + this->gain_i * error_int                     // 積分制御
+                + this->gain_d * (error - error_before) / dt;   // 微分制御
     
     // 制御量 変化量制限
     if(ret >= 0.0){
-        if(accelerateLimit > 0.0 && (ret - manipulateBefore)/dt > accelerateLimit) ret = manipulateBefore + accelerateLimit * dt;
-        else if(brakeLimit > 0.0 && (ret - manipulateBefore)/dt < -brakeLimit)     ret = manipulateBefore - brakeLimit * dt;
+        if(accelerate_limit > 0.0 && (ret - manipulate_before)/dt > accelerate_limit) ret = manipulate_before + accelerate_limit * dt;
+        else if(brake_limit > 0.0 && (ret - manipulate_before)/dt < -brake_limit)     ret = manipulate_before - brake_limit * dt;
     }
     else{
-        if(accelerateLimit > 0.0 && (ret - manipulateBefore)/dt < accelerateLimit) ret = manipulateBefore - accelerateLimit * dt;
-        else if(brakeLimit > 0.0 && (ret - manipulateBefore)/dt > -brakeLimit)     ret = manipulateBefore + brakeLimit * dt;
+        if(accelerate_limit > 0.0 && (ret - manipulate_before)/dt < accelerate_limit) ret = manipulate_before - accelerate_limit * dt;
+        else if(brake_limit > 0.0 && (ret - manipulate_before)/dt > -brake_limit)     ret = manipulate_before + brake_limit * dt;
     }
 
     // 制御量 制限
-    if(manipulateLimit >= 0.0){
-        if(ret > manipulateLimit)       ret = manipulateLimit;
-        else if(ret < -manipulateLimit) ret = -manipulateLimit;
+    if(manipulate_limit >= 0.0){
+        if(ret > manipulate_limit)       ret = manipulate_limit;
+        else if(ret < -manipulate_limit) ret = -manipulate_limit;
     }
 
     // 次の呼び出し時用
-    this->manipulateBefore = ret;
-    this->errorBefore = error;
-    this->timeBefore = time_now;
+    this->manipulate_before = ret;
+    this->error_before = error;
+    this->time_before = time_now;
 
     return ret;
 }

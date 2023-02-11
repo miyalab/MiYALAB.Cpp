@@ -79,9 +79,9 @@ struct Point3D{
     std::string toString() const {return "(" + std::to_string(this->x) + ", " + std::to_string(this->y) + ", " + std::to_string(this->z) + ")";}
 
     // 3次元ベクトル計算メソッド
-    Numeric Dot(const Point3D &point) const {return (this->x*point.x + this->y*point.y + this->z*point.z);}
-    Numeric Magnitude()     const {return std::sqrt(this->x*this->x + this->y*this->y + this->z*this->z);}
-    Numeric MagnitudePow2() const {return (this->x*this->x + this->y*this->y + this->z*this->z);}
+    Numeric dot(const Point3D &point) const {return (this->x*point.x + this->y*point.y + this->z*point.z);}
+    Numeric magnitude()     const {return std::sqrt(this->x*this->x + this->y*this->y + this->z*this->z);}
+    Numeric magnitudePow2() const {return (this->x*this->x + this->y*this->y + this->z*this->z);}
 };
 }
 }

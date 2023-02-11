@@ -80,24 +80,24 @@ public:
     bool operator !=(const Matrix &matrix) const {return !(*this==matrix);}
     
     // 文字列化メソッド
-    std::string ToString() const;
+    std::string toString() const;
 
     // 行列計算計算メソッド
-    Matrix Inverse() const;
-    Matrix Transpose() const;
-    Numeric Determinant() const;
+    Matrix inverse() const;
+    Matrix transpose() const;
+    Numeric determinant() const;
 
     // 単位行列生成メソッド
     static Matrix I(size_t n){Matrix ret(n); for(size_t i=0; i<n; i++) ret[i][i]=1; return ret;}
     static inline Matrix E(size_t n) {return I(n);}
 
     // 行列要素関連メソッド
-    size_t Height() const {return data.size();}
-    size_t Rows()   const {return data.size();}
-    size_t Width()  const {return data.size() ? data[0].size() : 0;}
-    size_t Cols()   const {return data.size() ? data[0].size() : 0;}
-    const Numeric &At(const size_t &row, const size_t &col) const {if(this->Cols()<=col || this->Rows()<=row) throw std::out_of_range("out_of_range"); return (*this)[row][col];}
-    Numeric &At(const size_t &row, const size_t &col) {if(this->Cols()<=col || this->Rows()<=row) throw std::out_of_range("out_of_range"); return (*this)[row][col];}
+    size_t height() const {return data.size();}
+    size_t rows()   const {return data.size();}
+    size_t width()  const {return data.size() ? data[0].size() : 0;}
+    size_t cols()   const {return data.size() ? data[0].size() : 0;}
+    const Numeric &at(const size_t &row, const size_t &col) const {if(this->cols()<=col || this->rows()<=row) throw std::out_of_range("out_of_range"); return (*this)[row][col];}
+    Numeric &at(const size_t &row, const size_t &col) {if(this->cols()<=col || this->rows()<=row) throw std::out_of_range("out_of_range"); return (*this)[row][col];}
 
 private:
     std::vector<std::vector<Numeric>> data;

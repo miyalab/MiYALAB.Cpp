@@ -41,8 +41,8 @@
 namespace MiYALAB {
 namespace Mathematics{
 
-template<typename Numeric> void ConvertToQuaternion(const EulerAngles<Numeric> &euler, Quaternion<Numeric> &quaternion);
-template<typename Numeric> Quaternion<Numeric> ConvertToQuaternion(const EulerAngles<Numeric> &euler);
+template<typename Numeric> void convertToQuaternion(const EulerAngles<Numeric> &euler, Quaternion<Numeric> &quaternion);
+template<typename Numeric> Quaternion<Numeric> convertToQuaternion(const EulerAngles<Numeric> &euler);
 
 }
 }
