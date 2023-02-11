@@ -48,7 +48,7 @@ public:
     void setRotateAngle(const double &angle){rotate_angle = angle;}
 private:
     double aspect_ratio = 1.0;
-    double rotate_angle;
+    double rotate_angle = 0.0;
 protected:
     const double &getAspectRatio() const {return aspect_ratio;}
     const double &getAngle() const {return rotate_angle;}
