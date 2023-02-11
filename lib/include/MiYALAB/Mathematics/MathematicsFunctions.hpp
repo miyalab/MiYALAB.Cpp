@@ -39,7 +39,7 @@ namespace Mathematics{
  * @param deg 
  * @return Numeric 
  */
-template<typename Numeric> inline Numeric ConvertToRad(const Numeric &deg){return deg * ConstantValue::M_PI / 180;}
+template<typename Numeric> inline Numeric convertToRad(const Numeric &deg){return deg * ConstantValue::M_PI / 180;}
 
 /**
  * @brief radian to degree
@@ -48,7 +48,7 @@ template<typename Numeric> inline Numeric ConvertToRad(const Numeric &deg){retur
  * @param rad 
  * @return Numeric degree
  */
-template<typename Numeric> inline Numeric ConvertToDeg(const Numeric &rad){return rad * 180 / ConstantValue::M_PI;}
+template<typename Numeric> inline Numeric convertToDeg(const Numeric &rad){return rad * 180 / ConstantValue::M_PI;}
 
 
 }
