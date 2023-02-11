@@ -51,27 +51,27 @@ public:
 };
 
 template<typename Numeric> 
-void DecomposeLUP(LUP<Numeric> &ret)
+void decomposeLUP(LUP<Numeric> &ret)
 {
     const size_t &n = ret.mat.height();
 
-    int pRow;
-    Numeric colMax;
+    int p_row;
+    Numeric col_max;
     ret.toggle = 1;
     for(size_t i=0; i<n; i++) ret.perm[i] = i;
     
     for(size_t j=0; j<n-1; j++){
-        colMax = std::abs(ret.mat[j][j]);
-        pRow = j;
+        col_max = std::abs(ret.mat[j][j]);
+        p_row = j;
         for(int i=j+1; i<n; i++){
-            if(ret.mat[i][j] > colMax){
-                colMax = ret.mat[i][j];
-                pRow = i;
+            if(ret.mat[i][j] > col_max){
+                col_max = ret.mat[i][j];
+                p_row = i;
             }
         }
-        if(pRow != j){
-            std::swap(ret.mat[pRow], ret.mat[j]);
-            std::swap(ret.perm[pRow],ret.perm[j]);
+        if(p_row != j){
+            std::swap(ret.mat[p_row], ret.mat[j]);
+            std::swap(ret.perm[p_row],ret.perm[j]);
             ret.toggle = -ret.toggle;
         }
         if(std::abs(ret.mat[j][j]) < 1.0E-10){
@@ -94,23 +94,23 @@ void DecomposeLUP(LUP<Numeric> &ret)
  * @param x 
  */
 template<typename Numeric>
-void HelperSolve(const MatrixType<Numeric> &luMat, const std::vector<Numeric> &b, std::vector<Numeric> &x)
+void helperSolve(const MatrixType<Numeric> &lu_matrix, const std::vector<Numeric> &b, std::vector<Numeric> &x)
 {
-    const size_t &n = luMat.height();
+    const size_t &n = lu_matrix.height();
     Numeric sum;
     x.resize(n);
     for(size_t i=0; i<b.size(); i++) x[i] = b[i];
     
     for(size_t i=1; i<n; i++){
         sum = x[i];
-        for(size_t j=0; j<i; j++) sum -= luMat[i][j] * x[j];
+        for(size_t j=0; j<i; j++) sum -= lu_matrix[i][j] * x[j];
         x[i] = sum;
     }
-    x[n-1] /= luMat[n-1][n-1];
+    x[n-1] /= lu_matrix[n-1][n-1];
     for(long i=n-2; 0<=i; i--){
         sum = x[i];
-        for(size_t j=i+1; j<n; j++) sum-= luMat[i][j] * x[j];
-        x[i] = sum / luMat[i][i];
+        for(size_t j=i+1; j<n; j++) sum-= lu_matrix[i][j] * x[j];
+        x[i] = sum / lu_matrix[i][i];
     }
 }
 }
@@ -265,8 +265,8 @@ template<typename Numeric> std::string MatrixType<Numeric>::toString() const
 template<typename Numeric> MatrixType<Numeric> MatrixType<Numeric>::inverse() const
 {
     LUP<Numeric> lum(*this);
-    DecomposeLUP(lum);
-    if(lum.toggle == 0) throw "Unable to compute inversed matrix.";
+    decomposeLUP(lum);
+    if(lum.toggle == 0) throw "Unable to compute inverse matrix.";
 
     MatrixType ret(*this);
     
@@ -277,7 +277,7 @@ template<typename Numeric> MatrixType<Numeric> MatrixType<Numeric>::inverse() co
             else b[j] = 0.0;
         }
         std::vector<Numeric> x;
-        HelperSolve(lum.mat, b, x);
+        helperSolve(lum.mat, b, x);
         for(size_t j=0; j<this->height(); j++) ret[j][i] = x[j];
     }
     return ret;
@@ -292,7 +292,7 @@ template<typename Numeric> MatrixType<Numeric> MatrixType<Numeric>::inverse() co
 template<typename Numeric> Numeric MatrixType<Numeric>::determinant() const
 {
     LUP<Numeric> lum(*this);
-    DecomposeLUP(lum);
+    decomposeLUP(lum);
     if(lum.toggle == 0) throw "Unable to compute matrix determinate.";
     
     Numeric ret = lum.toggle;
