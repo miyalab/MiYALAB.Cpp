@@ -15,12 +15,12 @@ int main()
     math::Point2D<double> point(1,1.4);
     physics::PotentialGenerator circleP;
     physics::EllipsePotentialGenerator ellipseP;
-    circleP.SetOffset(0, 0);
-    circleP.SetGain(2);
-    ellipseP.SetOffset(0, 0);
-    ellipseP.SetAspectRatio(2.0);
-    ellipseP.SetGain(2);
-    std::cout << circleP.CalcPotential(point).ToString() << std::endl;
-    std::cout << ellipseP.CalcPotential(point).ToString() << std::endl;
+    circleP.setOffset(0, 0);
+    circleP.setGain(2);
+    ellipseP.setOffset(0, 0);
+    ellipseP.setAspectRatio(2.0);
+    ellipseP.setGain(2);
+    std::cout << circleP.calcPotential(point).toString() << std::endl;
+    std::cout << ellipseP.calcPotential(point).toString() << std::endl;
     
 }

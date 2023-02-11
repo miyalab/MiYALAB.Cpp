@@ -17,8 +17,8 @@ int main()
 
     Mathematics::Matrix<double> mat1(MAT_SIZE, MAT_SIZE), mat2(MAT_SIZE, MAT_SIZE);
     
-    for(size_t i=0; i<mat1.Rows(); i++){
-        for(size_t j=0; j<mat1.Cols(); j++){
+    for(size_t i=0; i<mat1.rows(); i++){
+        for(size_t j=0; j<mat1.cols(); j++){
             mat1[i][j] = std::rand() % 10;
             mat2[i][j] = std::rand() % 10;
         }
@@ -64,7 +64,7 @@ int main()
 
     // 逆行列チェック
     start = std::chrono::high_resolution_clock::now();    
-    const auto &dst4 = mat1.Inverse();
+    const auto &dst4 = mat1.inverse();
     end = std::chrono::high_resolution_clock::now();
 #ifdef MAT_SHOW
     std::cout << dst4.ToString() << std::endl;
