@@ -38,9 +38,9 @@ namespace math = MiYALAB::Mathematics;
 //-----------------------------
 namespace MiYALAB {
 namespace PhysicsEngine{
-double PotentialGenerator::CalcPotential(const double &x, const double &y) const
+double PotentialGenerator::calcPotential(const double &x, const double &y) const
 {
-    math::Point2D<double> calc = this->CalcPotential(math::Point2D<double>(x,y));
+    math::Point2D<double> calc = this->calcPotential(math::Point2D<double>(x,y));
     return std::sqrt(calc.x * calc.x + calc.y * calc.y);
 }
 
@@ -50,14 +50,14 @@ double PotentialGenerator::CalcPotential(const double &x, const double &y) const
  * @param point 
  * @return math::Point2D<double> 
  */
-math::Point2D<double> PotentialGenerator::CalcPotential(const math::Point2D<double> &point) const 
+math::Point2D<double> PotentialGenerator::calcPotential(const math::Point2D<double> &point) const 
 {
     math::Point2D<double> ret;
-    const math::Point2D<double> &pt = point - this->GetOffset();
+    const math::Point2D<double> &pt = point - this->getOffset();
 
     const double &r2 = pt.x * pt.x + pt.y * pt.y;
-    ret.x = this->GetGain() * pt.x / r2;             // x = Gain * cos(theta) / r
-    ret.y = this->GetGain() * pt.y / r2;             // y = Gain * sin(theta) / r
+    ret.x = this->getGain() * pt.x / r2;             // x = Gain * cos(theta) / r
+    ret.y = this->getGain() * pt.y / r2;             // y = Gain * sin(theta) / r
     
     return ret;
 }

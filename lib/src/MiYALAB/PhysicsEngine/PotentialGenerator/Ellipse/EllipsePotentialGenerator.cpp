@@ -45,25 +45,25 @@ namespace PhysicsEngine{
  * @param point 
  * @return math::Point2D<double> 
  */
-math::Point2D<double> EllipsePotentialGenerator::CalcPotential(const math::Point2D<double> &point) const
+math::Point2D<double> EllipsePotentialGenerator::calcPotential(const math::Point2D<double> &point) const
 {
     math::Point2D<double> ret;
-    math::Point2D<double> pt = point - this->GetOffset();
+    math::Point2D<double> pt = point - this->getOffset();
 
     // 楕円ポテンシャル場の回転
-    const double &cos = std::cos(this->GetAngle());
-    const double &sin = std::sin(this->GetAngle());
+    const double &cos = std::cos(this->getAngle());
+    const double &sin = std::sin(this->getAngle());
     math::Point2D<double> pt2;
     pt2.x =  cos * pt.x + sin * pt.y;
     pt2.y = -sin * pt.x + cos * pt.y;
     pt = pt2;
 
     // ポテンシャル計算
-    const double &aspect_pow2 = this->GetAspectRatio()*this->GetAspectRatio();
-    const double &theta = std::atan2(m_aspect_ratio * pt.y, pt.x);
+    const double &aspect_pow2 = this->getAspectRatio()*this->getAspectRatio();
+    const double &theta = std::atan2(aspect_ratio * pt.y, pt.x);
     const double &r = std::sqrt((1+aspect_pow2)*pt.x*pt.x + (1+1/aspect_pow2)*pt.y*pt.y) / 1.41421356237;
-    ret.x = this->GetGain() * std::cos(theta + this->GetAngle()) / r;
-    ret.y = this->GetGain() * std::sin(theta + this->GetAngle()) / r;
+    ret.x = this->getGain() * std::cos(theta + this->getAngle()) / r;
+    ret.y = this->getGain() * std::sin(theta + this->getAngle()) / r;
     
     return ret;
 }

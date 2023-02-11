@@ -44,13 +44,13 @@ public:
     LaserScan(){}
     virtual ~LaserScan(){}
 
-    float angleMin;
-    float angleMax;
-    float angleIncrement;
-    float timeIncrement;
-    float scanTime;
-    float rangeMin;
-    float rangeMax;
+    float angle_min;
+    float angle_max;
+    float angle_increment;
+    float time_increment;
+    float scan_time;
+    float range_min;
+    float range_max;
     std::vector<float> ranges;
     std::vector<float> intensities;
 };

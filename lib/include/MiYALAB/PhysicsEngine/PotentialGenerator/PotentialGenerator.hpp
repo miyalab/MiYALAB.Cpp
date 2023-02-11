@@ -43,17 +43,17 @@ class PotentialGenerator{
 public:
     PotentialGenerator(){}
     virtual ~PotentialGenerator(){}
-    void SetGain(const double &_gain){gain = _gain;}
-    void SetOffset(const Mathematics::Point2D<double> &_offset){offset = _offset;}
-    void SetOffset(const double &x, const double &y){offset.x = x; offset.y = y;}
-    virtual double CalcPotential(const double &x, const double &y) const;
-    virtual Mathematics::Point2D<double> CalcPotential(const Mathematics::Point2D<double> &point) const;
+    void setGain(const double &_gain){gain = _gain;}
+    void setOffset(const Mathematics::Point2D<double> &_offset){offset = _offset;}
+    void setOffset(const double &x, const double &y){offset.x = x; offset.y = y;}
+    virtual double calcPotential(const double &x, const double &y) const;
+    virtual Mathematics::Point2D<double> calcPotential(const Mathematics::Point2D<double> &point) const;
 private:
     double gain = 1.0;
     Mathematics::Point2D<double> offset;
 protected:
-    const double &GetGain() const {return gain;}
-    const Mathematics::Point2D<double> &GetOffset() const {return offset;}
+    const double &getGain() const {return gain;}
+    const Mathematics::Point2D<double> &getOffset() const {return offset;}
 };
 }
 }
