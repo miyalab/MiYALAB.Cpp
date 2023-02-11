@@ -30,7 +30,7 @@
 //-----------------------------
 #include <vector>
 
-#include "MiYALAB/Mathematics/Point/Point3D.hpp"
+#include "../../Mathematics/Point/Point3D.hpp"
 
 //-----------------------------
 // Namespace & using
@@ -46,7 +46,7 @@ public:
     PointCloud();
     virtual ~PointCloud();
 
-    std::vector<Mathematics::Point32f> points;
+    std::vector<Mathematics::Point32> points;
     struct Channel{
         std::string name;
         std::vector<float> values;
