@@ -37,10 +37,10 @@
 namespace MiYALAB{
 namespace Algorithm{
 template<class T> void selectSort(std::vector<T> &array);
-template<class T> void selectSort(std::vector<T> &array, const std::function<int(T, T)> &compare_func_ptr);
+template<class T> void selectSort(std::vector<T> &array, const std::function<int(T, T)> &compareFunc);
 
 template<class T> void bubbleSort(std::vector<T> &array);
-template<class T> void bubbleSort(std::vector<T> &array, const std::function<int(T, T)> &compare_func_ptr);
+template<class T> void bubbleSort(std::vector<T> &array, const std::function<int(T, T)> &compareFunc);
 
 }
 }

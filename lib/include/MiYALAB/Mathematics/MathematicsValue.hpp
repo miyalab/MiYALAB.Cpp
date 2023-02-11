@@ -27,7 +27,6 @@
 
 namespace MiYALAB{
 namespace Mathematics{
-namespace ConstantValue{
 
 constexpr double e = 2.718281828459045235360287471352;          // ネイピア数
 constexpr double g = 9.80665;                                   // 重力加速度
@@ -45,7 +44,6 @@ constexpr double M_4_PI = 3.141592653589793238462643 * 4;       // 円周率　4
 constexpr double R = 8.31446262;                                // 気体定数
 constexpr double k = 1.380649E-23;                              // ネイピア数
 constexpr double Na = 6.02214076E23;                            // アボガドロ数
-}
 }
 }
 
