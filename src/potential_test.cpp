@@ -12,7 +12,7 @@ namespace physics = MiYALAB::PhysicsEngine;
 
 int main()
 {
-    math::Point2D<double> point(1,1.4);
+    math::Point2D point(1,1.4);
     physics::PotentialGenerator circleP;
     physics::EllipsePotentialGenerator ellipseP;
     circleP.setOffset(0, 0);

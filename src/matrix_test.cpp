@@ -15,7 +15,7 @@ int main()
     std::cout << std::fixed << std::setprecision(10);
     std::srand(std::time(nullptr));
 
-    Mathematics::Matrix<double> mat1(MAT_SIZE, MAT_SIZE), mat2(MAT_SIZE, MAT_SIZE);
+    Mathematics::Matrix mat1(MAT_SIZE, MAT_SIZE), mat2(MAT_SIZE, MAT_SIZE);
     
     for(size_t i=0; i<mat1.rows(); i++){
         for(size_t j=0; j<mat1.cols(); j++){
