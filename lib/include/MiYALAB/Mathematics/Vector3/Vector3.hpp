@@ -54,7 +54,7 @@ struct Vector3Type{
 
     // コンストラクタ
     Vector3Type() : x(0), y(0), z(0){}
-    Vector3Type(const Numeric &_roll, const Numeric &_pitch, const Numeric &_yaw) : x(_yaw), y(_pitch), z(_yaw){}
+    Vector3Type(const Numeric &_roll, const Numeric &_pitch, const Numeric &_yaw) : x(_roll), y(_pitch), z(_yaw){}
 
     // デストラクタ
     virtual ~Vector3Type(){}
