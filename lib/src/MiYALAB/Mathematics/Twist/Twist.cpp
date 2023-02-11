@@ -32,14 +32,14 @@
 //-----------------------------
 namespace MiYALAB{
 namespace Mathematics{
-template struct Twist<char>;
-template struct Twist<short>;
-template struct Twist<int>;
-template struct Twist<long>;
-template struct Twist<long long>;
-template struct Twist<float>;
-template struct Twist<double>;
-template struct Twist<long double>;
+template struct TwistType<char>;
+template struct TwistType<short>;
+template struct TwistType<int>;
+template struct TwistType<long>;
+template struct TwistType<long long>;
+template struct TwistType<float>;
+template struct TwistType<double>;
+template struct TwistType<long double>;
 }
 }
 

@@ -37,43 +37,43 @@
 //-----------------------------
 namespace MiYALAB {
 namespace Mathematics{
-template<typename Numeric> void convertToQuaternion(const EulerAngles<Numeric> &euler, Quaternion<Numeric> &quaternion)
+template<typename Numeric> void convertToQuaternion(const Vector3Type<Numeric> &euler, QuaternionType<Numeric> &quaternion)
 {
-    Numeric cosRoll = std::cos(euler.roll / 2.0);
-    Numeric sinRoll = std::sin(euler.roll / 2.0);
-    Numeric cosPitch = std::cos(euler.pitch / 2.0);
-    Numeric sinPitch = std::sin(euler.pitch / 2.0);
-    Numeric cosYaw = std::cos(euler.yaw / 2.0);
-    Numeric sinYaw = std::sin(euler.yaw / 2.0);
+    Numeric cosRoll = std::cos(euler.x / 2.0);
+    Numeric sinRoll = std::sin(euler.x / 2.0);
+    Numeric cosPitch = std::cos(euler.y / 2.0);
+    Numeric sinPitch = std::sin(euler.y / 2.0);
+    Numeric cosYaw = std::cos(euler.z / 2.0);
+    Numeric sinYaw = std::sin(euler.z / 2.0);
 
     quaternion.w = cosRoll * cosPitch * cosYaw + sinRoll * sinPitch * sinYaw;
     quaternion.x = sinRoll * cosPitch * cosYaw - cosRoll * sinPitch * sinYaw;
     quaternion.y = cosRoll * sinPitch * cosYaw + sinRoll * cosPitch * sinYaw;
     quaternion.z = cosRoll * cosPitch * sinYaw - sinRoll * sinPitch * cosYaw;
 }
-template void convertToQuaternion<char>(const EulerAngles<char>&, Quaternion<char>&);
-template void convertToQuaternion<short>(const EulerAngles<short>&, Quaternion<short>&);
-template void convertToQuaternion<int>(const EulerAngles<int>&, Quaternion<int>&);
-template void convertToQuaternion<long>(const EulerAngles<long>&, Quaternion<long>&);
-template void convertToQuaternion<long long>(const EulerAngles<long long>&, Quaternion<long long>&);
-template void convertToQuaternion<float>(const EulerAngles<float>&, Quaternion<float>&);
-template void convertToQuaternion<double>(const EulerAngles<double>&, Quaternion<double>&);
-template void convertToQuaternion<long double>(const EulerAngles<long double>&, Quaternion<long double>&);
+template void convertToQuaternion<char>(const Vector3Type<char>&, QuaternionType<char>&);
+template void convertToQuaternion<short>(const Vector3Type<short>&, QuaternionType<short>&);
+template void convertToQuaternion<int>(const Vector3Type<int>&, QuaternionType<int>&);
+template void convertToQuaternion<long>(const Vector3Type<long>&, QuaternionType<long>&);
+template void convertToQuaternion<long long>(const Vector3Type<long long>&, QuaternionType<long long>&);
+template void convertToQuaternion<float>(const Vector3Type<float>&, QuaternionType<float>&);
+template void convertToQuaternion<double>(const Vector3Type<double>&, QuaternionType<double>&);
+template void convertToQuaternion<long double>(const Vector3Type<long double>&, QuaternionType<long double>&);
 
-template<typename Numeric> Quaternion<Numeric> convertToQuaternion(const EulerAngles<Numeric> &euler)
+template<typename Numeric> QuaternionType<Numeric> convertToQuaternion(const Vector3Type<Numeric> &euler)
 {
-    Quaternion<Numeric> ret;
+    QuaternionType<Numeric> ret;
     convertToQuaternion(euler, ret);
     return ret;
 }
-template Quaternion<char> convertToQuaternion<char>(const EulerAngles<char>&);
-template Quaternion<short> convertToQuaternion<short>(const EulerAngles<short>&);
-template Quaternion<int> convertToQuaternion<int>(const EulerAngles<int>&);
-template Quaternion<long> convertToQuaternion<long>(const EulerAngles<long>&);
-template Quaternion<long long> convertToQuaternion<long long>(const EulerAngles<long long>&);
-template Quaternion<float> convertToQuaternion<float>(const EulerAngles<float>&);
-template Quaternion<double> convertToQuaternion<double>(const EulerAngles<double>&);
-template Quaternion<long double> convertToQuaternion<long double>(const EulerAngles<long double>&);
+template QuaternionType<char> convertToQuaternion<char>(const Vector3Type<char>&);
+template QuaternionType<short> convertToQuaternion<short>(const Vector3Type<short>&);
+template QuaternionType<int> convertToQuaternion<int>(const Vector3Type<int>&);
+template QuaternionType<long> convertToQuaternion<long>(const Vector3Type<long>&);
+template QuaternionType<long long> convertToQuaternion<long long>(const Vector3Type<long long>&);
+template QuaternionType<float> convertToQuaternion<float>(const Vector3Type<float>&);
+template QuaternionType<double> convertToQuaternion<double>(const Vector3Type<double>&);
+template QuaternionType<long double> convertToQuaternion<long double>(const Vector3Type<long double>&);
 
 }
 }

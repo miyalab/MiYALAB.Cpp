@@ -28,7 +28,7 @@
 //-----------------------------
 // include
 //-----------------------------
-#include "EulerAngles.hpp"
+#include "Vector3.hpp"
 #include "../Quaternion/Quaternion.hpp"
 
 //-----------------------------
@@ -41,8 +41,8 @@
 namespace MiYALAB {
 namespace Mathematics{
 
-template<typename Numeric> void convertToEulerAngles(const Quaternion<Numeric> &quaternion, EulerAngles<Numeric> &euler);
-template<typename Numeric> EulerAngles<Numeric> convertToEulerAngles(const Quaternion<Numeric> &quaternion);
+template<typename Numeric> void convertToEulerAngles(const QuaternionType<Numeric> &quaternion, Vector3Type<Numeric> &euler);
+template<typename Numeric> Vector3Type<Numeric> convertToEulerAngles(const QuaternionType<Numeric> &quaternion);
 
 }
 }

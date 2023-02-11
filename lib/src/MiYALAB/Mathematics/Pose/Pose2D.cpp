@@ -32,14 +32,14 @@
 //-----------------------------
 namespace MiYALAB{
 namespace Mathematics{
-template struct Pose2D<char>;
-template struct Pose2D<short>;
-template struct Pose2D<int>;
-template struct Pose2D<long>;
-template struct Pose2D<long long>;
-template struct Pose2D<float>;
-template struct Pose2D<double>;
-template struct Pose2D<long double>;
+template struct Pose2DType<char>;
+template struct Pose2DType<short>;
+template struct Pose2DType<int>;
+template struct Pose2DType<long>;
+template struct Pose2DType<long long>;
+template struct Pose2DType<float>;
+template struct Pose2DType<double>;
+template struct Pose2DType<long double>;
 }
 }
 

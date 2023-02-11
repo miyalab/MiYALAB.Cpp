@@ -40,7 +40,7 @@ namespace MiYALAB {
 namespace PhysicsEngine{
 double PotentialGenerator::calcPotential(const double &x, const double &y) const
 {
-    math::Point2D<double> calc = this->calcPotential(math::Point2D<double>(x,y));
+    math::Point2D calc = this->calcPotential(math::Point2D(x,y));
     return std::sqrt(calc.x * calc.x + calc.y * calc.y);
 }
 
@@ -48,12 +48,12 @@ double PotentialGenerator::calcPotential(const double &x, const double &y) const
  * @brief x-y
  * 
  * @param point 
- * @return math::Point2D<double> 
+ * @return math::Point2D 
  */
-math::Point2D<double> PotentialGenerator::calcPotential(const math::Point2D<double> &point) const 
+math::Point2D PotentialGenerator::calcPotential(const math::Point2D &point) const 
 {
-    math::Point2D<double> ret;
-    const math::Point2D<double> &pt = point - this->getOffset();
+    math::Point2D ret;
+    const math::Point2D &pt = point - this->getOffset();
 
     const double &r2 = pt.x * pt.x + pt.y * pt.y;
     ret.x = this->getGain() * pt.x / r2;             // x = Gain * cos(theta) / r

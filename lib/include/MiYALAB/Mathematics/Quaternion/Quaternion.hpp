@@ -45,22 +45,22 @@ namespace Mathematics{
  * @tparam Numeric 
  */
 template<typename Numeric>
-struct Quaternion{
+struct QuaternionType{
     Numeric w;
     Numeric x;
     Numeric y;
     Numeric z;
 
     // コンストラクタ
-    Quaternion() : w(0), x(0), y(0), z(0){}
-    Quaternion(const Numeric &_w, const Numeric &_x, const Numeric &_y, const Numeric &_z) :  w(_w), x(_x), y(_y), z(_z){}
+    QuaternionType() : w(0), x(0), y(0), z(0){}
+    QuaternionType(const Numeric &_w, const Numeric &_x, const Numeric &_y, const Numeric &_z) :  w(_w), x(_x), y(_y), z(_z){}
 
     // デストラクタ
-    virtual ~Quaternion(){}
+    virtual ~QuaternionType(){}
 
     // 比較演算子
-    bool operator==(const Quaternion &quaternion) const {return (this->w == quaternion.w && this->x == quaternion.x && this->y == quaternion.y && this->z == quaternion.z);}
-    bool operator!=(const Quaternion &quaternion) const {return (this->w != quaternion.w || this->x != quaternion.x || this->y != quaternion.y || this->z != quaternion.z);}
+    bool operator==(const QuaternionType &quaternion) const {return (this->w == quaternion.w && this->x == quaternion.x && this->y == quaternion.y && this->z == quaternion.z);}
+    bool operator!=(const QuaternionType &quaternion) const {return (this->w != quaternion.w || this->x != quaternion.x || this->y != quaternion.y || this->z != quaternion.z);}
 
     std::string toString() const {return "(" + std::to_string(this->w) + ", " + std::to_string(this->x) + ", " + std::to_string(this->y) + ", " + std::to_string(this->z) + ")";}
 
@@ -73,8 +73,8 @@ struct Quaternion{
 //-----------------------------
 namespace MiYALAB{
 namespace Mathematics{
-using Quaternion32f = Quaternion<float>;
-using Quaternion64f = Quaternion<double>;
+using Quaternion32 = QuaternionType<float>;
+using Quaternion = QuaternionType<double>;
 }
 }
 

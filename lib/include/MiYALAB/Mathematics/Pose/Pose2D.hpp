@@ -48,10 +48,10 @@ namespace Mathematics{
  * @tparam NumericType 
  */
 template<class NumericType>
-struct Pose2D{
-    Pose2D(const NumericType &_x, const NumericType &_y, const NumericType &_yaw){position.x = _x, position.y = _y, yaw = _yaw;}
+struct Pose2DType{
+    Pose2DType(const NumericType &_x, const NumericType &_y, const NumericType &_yaw){position.x = _x, position.y = _y, yaw = _yaw;}
     
-    Point2D<NumericType> position;
+    Point2DType<NumericType> position;
     NumericType yaw;
 
     std::string toString() const {return "(" + std::to_string(position.x) + ", " + std::to_string(position.y) + ", " + std::to_string(yaw) + ")";}
@@ -64,8 +64,8 @@ struct Pose2D{
 //-----------------------------
 namespace MiYALAB{
 namespace Mathematics{
-using Pose2D32f = Pose2D<float>;
-using Pose2D64f = Pose2D<double>;
+using Pose2D32 = Pose2DType<float>;
+using Pose2D = Pose2DType<double>;
 }
 }
 

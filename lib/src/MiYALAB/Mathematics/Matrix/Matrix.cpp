@@ -44,8 +44,8 @@ namespace Mathematics{
 template<typename Numeric>
 struct LUP{
 public:
-    LUP(const Matrix<Numeric> &matrix): mat(matrix), perm(matrix.height()){}
-    Matrix<Numeric> mat;
+    LUP(const MatrixType<Numeric> &matrix): mat(matrix), perm(matrix.height()){}
+    MatrixType<Numeric> mat;
     std::vector<Numeric> perm;
     int toggle;
 };
@@ -94,7 +94,7 @@ void DecomposeLUP(LUP<Numeric> &ret)
  * @param x 
  */
 template<typename Numeric>
-void HelperSolve(const Matrix<Numeric> &luMat, const std::vector<Numeric> &b, std::vector<Numeric> &x)
+void HelperSolve(const MatrixType<Numeric> &luMat, const std::vector<Numeric> &b, std::vector<Numeric> &x)
 {
     const size_t &n = luMat.height();
     Numeric sum;
@@ -126,9 +126,9 @@ namespace Mathematics{
  * 
  * @tparam Numeric 
  * @param matrix 
- * @return Matrix<Numeric>& 
+ * @return MatrixType<Numeric>& 
  */
-template<typename Numeric> Matrix<Numeric> &Matrix<Numeric>::operator+=(const Matrix &matrix)
+template<typename Numeric> MatrixType<Numeric> &MatrixType<Numeric>::operator+=(const MatrixType &matrix)
 {
     if(this->cols() != matrix.cols() || this->rows() != matrix.rows()) throw "Input matrices have different sizes.";
 
@@ -145,9 +145,9 @@ template<typename Numeric> Matrix<Numeric> &Matrix<Numeric>::operator+=(const Ma
  * 
  * @tparam Numeric 
  * @param matrix 
- * @return Matrix<Numeric>& 
+ * @return MatrixType<Numeric>& 
  */
-template<typename Numeric> Matrix<Numeric> &Matrix<Numeric>::operator-=(const Matrix &matrix)
+template<typename Numeric> MatrixType<Numeric> &MatrixType<Numeric>::operator-=(const MatrixType &matrix)
 {
     if(this->cols() != matrix.cols() || this->rows() != matrix.rows()) throw "Input matrices have different sizes.";
 
@@ -164,14 +164,14 @@ template<typename Numeric> Matrix<Numeric> &Matrix<Numeric>::operator-=(const Ma
  * 
  * @tparam Numeric 
  * @param matrix 
- * @return Matrix<Numeric> 
+ * @return MatrixType<Numeric> 
  * 
 */
-template<typename Numeric> Matrix<Numeric> Matrix<Numeric>::operator*(const Matrix &matrix) const 
+template<typename Numeric> MatrixType<Numeric> MatrixType<Numeric>::operator*(const MatrixType &matrix) const 
 {
     if(this->cols() != matrix.rows()) throw "Input matrices have different sizes.";
 
-    Matrix<Numeric> ret(this->rows(), matrix.cols());
+    MatrixType<Numeric> ret(this->rows(), matrix.cols());
     for(size_t i=0; i<this->rows(); i++){
         for(size_t k=0; k<this->cols(); k++){
             for(size_t j=0; j<matrix.cols(); j++){
@@ -187,9 +187,9 @@ template<typename Numeric> Matrix<Numeric> Matrix<Numeric>::operator*(const Matr
  * 
  * @tparam Numeric 
  * @param num 
- * @return Matrix<Numeric>& 
+ * @return MatrixType<Numeric>& 
  */
-template<typename Numeric> Matrix<Numeric> &Matrix<Numeric>::operator*=(const Numeric &num)
+template<typename Numeric> MatrixType<Numeric> &MatrixType<Numeric>::operator*=(const Numeric &num)
 {
     for(size_t i=0; i<this->rows(); i++){
         for(size_t j=0; j<this->cols(); j++){
@@ -204,9 +204,9 @@ template<typename Numeric> Matrix<Numeric> &Matrix<Numeric>::operator*=(const Nu
  * 
  * @tparam Numeric 
  * @param num 
- * @return Matrix<Numeric>& 
+ * @return MatrixType<Numeric>& 
  */
-template<typename Numeric> Matrix<Numeric> &Matrix<Numeric>::operator/=(const Numeric &num)
+template<typename Numeric> MatrixType<Numeric> &MatrixType<Numeric>::operator/=(const Numeric &num)
 {
     for(size_t i=0; i<this->rows(); i++){
         for(size_t j=0; j<this->cols(); j++){
@@ -224,7 +224,7 @@ template<typename Numeric> Matrix<Numeric> &Matrix<Numeric>::operator/=(const Nu
  * @return true 
  * @return false 
  */
-template<typename Numeric> bool Matrix<Numeric>::operator==(const Matrix &matrix) const 
+template<typename Numeric> bool MatrixType<Numeric>::operator==(const MatrixType &matrix) const 
 {
     if(this->cols() != matrix.cols() || this->rows() != matrix.rows()) return false;
 
@@ -242,7 +242,7 @@ template<typename Numeric> bool Matrix<Numeric>::operator==(const Matrix &matrix
  * @tparam Numeric 
  * @return std::string 
  */
-template<typename Numeric> std::string Matrix<Numeric>::toString() const
+template<typename Numeric> std::string MatrixType<Numeric>::toString() const
 {
     std::string ret = "[";
 
@@ -260,15 +260,15 @@ template<typename Numeric> std::string Matrix<Numeric>::toString() const
  * @brief 逆行列計算メソッド
  * 
  * @tparam Numeric 
- * @return Matrix<Numeric> 
+ * @return MatrixType<Numeric> 
  */
-template<typename Numeric> Matrix<Numeric> Matrix<Numeric>::inverse() const
+template<typename Numeric> MatrixType<Numeric> MatrixType<Numeric>::inverse() const
 {
     LUP<Numeric> lum(*this);
     DecomposeLUP(lum);
     if(lum.toggle == 0) throw "Unable to compute inversed matrix.";
 
-    Matrix ret(*this);
+    MatrixType ret(*this);
     
     std::vector<Numeric> b(this->height());
     for(size_t i=0; i<this->height(); i++){
@@ -289,7 +289,7 @@ template<typename Numeric> Matrix<Numeric> Matrix<Numeric>::inverse() const
  * @tparam Numeric 
  * @return double 
  */
-template<typename Numeric> Numeric Matrix<Numeric>::determinant() const
+template<typename Numeric> Numeric MatrixType<Numeric>::determinant() const
 {
     LUP<Numeric> lum(*this);
     DecomposeLUP(lum);
@@ -304,11 +304,11 @@ template<typename Numeric> Numeric Matrix<Numeric>::determinant() const
  * @brief 転置行列計算メソッド
  * 
  * @tparam Numeric 
- * @return Matrix<Numeric> 
+ * @return MatrixType<Numeric> 
  */
-template<typename Numeric> Matrix<Numeric> Matrix<Numeric>::transpose() const
+template<typename Numeric> MatrixType<Numeric> MatrixType<Numeric>::transpose() const
 {
-    Matrix ret(this->cols(), this->rows());
+    MatrixType ret(this->cols(), this->rows());
     for(size_t i=0; i<this->rows(); i++){
         for(size_t j=0; j<this->cols(); j++){
             ret[j][i] = (*this)[i][j];
@@ -325,14 +325,14 @@ template<typename Numeric> Matrix<Numeric> Matrix<Numeric>::transpose() const
 //-----------------------------
 namespace MiYALAB{
 namespace Mathematics{
-template struct Matrix<char>;
-template struct Matrix<short>;
-template struct Matrix<int>;
-template struct Matrix<long>;
-template struct Matrix<long long>;
-template struct Matrix<float>;
-template struct Matrix<double>;
-template struct Matrix<long double>;
+template struct MatrixType<char>;
+template struct MatrixType<short>;
+template struct MatrixType<int>;
+template struct MatrixType<long>;
+template struct MatrixType<long long>;
+template struct MatrixType<float>;
+template struct MatrixType<double>;
+template struct MatrixType<long double>;
 }
 }
 

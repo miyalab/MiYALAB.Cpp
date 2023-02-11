@@ -43,17 +43,17 @@ namespace PhysicsEngine{
  * @brief x-y
  * 
  * @param point 
- * @return math::Point2D<double> 
+ * @return math::Point2D 
  */
-math::Point2D<double> EllipsePotentialGenerator::calcPotential(const math::Point2D<double> &point) const
+math::Point2D EllipsePotentialGenerator::calcPotential(const math::Point2D &point) const
 {
-    math::Point2D<double> ret;
-    math::Point2D<double> pt = point - this->getOffset();
+    math::Point2D ret;
+    math::Point2D pt = point - this->getOffset();
 
     // 楕円ポテンシャル場の回転
     const double &cos = std::cos(this->getAngle());
     const double &sin = std::sin(this->getAngle());
-    math::Point2D<double> pt2;
+    math::Point2D pt2;
     pt2.x =  cos * pt.x + sin * pt.y;
     pt2.y = -sin * pt.x + cos * pt.y;
     pt = pt2;

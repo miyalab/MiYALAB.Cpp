@@ -31,7 +31,7 @@
 #include <string>
 
 #include "../Point/Point3D.hpp"
-#include "../EulerAngles/EulerAngles.hpp"
+#include "../Vector3/Vector3.hpp"
 
 //-----------------------------
 // Namespace & using
@@ -48,16 +48,16 @@ namespace Mathematics{
  * @tparam NumericType 
  */
 template<class Numeric>
-struct Twist{
-    Point3D<Numeric> position;
-    EulerAngles<Numeric> orientation;
+struct TwistType{
+    Point3DType<Numeric> linear;
+    Vector3Type<Numeric> angular;
 
-    std::string toString() const {return "(" + std::to_string(position.x) + ", "
-                                             + std::to_string(position.y) + ", " 
-                                             + std::to_string(position.z) + ", "
-                                             + std::to_string(orientation.roll) + ", "
-                                             + std::to_string(orientation.pitch) + ", " 
-                                             + std::to_string(orientation.yaw) + ")";}
+    std::string toString() const {return "(" + std::to_string(linear.x) + ", "
+                                             + std::to_string(linear.y) + ", " 
+                                             + std::to_string(linear.z) + ", "
+                                             + std::to_string(angular.x) + ", "
+                                             + std::to_string(angular.y) + ", " 
+                                             + std::to_string(angular.z) + ")";}
 };
 }
 }
@@ -67,8 +67,8 @@ struct Twist{
 //-----------------------------
 namespace MiYALAB{
 namespace Mathematics{
-using Twist32f = Twist<float>;
-using Twist64f = Twist<double>;
+using Twist32 = TwistType<float>;
+using Twist = TwistType<double>;
 }
 }
 

@@ -46,37 +46,37 @@ namespace Mathematics{
  * @tparam Numeric 
  */
 template<typename Numeric>
-struct Point2D{
+struct Point2DType{
     // フィールド
     Numeric x;
     Numeric y;
 
     // コンストラクタ
-    Point2D() : x(0), y(0){}
-    Point2D(const Numeric &_x, const Numeric &_y) : x(_x), y(_y){}
+    Point2DType() : x(0), y(0){}
+    Point2DType(const Numeric &_x, const Numeric &_y) : x(_x), y(_y){}
 
     // デストラクタ
-    virtual ~Point2D(){}
+    virtual ~Point2DType(){}
 
     // 算術演算子
-    Point2D &operator+=(const Point2D &point)  {this->x+=point.x; this->y+=point.y; return *this;}
-    Point2D &operator-=(const Point2D &point)  {this->x-=point.x; this->y-=point.y; return *this;}
-    Point2D &operator*=(const Numeric &num){this->x*=num; this->y*=num; return *this;}
-    Point2D &operator/=(const Numeric &num){this->x/=num; this->y/=num; return *this;}
-    Point2D operator+ (const Point2D &point)   const {return (Point2D(*this)+=point);}
-    Point2D operator- (const Point2D &point)   const {return (Point2D(*this)-=point);}
-    Point2D operator* (const Numeric &num) const {return (Point2D(*this)*=num);}
-    Point2D operator/ (const Numeric &num) const {return (Point2D(*this)/=num);}
+    Point2DType &operator+=(const Point2DType &point)  {this->x+=point.x; this->y+=point.y; return *this;}
+    Point2DType &operator-=(const Point2DType &point)  {this->x-=point.x; this->y-=point.y; return *this;}
+    Point2DType &operator*=(const Numeric &num){this->x*=num; this->y*=num; return *this;}
+    Point2DType &operator/=(const Numeric &num){this->x/=num; this->y/=num; return *this;}
+    Point2DType operator+ (const Point2DType &point)   const {return (Point2DType(*this)+=point);}
+    Point2DType operator- (const Point2DType &point)   const {return (Point2DType(*this)-=point);}
+    Point2DType operator* (const Numeric &num) const {return (Point2DType(*this)*=num);}
+    Point2DType operator/ (const Numeric &num) const {return (Point2DType(*this)/=num);}
     
     // 比較演算子
-    bool operator==(const Point2D &point) const {return (this->x == point.x && this->y == point.y);}
-    bool operator!=(const Point2D &point) const {return (this->x != point.x || this->y != point.y);}
+    bool operator==(const Point2DType &point) const {return (this->x == point.x && this->y == point.y);}
+    bool operator!=(const Point2DType &point) const {return (this->x != point.x || this->y != point.y);}
 
     // 文字列化メソッド
     std::string toString() const {return "(" + std::to_string(this->x) + ", " + std::to_string(this->y) + ")";}
 
     // 2次元ベクトル計算メソッド
-    Numeric dot(const Point2D &point) const {return this->x*point.x + this->y*point.y;}
+    Numeric dot(const Point2DType &point) const {return this->x*point.x + this->y*point.y;}
     Numeric magnitude()     const {return std::sqrt(this->x*this->x + this->y*this->y);}
     Numeric magnitudePow2() const {return (this->x*this->x + this->y*this->y);}
 };
@@ -88,8 +88,8 @@ struct Point2D{
 //-----------------------------
 namespace MiYALAB{
 namespace Mathematics{
-using Point2d32f = Point2D<float>;
-using Point2d64f = Point2D<double>;
+using Point2D32 = Point2DType<float>;
+using Point2D = Point2DType<double>;
 }
 }
 

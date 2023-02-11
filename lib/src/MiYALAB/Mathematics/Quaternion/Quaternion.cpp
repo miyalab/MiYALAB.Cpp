@@ -32,14 +32,14 @@
 //-----------------------------
 namespace MiYALAB{
 namespace Mathematics{
-template struct Quaternion<char>;
-template struct Quaternion<short>;
-template struct Quaternion<int>;
-template struct Quaternion<long>;
-template struct Quaternion<long long>;
-template struct Quaternion<float>;
-template struct Quaternion<double>;
-template struct Quaternion<long double>;
+template struct QuaternionType<char>;
+template struct QuaternionType<short>;
+template struct QuaternionType<int>;
+template struct QuaternionType<long>;
+template struct QuaternionType<long long>;
+template struct QuaternionType<float>;
+template struct QuaternionType<double>;
+template struct QuaternionType<long double>;
 }
 }
 

@@ -29,21 +29,21 @@
 #include <vector>
 #include <string>
 #include <algorithm>
-#include "MiYALAB/Mathematics/EulerAngles/EulerAngles.hpp"
+#include "MiYALAB/Mathematics/Vector3/Vector3.hpp"
 
 //-----------------------------
 // template
 //-----------------------------
 namespace MiYALAB{
 namespace Mathematics{
-template struct EulerAngles<char>;
-template struct EulerAngles<short>;
-template struct EulerAngles<int>;
-template struct EulerAngles<long>;
-template struct EulerAngles<long long>;
-template struct EulerAngles<float>;
-template struct EulerAngles<double>;
-template struct EulerAngles<long double>;
+template struct Vector3Type<char>;
+template struct Vector3Type<short>;
+template struct Vector3Type<int>;
+template struct Vector3Type<long>;
+template struct Vector3Type<long long>;
+template struct Vector3Type<float>;
+template struct Vector3Type<double>;
+template struct Vector3Type<long double>;
 
 }
 }

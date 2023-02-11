@@ -22,8 +22,8 @@
  * SOFTWARE.
 */
 
-#ifndef __MIYALAB_CPP_MATHEMATICS_POINT_POINT_3D_HPP__
-#define __MIYALAB_CPP_MATHEMATICS_POINT_POINT_3D_HPP__
+#ifndef __MIYALAB_CPP_MATHEMATICS_EULER_ANGLES_EULER_ANGLES_HPP__
+#define __MIYALAB_CPP_MATHEMATICS_EULER_ANGLES_EULER_ANGLES_HPP__
 
 //-----------------------------
 // include
@@ -46,40 +46,40 @@ namespace Mathematics{
  * @tparam Numeric 
  */
 template<typename Numeric>
-struct Point3DType{
+struct Vector3Type{
     // フィールド
     Numeric x;
     Numeric y;
     Numeric z;
 
     // コンストラクタ
-    Point3DType() : x(0), y(0), z(0){}
-    Point3DType(const Numeric &_x, const Numeric &_y, const Numeric &_z) : x(_x), y(_y), z(_z){}
+    Vector3Type() : x(0), y(0), z(0){}
+    Vector3Type(const Numeric &_roll, const Numeric &_pitch, const Numeric &_yaw) : x(_yaw), y(_pitch), z(_yaw){}
 
     // デストラクタ
-    virtual ~Point3DType(){}
+    virtual ~Vector3Type(){}
 
     // 算術演算子
-    Point3DType &operator+=(const Point3DType &point)  {this->x+=point.x; this->y+=point.y; this->z+=point.z; return *this;}
-    Point3DType &operator-=(const Point3DType &point)  {this->x-=point.x; this->y-=point.y; this->z-=point.z; return *this;}
-    Point3DType &operator*=(const Point3DType &point)  {*this=*this*point; return *this;}
-    Point3DType &operator*=(const Numeric &num){this->x*=num; this->y*=num; this->z*=num; return *this;}
-    Point3DType &operator/=(const Numeric &num){this->x/=num; this->y/=num; this->z/=num; return *this;}
-    Point3DType operator+ (const Point3DType &point)   const {return (Point3DType(*this)+=point);}
-    Point3DType operator- (const Point3DType &point)   const {return (Point3DType(*this)-=point);}
-    Point3DType operator* (const Point3DType &point)   const {return (Point3DType(this->y*point.z-point.y*this->z, this->z*point.x-point.z*this->x, this->x*point.y-point.x*this->y));}
-    Point3DType operator* (const Numeric &num) const {return (Point3DType(*this)*=num);}
-    Point3DType operator/ (const Numeric &num) const {return (Point3DType(*this)/=num);}    
+    Vector3Type &operator+=(const Vector3Type &point)  {this->x+=point.x; this->y+=point.y; this->z+=point.z; return *this;}
+    Vector3Type &operator-=(const Vector3Type &point)  {this->x-=point.x; this->y-=point.y; this->z-=point.z; return *this;}
+    Vector3Type &operator*=(const Vector3Type &point)  {*this=*this*point; return *this;}
+    Vector3Type &operator*=(const Numeric &num){this->x*=num; this->y*=num; this->z*=num; return *this;}
+    Vector3Type &operator/=(const Numeric &num){this->x/=num; this->y/=num; this->z/=num; return *this;}
+    Vector3Type operator+ (const Vector3Type &point)   const {return (Vector3Type(*this)+=point);}
+    Vector3Type operator- (const Vector3Type &point)   const {return (Vector3Type(*this)-=point);}
+    Vector3Type operator* (const Vector3Type &point)   const {return (Vector3Type(this->y*point.z-point.y*this->z, this->z*point.x-point.z*this->x, this->x*point.y-point.x*this->y));}
+    Vector3Type operator* (const Numeric &num) const {return (Vector3Type(*this)*=num);}
+    Vector3Type operator/ (const Numeric &num) const {return (Vector3Type(*this)/=num);}    
     
     // 比較演算子
-    bool operator==(const Point3DType &point) const {return (this->x == point.x && this->y == point.y && this->z == point.z);}
-    bool operator!=(const Point3DType &point) const {return (this->x != point.x || this->y != point.y || this->z != point.z);}
+    bool operator==(const Vector3Type &angles) const {return (this->x == angles.x && this->y == angles.y && this->z == angles.z);}
+    bool operator!=(const Vector3Type &angles) const {return (this->x != angles.x || this->y != angles.y || this->z != angles.z);}
 
     // 文字列化メソッド
     std::string toString() const {return "(" + std::to_string(this->x) + ", " + std::to_string(this->y) + ", " + std::to_string(this->z) + ")";}
 
     // 3次元ベクトル計算メソッド
-    Numeric dot(const Point3DType &point) const {return (this->x*point.x + this->y*point.y + this->z*point.z);}
+    Numeric dot(const Vector3Type &point) const {return (this->x*point.x + this->y*point.y + this->z*point.z);}
     Numeric magnitude()     const {return std::sqrt(this->x*this->x + this->y*this->y + this->z*this->z);}
     Numeric magnitudePow2() const {return (this->x*this->x + this->y*this->y + this->z*this->z);}
 };
@@ -91,14 +91,12 @@ struct Point3DType{
 //-----------------------------
 namespace MiYALAB{
 namespace Mathematics{
-using Point32f = Point3DType<float>;
-using Point64f = Point3DType<double>;
-using Point32 = Point3DType<float>;
-using Point = Point3DType<double>;
+using Vector3_32 = Vector3Type<float>;
+using Vector3 = Vector3Type<double>;
 }
 }
 
-#endif // __MIYALAB_CPP_MATHEMATICS_POINT_POINT_3D_HPP__
+#endif // __MIYALAB_CPP_MATHEMATICS_EULER_ANGLES_EULER_ANGLES_HPP__
 
 //-----------------------------------------------------------------------------------
 // end of file

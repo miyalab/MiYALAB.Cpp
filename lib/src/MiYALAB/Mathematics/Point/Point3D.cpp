@@ -32,14 +32,14 @@
 //-----------------------------
 namespace MiYALAB{
 namespace Mathematics{
-template struct Point3D<char>;
-template struct Point3D<short>;
-template struct Point3D<int>;
-template struct Point3D<long>;
-template struct Point3D<long long>;
-template struct Point3D<float>;
-template struct Point3D<double>;
-template struct Point3D<long double>;
+template struct Point3DType<char>;
+template struct Point3DType<short>;
+template struct Point3DType<int>;
+template struct Point3DType<long>;
+template struct Point3DType<long long>;
+template struct Point3DType<float>;
+template struct Point3DType<double>;
+template struct Point3DType<long double>;
 
 }
 }

@@ -43,7 +43,7 @@ class EllipsePotentialGenerator: public PotentialGenerator{
 public:
     EllipsePotentialGenerator(){}
     virtual ~EllipsePotentialGenerator(){}
-    Mathematics::Point2D<double> calcPotential(const Mathematics::Point2D<double> &point) const override;
+    Mathematics::Point2D calcPotential(const Mathematics::Point2D &point) const override;
     void setAspectRatio(const double &aspect){aspect_ratio = aspect;}
     void setRotateAngle(const double &angle){rotate_angle = angle;}
 private:

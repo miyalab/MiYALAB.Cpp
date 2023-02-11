@@ -48,9 +48,9 @@ namespace Mathematics{
  * @tparam NumericType 
  */
 template<class NumericType>
-struct Pose3D{
-    Point3D<NumericType> position;
-    Quaternion<NumericType> orientation;
+struct Pose3DType{
+    Point3DType<NumericType> position;
+    QuaternionType<NumericType> orientation;
 
     std::string toString() const {return "(" + std::to_string(position.x) + ", "
                                              + std::to_string(position.y) + ", " 
@@ -68,8 +68,8 @@ struct Pose3D{
 //-----------------------------
 namespace MiYALAB{
 namespace Mathematics{
-using Pose32f = Pose3D<float>;
-using Pose64f = Pose3D<double>;
+using Pose32 = Pose3DType<float>;
+using Pose = Pose3DType<double>;
 }
 }
 

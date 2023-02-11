@@ -43,7 +43,7 @@ class RotatePotentialGenerator: public PotentialGenerator{
 public:
     RotatePotentialGenerator(){}
     virtual ~RotatePotentialGenerator(){}
-    Mathematics::Point2D<double> calcPotential(const Mathematics::Point2D<double> &point) const override;
+    Mathematics::Point2D calcPotential(const Mathematics::Point2D &point) const override;
 private:
 
 protected:
