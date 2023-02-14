@@ -22,41 +22,53 @@
  * SOFTWARE.
 */
 
-#ifndef __MIYALAB_CPP_ROBOTICS_POINT_CLOUD_HPP__
-#define __MIYALAB_CPP_ROBOTICS_POINT_CLOUD_HPP__
+#ifndef __MIYALAB_CPP_MATHEMATICS_NORMALIZE_RADIAN_HPP__
+#define __MIYALAB_CPP_MATHEMATICS_NORMALIZE_RADIAN_HPP__
 
 //-----------------------------
 // include
 //-----------------------------
-#include <vector>
-
-#include "../../Mathematics/Point/Point3D.hpp"
+#include <string>
+#include <cmath>
 
 //-----------------------------
 // Namespace & using
 //-----------------------------
 
 //-----------------------------
-// Struct
+// Class
 //-----------------------------
 namespace MiYALAB {
-namespace Robotics{
-struct PointCloud{
+namespace Mathematics{
+struct NormalizeRadian{
 public:
-    PointCloud();
-    virtual ~PointCloud();
+    NormalizeRadian(){}
+    NormalizeRadian(const double &value) : radian(value) {}
+    virtual ~NormalizeRadian(){}
 
-    std::vector<Mathematics::Point> points;
-    struct Channel{
-        std::string name;
-        std::vector<double> values;
-    };
-    std::vector<Channel> channels;
+    NormalizeRadian &operator+=(const NormalizeRadian &value);
+    NormalizeRadian &operator-=(const NormalizeRadian &value);
+    NormalizeRadian &operator*=(const NormalizeRadian &value);
+    NormalizeRadian &operator/=(const NormalizeRadian &value);
+    NormalizeRadian operator+(const NormalizeRadian &value){return NormalizeRadian(*this)+=value;}
+    NormalizeRadian operator-(const NormalizeRadian &value){return NormalizeRadian(*this)-=value;}
+    NormalizeRadian operator*(const NormalizeRadian &value){return NormalizeRadian(*this)*=value;}
+    NormalizeRadian operator/(const NormalizeRadian &value){return NormalizeRadian(*this)/=value;}
+    NormalizeRadian operator=(const NormalizeRadian &value);
+    bool operator==(const NormalizeRadian &value);
+    bool operator!=(const NormalizeRadian &value){return !(*this == value);}
+    bool operator<=(const NormalizeRadian &value);
+    bool operator>(const NormalizeRadian &value){return !(*this <= value);}
+    bool operator>=(const NormalizeRadian &value);
+    bool operator<(const NormalizeRadian &value){return !(*this >= value);}
+private:
+    double radian;
 };
 }
 }
 
-#endif // __MIYALAB_CPP_ROBOTICS_POINT_CLOUD_HPP__
+
+#endif // __MIYALAB_CPP_MATHEMATICS_NORMALIZE_RADIAN_HPP__
 
 //-----------------------------------------------------------------------------------
 // end of file

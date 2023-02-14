@@ -41,10 +41,11 @@ class ICPMatching2D{
 public:
     ICPMatching2D();
     virtual ~ICPMatching2D();
+    double match(const std::vector<Mathematics::Point2D> &local_map, Mathematics::Pose2D *pose);
+    void setGlobalMap(std::vector<Mathematics::Point2D> &map);
     
 private:
-
-    
+    std::vector<Mathematics::Point2D> global_map;
 };
 }
 }
