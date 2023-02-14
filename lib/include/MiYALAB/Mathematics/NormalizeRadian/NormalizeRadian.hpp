@@ -42,18 +42,30 @@ namespace MiYALAB {
 namespace Mathematics{
 struct NormalizeRadian{
 public:
+    // コンストラクタ
     NormalizeRadian(){}
     NormalizeRadian(const double &value) : radian(value) {}
+    
+    // デストラクタ
     virtual ~NormalizeRadian(){}
 
+    // 演算子オーバーロード
     NormalizeRadian &operator+=(const NormalizeRadian &value);
     NormalizeRadian &operator-=(const NormalizeRadian &value);
     NormalizeRadian &operator*=(const NormalizeRadian &value);
     NormalizeRadian &operator/=(const NormalizeRadian &value);
+    NormalizeRadian &operator+=(const double &value);
+    NormalizeRadian &operator-=(const double &value);
+    NormalizeRadian &operator*=(const double &value);
+    NormalizeRadian &operator/=(const double &value);
     NormalizeRadian operator+(const NormalizeRadian &value){return NormalizeRadian(*this)+=value;}
     NormalizeRadian operator-(const NormalizeRadian &value){return NormalizeRadian(*this)-=value;}
     NormalizeRadian operator*(const NormalizeRadian &value){return NormalizeRadian(*this)*=value;}
     NormalizeRadian operator/(const NormalizeRadian &value){return NormalizeRadian(*this)/=value;}
+    NormalizeRadian operator+(const double &value){return NormalizeRadian(*this)+=value;}
+    NormalizeRadian operator-(const double &value){return NormalizeRadian(*this)-=value;}
+    NormalizeRadian operator*(const double &value){return NormalizeRadian(*this)*=value;}
+    NormalizeRadian operator/(const double &value){return NormalizeRadian(*this)/=value;}
     NormalizeRadian operator=(const NormalizeRadian &value);
     bool operator==(const NormalizeRadian &value);
     bool operator!=(const NormalizeRadian &value){return !(*this == value);}
