@@ -22,13 +22,15 @@
  * SOFTWARE.
 */
 
-#ifndef __MIYALAB_CPP_ROBOTICS_LASER_SCAN_LASER_SCAN_HPP__
-#define __MIYALAB_CPP_ROBOTICS_LASER_SCAN_LASER_SCAN_HPP__
+#ifndef __MIYALAB_CPP_SENSOR_POINT_CLOUD_HPP__
+#define __MIYALAB_CPP_SENSOR_POINT_CLOUD_HPP__
 
 //-----------------------------
 // include
 //-----------------------------
 #include <vector>
+
+#include "../../Mathematics/Point/Point3D.hpp"
 
 //-----------------------------
 // Namespace & using
@@ -38,26 +40,20 @@
 // Struct
 //-----------------------------
 namespace MiYALAB {
-namespace Robotics{
-struct LaserScan{
+namespace Sensor{
+struct PointCloud{
 public:
-    LaserScan(){}
-    virtual ~LaserScan(){}
+    PointCloud();
+    virtual ~PointCloud();
 
-    float angle_min;
-    float angle_max;
-    float angle_increment;
-    float time_increment;
-    float scan_time;
-    float range_min;
-    float range_max;
+    std::vector<Mathematics::Point32> points;
     std::vector<float> ranges;
-    std::vector<float> intensities;
+    std::vector<float> intensity;
 };
 }
 }
 
-#endif // __MIYALAB_CPP_ROBOTICS_LASER_SCAN_LASER_SCAN_HPP__
+#endif // __MIYALAB_CPP_Sensor_POINT_CLOUD_HPP__
 
 //-----------------------------------------------------------------------------------
 // end of file

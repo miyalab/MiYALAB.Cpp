@@ -22,13 +22,43 @@
  * SOFTWARE.
 */
 
-#pragma once
+#ifndef __MIYALAB_CPP_SENSOR_LASER_SCAN_LASER_SCAN_HPP__
+#define __MIYALAB_CPP_SENSOR_LASER_SCAN_LASER_SCAN_HPP__
 
-#include <sys/socket.h>
+//-----------------------------
+// include
+//-----------------------------
+#include <vector>
 
-namespace MiYALAB{
-namespace Device{
+//-----------------------------
+// Namespace & using
+//-----------------------------
 
+//-----------------------------
+// Struct
+//-----------------------------
+namespace MiYALAB {
+namespace Sensor{
+struct LaserScan{
+public:
+    LaserScan(){}
+    virtual ~LaserScan(){}
 
+    float angle_min;
+    float angle_max;
+    float angle_increment;
+    float time_increment;
+    float scan_time;
+    float range_min;
+    float range_max;
+    std::vector<float> ranges;
+    std::vector<float> intensities;
+};
 }
 }
+
+#endif // __MIYALAB_CPP_Sensor_LASER_SCAN_LASER_SCAN_HPP__
+
+//-----------------------------------------------------------------------------------
+// end of file
+//-----------------------------------------------------------------------------------
