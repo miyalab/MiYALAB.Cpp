@@ -22,21 +22,45 @@
  * SOFTWARE.
 */
 
-#ifndef __MIYALAB_CPP_ROBOT_CONTROLLER_OMNI_3WD_HPP__
-#define __MIYALAB_CPP_ROBOT_CONTROLLER_OMNI_3WD_HPP__
+#ifndef __MIYALAB_CPP_MATHEMATICS_POLAR_POLAR_2D_HPP__
+#define __MIYALAB_CPP_MATHEMATICS_POLAR_POLAR_2D_HPP__
 
 //-----------------------------
 // include
 //-----------------------------
-#include <functional>
 
 //-----------------------------
-// class 
+// Namespace & using
+//-----------------------------
+
+//-----------------------------
+// Struct
+//-----------------------------
+namespace MiYALAB {
+namespace Mathematics{
+template <typename Numeric>
+struct Polar2D{
+public:
+    Numeric range;
+    Numeric theta;
+    Polar2D(): range(0), theta(0){}
+    Polar2D(const Numeric &_range, const Numeric &_theta): range(_range), theta(_theta){}
+};
+}
+}
+
+//-----------------------------
+// using
 //-----------------------------
 namespace MiYALAB{
-namespace RobotController{
-
+namespace Mathematics{
+using Polar2D32 = Polar2D<float>;
+using Polar2D64 = Polar2D<double>;
 }
 }
 
-#endif // __MIYALAB_CPP_ROBOT_CONTROLLER_OMNI_3WD_HPP__
+#endif // __MIYALAB_CPP_MATHEMATICS_POLAR_POLAR_2D_HPP__
+
+//-----------------------------------------------------------------------------------
+// end of file
+//-----------------------------------------------------------------------------------

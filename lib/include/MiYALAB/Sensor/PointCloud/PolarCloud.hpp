@@ -22,35 +22,38 @@
  * SOFTWARE.
 */
 
-#ifndef __MIYALAB_CPP_ROBOT_CONTROLLER_DC_MOTOR_HPP__
-#define __MIYALAB_CPP_ROBOT_CONTROLLER_DC_MOTOR_HPP__
+#ifndef __MIYALAB_CPP_SENSOR_POINT_CLOUD_POLAR_CLOUD_HPP__
+#define __MIYALAB_CPP_SENSOR_POINT_CLOUD_POLAR_CLOUD_HPP__
 
 //-----------------------------
 // include
 //-----------------------------
-#include <functional>
+#include <vector>
+
+#include "../../Mathematics/Polar/Polar3D.hpp"
 
 //-----------------------------
-// class 
+// Namespace & using
 //-----------------------------
-namespace MiYALAB{
-namespace RobotController{
-class DCMotor{
+
+//-----------------------------
+// Struct
+//-----------------------------
+namespace MiYALAB {
+namespace Sensor{
+struct PolarCloud{
 public:
-    DCMotor(){}
-    virtual ~DCMotor(){}
+    PolarCloud();
+    virtual ~PolarCloud();
 
-    void setSpeed(double speed);
-    void setSpeedLimit(double speed);
-    void setAngle(double angle);
-
-    void setSpeedSetMethod(std::function<bool(double)> function){motorSpeedSetMethod = function;}
-    void setCurrentAngleSetMethod(std::function<bool(double)> function){motorCurrentAngleGetMethod = function;}
-private:
-    std::function<bool(double)> motorSpeedSetMethod;
-    std::function<bool(double)> motorCurrentAngleGetMethod;
+    std::vector<Mathematics::Polar32> polar;
+    std::vector<float> intensity;
 };
 }
 }
 
-#endif // __MIYALAB_CPP_ROBOT_CONTROLLER_DC_MOTOR_HPP__
+#endif // __MIYALAB_CPP_SENSOR_POINT_CLOUD_POLAR_CLOUD_HPP__
+
+//-----------------------------------------------------------------------------------
+// end of file
+//-----------------------------------------------------------------------------------

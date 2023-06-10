@@ -22,8 +22,8 @@
  * SOFTWARE.
 */
 
-#ifndef __MIYALAB_CPP_SENSOR_POINT_CLOUD_HPP__
-#define __MIYALAB_CPP_SENSOR_POINT_CLOUD_HPP__
+#ifndef __MIYALAB_CPP_SENSOR_POINT_CLOUD_POINT_CLOUD_HPP__
+#define __MIYALAB_CPP_SENSOR_POINT_CLOUD_POINT_CLOUD_HPP__
 
 //-----------------------------
 // include
@@ -47,13 +47,12 @@ public:
     virtual ~PointCloud();
 
     std::vector<Mathematics::Point32> points;
-    std::vector<float> ranges;
     std::vector<float> intensity;
 };
 }
 }
 
-#endif // __MIYALAB_CPP_Sensor_POINT_CLOUD_HPP__
+#endif // __MIYALAB_CPP_Sensor_POINT_CLOUD_POINT_CLOUD_HPP__
 
 //-----------------------------------------------------------------------------------
 // end of file
