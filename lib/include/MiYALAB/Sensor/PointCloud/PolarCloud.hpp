@@ -46,7 +46,7 @@ public:
     PolarCloud();
     virtual ~PolarCloud();
 
-    std::vector<Mathematics::Polar32> polar;
+    std::vector<Mathematics::Polar32> polars;
     std::vector<float> intensity;
 };
 }
