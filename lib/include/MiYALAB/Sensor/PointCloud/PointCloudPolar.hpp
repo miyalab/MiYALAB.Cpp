@@ -43,8 +43,8 @@ namespace MiYALAB {
 namespace Sensor{
 struct PointCloudPolar{
 public:
-    PointCloudPolar();
-    virtual ~PointCloudPolar();
+    PointCloudPolar(){}
+    virtual ~PointCloudPolar(){}
 
     std::vector<Mathematics::Polar32> polars;
     std::vector<float> intensity;

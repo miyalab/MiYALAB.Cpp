@@ -43,8 +43,8 @@ namespace MiYALAB {
 namespace Sensor{
 struct PointCloud{
 public:
-    PointCloud();
-    virtual ~PointCloud();
+    PointCloud(){}
+    virtual ~PointCloud(){}
 
     std::vector<Mathematics::Point32> points;
     std::vector<float> intensity;
