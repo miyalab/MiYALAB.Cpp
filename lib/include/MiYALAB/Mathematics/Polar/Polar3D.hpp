@@ -44,7 +44,7 @@ public:
     Numeric range;
     Numeric theta;
     Numeric phi;
-    Polar3DType(): range(0), theta(0), yaw(0){}
+    Polar3DType(): range(0), theta(0), theta(0){}
     Polar3DType(const Numeric &_range, const Numeric &_yaw, const Numeric &_pitch): range(_range), theta(_yaw), phi(_pitch){}
 
 };
