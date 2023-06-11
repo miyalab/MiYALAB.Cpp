@@ -22,39 +22,37 @@
  * SOFTWARE.
 */
 
+#ifndef __MIYALAB_CPP_SENSOR_POINT_CLOUD_POINT_CLOUD_POLAR_HPP__
+#define __MIYALAB_CPP_SENSOR_POINT_CLOUD_POINT_CLOUD_POLAR_HPP__
+
 //-----------------------------
 // include
 //-----------------------------
-#include "MiYALAB/Mathematics/Matrix/ConvertToMatrix.hpp"
+#include <vector>
+
+#include "../../Mathematics/Polar/Polar3D.hpp"
 
 //-----------------------------
 // Namespace & using
 //-----------------------------
 
 //-----------------------------
-// Class
+// Struct
 //-----------------------------
 namespace MiYALAB {
-namespace Mathematics{
-template <typename Numeric> MatrixType<Numeric> convertToMatrix(const Point2DType<Numeric> &point, bool column_vector)
-{
-    MatrixType<Numeric> ret(1+column_vector,1+!column_vector);
-    ret[0][0] = point.x;
-    ret[column_vector][!column_vector] = point.y;
-    return ret;
+namespace Sensor{
+struct PointCloudPolar{
+public:
+    PointCloudPolar();
+    virtual ~PointCloudPolar();
+
+    std::vector<Mathematics::Polar32> polars;
+    std::vector<float> intensity;
+};
+}
 }
 
-template <typename Numeric> MatrixType<Numeric> convertToMatrix(const Point3DType<Numeric> &point, bool column_vector)
-{
-    MatrixType<Numeric> ret(1+2*column_vector, 1+2*!column_vector);
-    ret[0][0] = point.x;
-    ret[column_vector][!column_vector] = point.y;
-    ret[2*column_vector][2*!column_vector] = point.z;
-    return ret;
-}
-
-}
-}
+#endif // __MIYALAB_CPP_SENSOR_POINT_CLOUD_POLAR_CLOUD_HPP__
 
 //-----------------------------------------------------------------------------------
 // end of file

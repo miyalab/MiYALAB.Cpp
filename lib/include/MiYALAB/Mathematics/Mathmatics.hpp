@@ -22,32 +22,14 @@
  * SOFTWARE.
 */
 
-#ifndef __MIYALAB_CPP_MATHEMATICS_EULER_ANGLES_CONVERT_TO_EULER_ANGLES_HPP__
-#define __MIYALAB_CPP_MATHEMATICS_EULER_ANGLES_CONVERT_TO_EULER_ANGLES_HPP__
+#ifndef __MIYALAB_CPP_MATHEMATICS_HPP__
+#define __MIYALAB_CPP_MATHEMATICS_HPP__
 
-//-----------------------------
-// include
-//-----------------------------
-#include "Vector3.hpp"
-#include "../Quaternion/Quaternion.hpp"
+#include "MathematicsFunctions.hpp"
+#include "MathematicsValue.hpp"
 
-//-----------------------------
-// Namespace & using
-//-----------------------------
 
-//-----------------------------
-// Class
-//-----------------------------
-namespace MiYALAB {
-namespace Mathematics{
-
-template<typename Numeric> void convertToEulerAngles(const QuaternionType<Numeric> &quaternion, Vector3Type<Numeric> &euler);
-template<typename Numeric> Vector3Type<Numeric> convertToEulerAngles(const QuaternionType<Numeric> &quaternion);
-
-}
-}
-
-#endif // __MIYALAB_CPP_MATHEMATICS_EULER_ANGLES_CONVERT_TO_EULER_ANGLES_HPP__
+#endif
 
 //-----------------------------------------------------------------------------------
 // end of file

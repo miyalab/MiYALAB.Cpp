@@ -27,16 +27,18 @@ link_directories(
 add_library(${PROJECT_NAME} SHARED
 	src/MiYALAB/Algorithm/Sort/SelectSort.cpp
 	src/MiYALAB/Algorithm/Sort/BubbleSort.cpp
+	src/MiYALAB/Mathematics/Converter/ConvertToVector3.cpp
+	src/MiYALAB/Mathematics/Converter/ConvertToMatrix.cpp
+	src/MiYALAB/Mathematics/Converter/ConvertToQuaternion.cpp
 	src/MiYALAB/Mathematics/Vector3/Vector3.cpp
-	src/MiYALAB/Mathematics/Vector3/ConvertToVector3.cpp
 	src/MiYALAB/Mathematics/Matrix/Matrix.cpp
-	src/MiYALAB/Mathematics/Matrix/ConvertToMatrix.cpp
 	src/MiYALAB/Mathematics/Point/Point2D.cpp
 	src/MiYALAB/Mathematics/Point/Point3D.cpp
+	src/MiYALAB/Mathematics/Polar/Polar2D.cpp
+	src/MiYALAB/Mathematics/Polar/Polar3D.cpp
 	src/MiYALAB/Mathematics/Pose/Pose2D.cpp
 	src/MiYALAB/Mathematics/Pose/Pose3D.cpp
 	src/MiYALAB/Mathematics/Quaternion/Quaternion.cpp
-	src/MiYALAB/Mathematics/Quaternion/ConvertToQuaternion.cpp
 	src/MiYALAB/Mathematics/Twist/Twist.cpp
 	src/MiYALAB/ControllerEngine/PIDController/PIDController.cpp
 	src/MiYALAB/PhysicsEngine/PotentialGenerator/PotentialGenerator.cpp

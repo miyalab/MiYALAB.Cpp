@@ -22,46 +22,26 @@
  * SOFTWARE.
 */
 
-#ifndef __MIYALAB_CPP_MATHEMATICS_POLAR_POLAR_3D_HPP__
-#define __MIYALAB_CPP_MATHEMATICS_POLAR_POLAR_3D_HPP__
-
 //-----------------------------
 // include
 //-----------------------------
+#include "MiYALAB/Mathematics/Polar/Polar2D.hpp"
 
 //-----------------------------
-// Namespace & using
-//-----------------------------
-
-//-----------------------------
-// Struct
-//-----------------------------
-namespace MiYALAB {
-namespace Mathematics{
-template <typename Numeric>
-struct Polar3DType{
-public:
-    Numeric range;
-    Numeric yaw;
-    Numeric pitch;
-    Polar3DType(): range(0), yaw(0), pitch(0){}
-    Polar3DType(const Numeric &_range, const Numeric &_yaw, const Numeric &_pitch): range(_range), yaw(_yaw), pitch(_pitch){}
-
-};
-}
-}
-
-//-----------------------------
-// using
+// template
 //-----------------------------
 namespace MiYALAB{
 namespace Mathematics{
-using Polar32 = Polar3DType<float>;
-using Polar   = Polar3DType<double>;
+template struct Polar2DType<char>;
+template struct Polar2DType<short>;
+template struct Polar2DType<int>;
+template struct Polar2DType<long>;
+template struct Polar2DType<long long>;
+template struct Polar2DType<float>;
+template struct Polar2DType<double>;
+template struct Polar2DType<long double>;
 }
 }
-
-#endif // __MIYALAB_CPP_MATHEMATICS_POLAR_POLAR_3D_HPP__
 
 //-----------------------------------------------------------------------------------
 // end of file

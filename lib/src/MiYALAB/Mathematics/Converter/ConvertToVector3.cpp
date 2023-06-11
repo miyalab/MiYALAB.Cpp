@@ -26,7 +26,7 @@
 // include
 //-----------------------------
 #include <cmath>
-#include "MiYALAB/Mathematics/Vector3/ConvertToVector3.hpp"
+#include "MiYALAB/Mathematics/Converter/ConvertToVector3.hpp"
 
 //-----------------------------
 // Namespace & using

@@ -30,7 +30,7 @@
 //-----------------------------
 #include "../Point/Point2D.hpp"
 #include "../Point/Point3D.hpp"
-#include "Matrix.hpp"
+#include "../Matrix/Matrix.hpp"
 
 
 //-----------------------------

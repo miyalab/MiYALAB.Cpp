@@ -22,14 +22,14 @@
  * SOFTWARE.
 */
 
-#ifndef __MIYALAB_CPP_MATHEMATICS_QUATERNION_QUATERNION_CONVERTER_HPP__
-#define __MIYALAB_CPP_MATHEMATICS_QUATERNION_QUATERNION_CONVERTER_HPP__
+#ifndef __MIYALAB_CPP_MATHEMATICS_EULER_ANGLES_CONVERT_TO_EULER_ANGLES_HPP__
+#define __MIYALAB_CPP_MATHEMATICS_EULER_ANGLES_CONVERT_TO_EULER_ANGLES_HPP__
 
 //-----------------------------
 // include
 //-----------------------------
 #include "../Vector3/Vector3.hpp"
-#include "Quaternion.hpp"
+#include "../Quaternion/Quaternion.hpp"
 
 //-----------------------------
 // Namespace & using
@@ -41,13 +41,13 @@
 namespace MiYALAB {
 namespace Mathematics{
 
-template<typename Numeric> void convertToQuaternion(const Vector3Type<Numeric> &euler, QuaternionType<Numeric> &quaternion);
-template<typename Numeric> QuaternionType<Numeric> convertToQuaternion(const Vector3Type<Numeric> &euler);
+template<typename Numeric> void convertToEulerAngles(const QuaternionType<Numeric> &quaternion, Vector3Type<Numeric> &euler);
+template<typename Numeric> Vector3Type<Numeric> convertToEulerAngles(const QuaternionType<Numeric> &quaternion);
 
 }
 }
 
-#endif // __MIYALAB_CPP_MATHEMATICS_QUATERNION_QUATERNION_CONVERTER_HPP__
+#endif // __MIYALAB_CPP_MATHEMATICS_EULER_ANGLES_CONVERT_TO_EULER_ANGLES_HPP__
 
 //-----------------------------------------------------------------------------------
 // end of file

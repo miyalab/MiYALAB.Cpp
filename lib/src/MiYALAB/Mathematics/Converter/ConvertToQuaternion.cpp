@@ -26,7 +26,7 @@
 // include
 //-----------------------------
 #include <cmath>
-#include "MiYALAB/Mathematics/Quaternion/ConvertToQuaternion.hpp"
+#include "MiYALAB/Mathematics/Converter/ConvertToQuaternion.hpp"
 
 //-----------------------------
 // Namespace & using

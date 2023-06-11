@@ -39,12 +39,12 @@
 namespace MiYALAB {
 namespace Mathematics{
 template <typename Numeric>
-struct Polar2D{
+struct Polar2DType{
 public:
     Numeric range;
     Numeric theta;
-    Polar2D(): range(0), theta(0){}
-    Polar2D(const Numeric &_range, const Numeric &_theta): range(_range), theta(_theta){}
+    Polar2DType(): range(0), theta(0){}
+    Polar2DType(const Numeric &_range, const Numeric &_theta): range(_range), theta(_theta){}
 };
 }
 }
@@ -54,8 +54,8 @@ public:
 //-----------------------------
 namespace MiYALAB{
 namespace Mathematics{
-using Polar2D32 = Polar2D<float>;
-using Polar2D64 = Polar2D<double>;
+using Polar2D32 = Polar2DType<float>;
+using Polar2D64 = Polar2DType<double>;
 }
 }
 

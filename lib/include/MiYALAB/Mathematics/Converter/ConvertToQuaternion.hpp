@@ -22,46 +22,32 @@
  * SOFTWARE.
 */
 
-#ifndef __MIYALAB_CPP_MATHEMATICS_POLAR_POLAR_3D_HPP__
-#define __MIYALAB_CPP_MATHEMATICS_POLAR_POLAR_3D_HPP__
+#ifndef __MIYALAB_CPP_MATHEMATICS_QUATERNION_QUATERNION_CONVERTER_HPP__
+#define __MIYALAB_CPP_MATHEMATICS_QUATERNION_QUATERNION_CONVERTER_HPP__
 
 //-----------------------------
 // include
 //-----------------------------
+#include "../Vector3/Vector3.hpp"
+#include "../Quaternion/Quaternion.hpp"
 
 //-----------------------------
 // Namespace & using
 //-----------------------------
 
 //-----------------------------
-// Struct
+// Class
 //-----------------------------
 namespace MiYALAB {
 namespace Mathematics{
-template <typename Numeric>
-struct Polar3DType{
-public:
-    Numeric range;
-    Numeric yaw;
-    Numeric pitch;
-    Polar3DType(): range(0), yaw(0), pitch(0){}
-    Polar3DType(const Numeric &_range, const Numeric &_yaw, const Numeric &_pitch): range(_range), yaw(_yaw), pitch(_pitch){}
 
-};
+template<typename Numeric> void convertToQuaternion(const Vector3Type<Numeric> &euler, QuaternionType<Numeric> &quaternion);
+template<typename Numeric> QuaternionType<Numeric> convertToQuaternion(const Vector3Type<Numeric> &euler);
+
 }
 }
 
-//-----------------------------
-// using
-//-----------------------------
-namespace MiYALAB{
-namespace Mathematics{
-using Polar32 = Polar3DType<float>;
-using Polar   = Polar3DType<double>;
-}
-}
-
-#endif // __MIYALAB_CPP_MATHEMATICS_POLAR_POLAR_3D_HPP__
+#endif // __MIYALAB_CPP_MATHEMATICS_QUATERNION_QUATERNION_CONVERTER_HPP__
 
 //-----------------------------------------------------------------------------------
 // end of file
