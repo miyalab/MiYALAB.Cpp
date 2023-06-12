@@ -46,7 +46,7 @@ public:
     PointCloudPolar(){}
     virtual ~PointCloudPolar(){}
 
-    std::vector<Mathematics::Polar32> polars;
+    std::vector<Mathematics::Polar> polars;
     std::vector<float> intensity;
 };
 }
