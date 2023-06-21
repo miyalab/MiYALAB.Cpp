@@ -31,6 +31,7 @@
 #include <vector>
 
 #include "../../Mathematics/Polar/Polar3D.hpp"
+#include "Channel.hpp"
 
 //-----------------------------
 // Namespace & using
@@ -47,7 +48,7 @@ public:
     virtual ~PointCloudPolar(){}
 
     std::vector<Mathematics::Polar> polars;
-    std::vector<float> intensity;
+    std::vector<ChannelFloat32> intensity;
 };
 }
 }

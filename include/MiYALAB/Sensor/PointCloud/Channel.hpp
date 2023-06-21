@@ -22,16 +22,14 @@
  * SOFTWARE.
 */
 
-#ifndef __MIYALAB_CPP_SENSOR_POINT_CLOUD_POINT_CLOUD_HPP__
-#define __MIYALAB_CPP_SENSOR_POINT_CLOUD_POINT_CLOUD_HPP__
+#ifndef __MIYALAB_CPP_SENSOR_POINT_CLOUD_CHANNEL_HPP__
+#define __MIYALAB_CPP_SENSOR_POINT_CLOUD_CHANNEL_HPP__
 
 //-----------------------------
 // include
 //-----------------------------
+#include <string>
 #include <vector>
-
-#include "Channel.hpp"
-#include "../../Mathematics/Point/Point3D.hpp"
 
 //-----------------------------
 // Namespace & using
@@ -42,18 +40,28 @@
 //-----------------------------
 namespace MiYALAB {
 namespace Sensor{
-struct PointCloud{
+template <typename Numeric>
+struct Channel{
 public:
-    PointCloud(){}
-    virtual ~PointCloud(){}
-
-    std::vector<Mathematics::Point32> points;
-    std::vector<ChannelFloat32> channels;
+    Channel(){}
+    virtual ~Channel(){}
+    std::string name;
+    std::vector<Numeric> values;
 };
 }
 }
 
-#endif // __MIYALAB_CPP_Sensor_POINT_CLOUD_POINT_CLOUD_HPP__
+//-----------------------------
+// using
+//-----------------------------
+namespace MiYALAB{
+namespace Sensor{
+using ChannelFloat32 = Channel<float>;
+using ChannelFloat64 = Channel<double>;
+}
+}
+
+#endif // __MIYALAB_CPP_Sensor_POINT_CLOUD_CHANNEL_HPP__
 
 //-----------------------------------------------------------------------------------
 // end of file
