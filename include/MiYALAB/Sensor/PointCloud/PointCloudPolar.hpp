@@ -48,7 +48,7 @@ public:
     virtual ~PointCloudPolar(){}
 
     std::vector<Mathematics::Polar> polars;
-    std::vector<ChannelFloat32> channels;
+    std::vector<ChannelFloat64> channels;
 };
 }
 }

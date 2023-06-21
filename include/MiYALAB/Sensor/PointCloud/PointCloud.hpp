@@ -47,8 +47,8 @@ public:
     PointCloud(){}
     virtual ~PointCloud(){}
 
-    std::vector<Mathematics::Point32> points;
-    std::vector<ChannelFloat32> channels;
+    std::vector<Mathematics::Point> points;
+    std::vector<ChannelFloat64> channels;
 };
 }
 }
