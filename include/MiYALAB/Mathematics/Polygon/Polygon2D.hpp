@@ -22,16 +22,17 @@
  * SOFTWARE.
 */
 
-#ifndef __MIYALAB_CPP_ROBOTICS_OBSTACLE_DETECTOR_SIMPLE_DETECTOR_USING_POINT_CLOUD_HPP__
-#define __MIYALAB_CPP_ROBOTICS_OBSTACLE_DETECTOR_SIMPLE_DETECTOR_USING_POINT_CLOUD_HPP__
+#ifndef __MIYALAB_CPP_MATHEMATICS_POLYGON_POLYGON_2D_HPP__
+#define __MIYALAB_CPP_MATHEMATICS_POLYGON_POLYGON_2D_HPP__
 
 //-----------------------------
 // include
 //-----------------------------
+#include <string>
+#include <cmath>
 #include <vector>
-#include "../../Sensor/PointCloud/PointCloud.hpp"
-#include "../../Mathematics/Vector3/Vector3.hpp"
-#include "../../Mathematics/Polygon/Polygon2D.hpp"
+
+#include "../Point/Point2D.hpp"
 
 //-----------------------------
 // Namespace & using
@@ -41,18 +42,37 @@
 // Class
 //-----------------------------
 namespace MiYALAB {
-namespace Robotics{
-class SimpleDetectorUsingPointCloud{
-public:
-    SimpleDetectorUsingPointCloud(){}
-    virtual ~SimpleDetectorUsingPointCloud(){}
-    std::vector<MiYALAB::Mathematics::Polygon2D> detect(MiYALAB::Sensor::PointCloud &points);
-private:
+namespace Mathematics{
+/**
+ * @brief x-y Numeric
+ * 
+ * @tparam Numeric 
+ */
+template<typename Numeric>
+struct Polygon2DType{
+    // フィールド
+    std::vector<Point2DType<Numeric>> points;
+
+    // コンストラクタ
+    Polygon2DType(){}
+
+    // デストラクタ
+    virtual ~Point2DType(){}
 };
 }
 }
 
-#endif // __MIYALAB_CPP_ROBOTICS_OBSTACLE_DETECTOR_SIMPLE_DETECTOR_WITH_POINT_CLOUD_HPP__
+//-----------------------------
+// using
+//-----------------------------
+namespace MiYALAB{
+namespace Mathematics{
+using Polygon2D32 = Polygon2DType<float>;
+using Polygon2D = Polygon2DType<double>;
+}
+}
+
+#endif // __MIYALAB_CPP_MATHEMATICS_POINT_POINT_2D_HPP__
 
 //-----------------------------------------------------------------------------------
 // end of file

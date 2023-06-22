@@ -22,37 +22,27 @@
  * SOFTWARE.
 */
 
-#ifndef __MIYALAB_CPP_ROBOTICS_OBSTACLE_DETECTOR_SIMPLE_DETECTOR_USING_POINT_CLOUD_HPP__
-#define __MIYALAB_CPP_ROBOTICS_OBSTACLE_DETECTOR_SIMPLE_DETECTOR_USING_POINT_CLOUD_HPP__
-
 //-----------------------------
 // include
 //-----------------------------
-#include <vector>
-#include "../../Sensor/PointCloud/PointCloud.hpp"
-#include "../../Mathematics/Vector3/Vector3.hpp"
-#include "../../Mathematics/Polygon/Polygon2D.hpp"
+#include "MiYALAB/Mathematics/Polygon/Polygon3D.hpp"
 
 //-----------------------------
-// Namespace & using
+// template
 //-----------------------------
+namespace MiYALAB{
+namespace Mathematics{
+template struct Polygon3DType<char>;
+template struct Polygon3DType<short>;
+template struct Polygon3DType<int>;
+template struct Polygon3DType<long>;
+template struct Polygon3DType<long long>;
+template struct Polygon3DType<float>;
+template struct Polygon3DType<double>;
+template struct Polygon3DType<long double>;
 
-//-----------------------------
-// Class
-//-----------------------------
-namespace MiYALAB {
-namespace Robotics{
-class SimpleDetectorUsingPointCloud{
-public:
-    SimpleDetectorUsingPointCloud(){}
-    virtual ~SimpleDetectorUsingPointCloud(){}
-    std::vector<MiYALAB::Mathematics::Polygon2D> detect(MiYALAB::Sensor::PointCloud &points);
-private:
-};
 }
 }
-
-#endif // __MIYALAB_CPP_ROBOTICS_OBSTACLE_DETECTOR_SIMPLE_DETECTOR_WITH_POINT_CLOUD_HPP__
 
 //-----------------------------------------------------------------------------------
 // end of file

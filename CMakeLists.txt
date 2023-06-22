@@ -36,6 +36,8 @@ add_library(${PROJECT_NAME} SHARED
 	src/MiYALAB/Mathematics/Point/Point3D.cpp
 	src/MiYALAB/Mathematics/Polar/Polar2D.cpp
 	src/MiYALAB/Mathematics/Polar/Polar3D.cpp
+	src/MiYALAB/Mathematics/Polygon/Polygon2D.cpp
+	src/MiYALAB/Mathematics/Polygon/Polygon3D.cpp
 	src/MiYALAB/Mathematics/Pose/Pose2D.cpp
 	src/MiYALAB/Mathematics/Pose/Pose3D.cpp
 	src/MiYALAB/Mathematics/Quaternion/Quaternion.cpp
