@@ -3,7 +3,7 @@
 
 install方法  
 ```
-\$ cd build  
-\$ cmake ..  
-\$ sudo make install  
+$ cd build  
+$ cmake ..  
+$ sudo make install  
 ```
