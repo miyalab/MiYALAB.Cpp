@@ -57,7 +57,7 @@ struct Polygon2DType{
     Polygon2DType(){}
 
     // デストラクタ
-    virtual ~Point2DType(){}
+    virtual ~Polygon2DType(){}
 };
 }
 }
