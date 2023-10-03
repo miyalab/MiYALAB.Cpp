@@ -54,6 +54,7 @@ public:
     int microseconds();
     int nanoseconds();
 private:
+    long long clock();
 };
 }
 }
