@@ -22,14 +22,13 @@
  * SOFTWARE.
 */
 
-#ifndef __MIYALAB_CPP_SYSTEM_STOPWATCH_STOPWATCH_HPP__
-#define __MIYALAB_CPP_SYSTEM_STOPWATCH_STOPWATCH_HPP__
+#ifndef __MIYALAB_CPP_SYSTEM_STOPWATCH_TIME_SPAN_HPP__
+#define __MIYALAB_CPP_SYSTEM_STOPWATCH_TIME_SPAN_HPP__
 
 //-----------------------------
 // include
 //-----------------------------
 #include <chrono>
-#include "timespan.hpp"
 
 //-----------------------------
 // Namespace & using
@@ -40,23 +39,27 @@
 //-----------------------------
 namespace MiYALAB {
 namespace System{
-class Stopwatch{
+class TimeSpan{
 public:
-    Stopwatch();
-    virtual ~Stopwatch();
-    void start();
-    void stop();
-    void restart();
-    TimeSpan getElapsedTime();
+    TimeSpan();
+    virtual ~TimeSpan();
+    double totalSeconds();
+    double totalMilliseconds();
+    double totalMicroseconds();
+    double totalNanoseconds();
+    int hours();
+    int minutes();
+    int seconds();
+    int milliseconds();
+    int microseconds();
+    int nanoseconds();
 private:
-    bool m_is_active;
-    std::chrono::high_resolution_clock::time_point start_point;
-    std::chrono::high_resolution_clock::time_point stop_point;
+    long long clock;
 };
 }
 }
 
-#endif // __MIYALAB_CPP_SYSTEM_STOPWATCH_STOPWATCH_HPP__
+#endif // __MIYALAB_CPP_SYSTEM_STOPWATCH_TIME_SPAN_HPP__
 
 //-----------------------------------------------------------------------------------
 // end of file
