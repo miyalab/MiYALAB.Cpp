@@ -1,7 +1,7 @@
 /*
  * MIT License
  * 
- * Copyright (c) 2022 MiYA LAB(K.Miyauchi)
+ * Copyright (c) 2022-2023 MiYA LAB(K.Miyauchi)
  * 
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -22,53 +22,41 @@
  * SOFTWARE.
 */
 
+#ifndef __MIYALAB_CPP_SYSTEM_STOPWATCH_STOPWATCH_HPP__
+#define __MIYALAB_CPP_SYSTEM_STOPWATCH_STOPWATCH_HPP__
+
 //-----------------------------
 // include
 //-----------------------------
-#include "MiYALAB/System/Stopwatch/Stopwatch.hpp"
+#include <chrono>
+#include "TimeSpan.hpp"
 
 //-----------------------------
 // Namespace & using
 //-----------------------------
 
 //-----------------------------
-// Methods
+// Struct
 //-----------------------------
 namespace MiYALAB {
 namespace System{
-Stopwatch::Stopwatch()
-{
-    m_is_active = false;
-}
-
-Stopwatch::~Stopwatch()
-{
-
-}
-
-void Stopwatch::start()
-{
-    m_is_active = true;
-}
-
-void Stopwatch::stop()
-{
-    m_is_active = false;
-}
-
-void Stopwatch::restart()
-{
-    m_is_active = true;
-}
-
-TimeSpan Stopwatch::elapsedTime()
-{
-
-}
-
-
+class Stopwatch{
+public:
+    Stopwatch();
+    virtual ~Stopwatch();
+    void start();
+    void stop();
+    void restart();
+    TimeSpan elapsedTime();
+private:
+    bool m_is_active;
+    std::chrono::high_resolution_clock::time_point m_start_point;
+    TimeSpan m_time_span;
+};
 }
 }
+
+#endif // __MIYALAB_CPP_SYSTEM_STOPWATCH_STOPWATCH_HPP__
 
 //-----------------------------------------------------------------------------------
 // end of file

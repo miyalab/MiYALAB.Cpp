@@ -1,7 +1,7 @@
 /*
  * MIT License
  * 
- * Copyright (c) 2022-2023 MiYA LAB(K.Miyauchi)
+ * Copyright (c) 2022 MiYA LAB(K.Miyauchi)
  * 
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -22,41 +22,57 @@
  * SOFTWARE.
 */
 
-#ifndef __MIYALAB_CPP_SYSTEM_STOPWATCH_STOPWATCH_HPP__
-#define __MIYALAB_CPP_SYSTEM_STOPWATCH_STOPWATCH_HPP__
-
 //-----------------------------
 // include
 //-----------------------------
-#include <chrono>
-#include "TimeSpan.hpp"
+#include "MiYALAB/System/Clock/Stopwatch.hpp"
 
 //-----------------------------
 // Namespace & using
 //-----------------------------
 
 //-----------------------------
-// Struct
+// Methods
 //-----------------------------
 namespace MiYALAB {
 namespace System{
-class Stopwatch{
-public:
-    Stopwatch();
-    virtual ~Stopwatch();
-    void start();
-    void stop();
-    void restart();
-    TimeSpan elapsedTime();
-private:
-    bool m_is_active;
-    std::chrono::high_resolution_clock::time_point start_point;
-    std::chrono::high_resolution_clock::time_point stop_point;
-};
-}
+Stopwatch::Stopwatch()
+{
+    m_is_active = false;
 }
 
-#endif // __MIYALAB_CPP_SYSTEM_STOPWATCH_STOPWATCH_HPP__
+Stopwatch::~Stopwatch()
+{
+
+}
+
+void Stopwatch::start()
+{
+    m_is_active = true;
+    m_start_point = std::chrono::high_resolution_clock::now();
+}
+
+void Stopwatch::stop()
+{
+    m_is_active = false;
+    m_time_span += TimeSpan(m_start_point, std::chrono::high_resolution_clock::now());
+}
+
+void Stopwatch::restart()
+{
+    this->start();
+    m_time_span = TimeSpan(m_start_point, m_start_point);
+}
+
+TimeSpan Stopwatch::elapsedTime()
+{
+    if(m_is_active){
+        return m_time_span + TimeSpan(m_start_point, std::chrono::high_resolution_clock::now());
+    }
+    return m_time_span;
+}
+}
+}
 
 //-----------------------------------------------------------------------------------
 // end of file

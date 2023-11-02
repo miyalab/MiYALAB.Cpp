@@ -33,6 +33,7 @@
 //-----------------------------
 // Namespace & using
 //-----------------------------
+constexpr long long UNIT_NANO = 1000000000LL;
 
 //-----------------------------
 // Struct
@@ -40,21 +41,38 @@
 namespace MiYALAB {
 namespace System{
 class TimeSpan{
-public:
-    TimeSpan();
-    virtual ~TimeSpan();
-    double totalSeconds();
-    double totalMilliseconds();
-    double totalMicroseconds();
-    double totalNanoseconds();
-    int hours();
-    int minutes();
-    int seconds();
-    int milliseconds();
-    int microseconds();
-    int nanoseconds();
 private:
-    long long clock;
+    long long m_nanosec = 0;
+    long long m_sec = 0;
+public:
+    TimeSpan(){}
+    TimeSpan(std::chrono::high_resolution_clock::time_point tp1, std::chrono::high_resolution_clock::time_point tp2){
+        auto nanosec = std::chrono::duration_cast<std::chrono::nanoseconds>(tp2 - tp1).count();
+        m_nanosec = nanosec % UNIT_NANO;
+        m_sec     = nanosec / UNIT_NANO;
+
+    }
+    virtual ~TimeSpan(){}
+
+    double totalSeconds()     {return (double)m_sec + (double)m_nanosec / UNIT_NANO;}
+    double totalMilliseconds(){return (double)m_sec * UNIT_NANO + (double)m_nanosec / 1000000.0;}
+    double totalMicroseconds(){return (double)m_sec * UNIT_NANO + (double)m_nanosec / 1000.0;}
+    double totalNanoseconds() {return (double)m_sec * UNIT_NANO + (double)m_nanosec;}
+    
+    TimeSpan operator+=(const TimeSpan &ts){
+        m_nanosec += ts.m_nanosec;
+        m_sec += ts.m_sec + (m_nanosec / UNIT_NANO);
+        m_nanosec %= UNIT_NANO;
+        return *this;
+    } 
+    TimeSpan operator+ (const TimeSpan &ts){return TimeSpan(*this)+=ts;}
+    
+    long long nanoseconds(){return m_nanosec % 1000;} 
+    long long microseconds(){return (m_nanosec / 1000) % 1000;} 
+    long long milliseconds(){return m_nanosec / 1000000;} 
+    long long seconds(){return m_sec % 60;}
+    long long minutes(){return (m_sec / 60) % 60;}
+    long long hours(){return m_sec / 3600;}
 };
 }
 }
