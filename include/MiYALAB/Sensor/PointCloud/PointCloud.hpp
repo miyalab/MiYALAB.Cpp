@@ -28,10 +28,12 @@
 //-----------------------------
 // include
 //-----------------------------
+#include <ctime>
 #include <vector>
 
 #include "Channel.hpp"
 #include "../../Mathematics/Point/Point3D.hpp"
+#include "../../Std/Header.hpp"
 
 //-----------------------------
 // Namespace & using
@@ -46,7 +48,8 @@ struct PointCloud{
 public:
     PointCloud(){}
     virtual ~PointCloud(){}
-
+    
+    Std::Header header;
     std::vector<Mathematics::Point> points;
     std::vector<ChannelFloat64> channels;
 };
